@@ -6,31 +6,32 @@
    * Rules
    * Approach
    * Evaluation and grading
+
 ## (1) The R-software (2)
    * Installation
    * Variables and simple operations
    * Arrays 
-   		* Vectors
-   			* Creation	
-   			* Indexing and replacment (three methods)
-			* Attributes (length, names)
-   			* Binding vectors
-   		* Matrices
-   			* Creation
-   			* Indexing and replacment (three methods)
-   			* Atrributes (rownames, colnames, dim, nrow, ncol)
-   		* Multi-dimensional arrays
-   			* Creation
-   			* Indexing and replacment (three methods)
-   			* Attributes
-		* List
-			* Why we need lits
-			* Creation
-			* Indexing and replacement (three methods)
-		* Data Frames	
-			* Why are these needed
-			* Creating data frames (using read table, using data.frame and using as.data.frame)
-			* Indexing and replacement (four methods)
+   	* Vectors
+   		* Creation
+   		* Indexing and replacment (three methods)
+   		* Attributes (length, names)
+   		 Binding vectors
+   	* Matrices
+   		* Creation
+   		* Indexing and replacment (three methods)
+   		* Atrributes (rownames, colnames, dim, nrow, ncol)
+   	* Multi-dimensional arrays
+   		* Creation
+   		* Indexing and replacment (three methods)
+   		* Attributes
+	* Lists
+		* Why we need lits
+		* Creation
+		* Indexing and replacement (three methods)
+	* Data Frames	
+		* Why are these needed
+		* Creating data frames (using read table, using data.frame and using as.data.frame)
+		* Indexing and replacement (four methods)
 	* Conditional statements
 	* For and while loops
 	* I/O
@@ -39,6 +40,7 @@
 		* `dput` and `dget`
 		* `scan` and `wirte`
 		* `readBin` and `writeBin`
+
 ## (2) Matrix Algebra (3)
 	* Matrix definition
 	* Matrix addition and subtraction
