@@ -1,6 +1,6 @@
-# EPI-809b
+# Statistical Computing  (EPI-853B)
 
-
+*Instructor*: Gustavo de los Campos (gustavoc@msu.edu)
 ## Introduction 
    * Goals
    * Rules
@@ -89,18 +89,18 @@
    * Metropolis Hastings
 	
 ## (9) Cross-validation Methods
-	* Why we need it?
-	* Different types of prediction errors
-	* Training-testing
-	* Replicated training-testint
-	* q-fold CV
-	* Leave-one-out CV in OLS
+   * Why we need it?
+   * Different types of prediction errors
+   * Training-testing
+   * Replicated training-testint
+   * q-fold CV
+   * Leave-one-out CV in OLS
 	
 ## (10) Penalised Regressions
-	* Why we needed it
-	* Penalized RSS 
-	* Standard penalty functions and the solutions they induce
-	* Ridge Regression
+   * Why are penalized regressions needed? The variance-bias trade off
+   * Penalized RSS 
+   * Standard penalty functions and the solutions they induce
+   * Ridge Regression
 	* Lasso
 	* Bridge Regression
 	* The coordinate descent gradient algorithm 
