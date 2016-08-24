@@ -12,15 +12,33 @@ In this course we will cover computational methods commonly used in statistics, 
 
 **Instructor**: Gustavo de los Campos (gustavoc@msu.edu)
 
-# Outline
+## Outline
+<div id="Outline" />
+
+  * [Introduction](#intro)
+  * [The R-software](#R)
+  * [Matrix Algebra in R](#Matrix)
+  * [Ordinary Least Squares I: Estimation](#OLS-I)
+  * [Ordinary Least Squares II: Inference](#OLS-II)
+  * [Maximum Likelihood](#ML)
+  * [Non-linear regression using Splines](#splines)
+  * [Multi-core computing in R](#parallel)
+  * [Simulation of random variables](#RV)
+  * [Monte Carlo Markov Chain Methods](#MCMC)
+  * [Cross-Validation](#CV)
+  * [Penalised Regressions](#penalized)
+
+
 
 ## Introduction 
+<div id="intro" />
    * Goals
    * Rules
    * Approach
    * Evaluation and grading
 
 ## (1) The R-software  [Section 2.3, plus materials provided below]
+<div id="R" />
    * Installation [CRAN]()
    * Variables and simple operations
    * Arrays 
@@ -55,6 +73,7 @@ In this course we will cover computational methods commonly used in statistics, 
 		* `readBin` and `writeBin`
 
 ## (2) Matrix Algebra (definitions and computational methods)
+<div id="Matrix" />
    * Basic definitions
    * Matrix addition and subtraction
    * Transpose
@@ -64,6 +83,7 @@ In this course we will cover computational methods commonly used in statistics, 
    * Generalized Inverse
 	
 ## (3) Ordinary-least squares [Chapter 3, plus materials provided below]
+<div id="OLS-I" />
    * The problem
    * Analytical solution
    * The lm and ls.fit functions
@@ -73,11 +93,14 @@ In this course we will cover computational methods commonly used in statistics, 
    * Iterative Procedures: Gauss-Seidel method
 	
 ## (4) Inference in the OLS regression [Chapters 3 and 5, plus materials provided below]
+<div id="OLS-II" />
    * Bias and variance of OLS estimates
+   * Omitted variable bias
    * Evaluation of Bias and Variance Using Monte Carlo Methods
    * The Bootstrap method [Chapter 5, Section 5.2]
 
 ## (5) Maximum Likelihood estimation [Chapter 4, sections 4.1-4.3]
+<div id="ML" />
    * The likelihood function
    * Analytical solution in the Gaussian and Bernoulli models
    * Numerical optimisation (application to GLM)
@@ -85,20 +108,24 @@ In this course we will cover computational methods commonly used in statistics, 
    * Data Augmentation and the EM-algoritm
     
 ## (6) Non-linear regression using splines [Chapter 7]	
+<div id="splines" />
    * Basis functions
    * Non-linear regression using splines
 
 ## (7)  Multi-core computing in R [the parrallel R-package](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf)
+<div id="parallel" />
    * Introduction to multi-core computing
    * The `parallel` package
 
 ## (8) Simulation of Random Variables
+<div id="RV" />
    * Random numbers
    * Transformations of RV
    * Generating dras from Multivariate Normal
    * Inverse CDF
 	
-## (9) Monte Carlo Markov Chain [References provided below]
+## (9) Monte Carlo Markov Chain Methods [References provided below]
+<div id="MCMC" />
    * Introduction
    * The Monte-Carlo Error
    * Basic sampling methods
@@ -107,6 +134,7 @@ In this course we will cover computational methods commonly used in statistics, 
    	* Metropolis Hastings
 	
 ## (10) Cross-validation Methods [Chapter 5]
+<div id="CV" />
    * Why we need it?
    * Different types of prediction errors
    * Validation methods
@@ -117,6 +145,7 @@ In this course we will cover computational methods commonly used in statistics, 
    * Choosing the optimal number of knots in a spline using CV.
 	
 ## (11) Penalised Regressions [Chapter 6]
+<div id="penalised" />
    * Why are penalized regressions needed? The variance-bias trade off
    * Penalized RSS 
    * Standard penalty functions and the solutions they induce
