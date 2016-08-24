@@ -75,6 +75,9 @@ ___
 		* `scan` and `wirte`
 		* `readBin` and `writeBin`
 
+[Back to Outline](#intro)
+___
+
 ## (2) Matrix Algebra (definitions and computational methods)
 <div id="Matrix" />
    * Basic definitions
@@ -84,7 +87,10 @@ ___
    * Inversion
    * Singular Value Decomposition
    * Generalized Inverse
-	
+
+[Back to Outline](#intro)
+___
+
 ## (3) Ordinary-least squares [Chapter 3, plus materials provided below]
 <div id="OLS-I" />
    * The problem
@@ -94,7 +100,10 @@ ___
    * Computing OLS estimates using matrix operations
    * OLS using the QR and SVD decompositions
    * Iterative Procedures: Gauss-Seidel method
-	
+
+[Back to Outline](#intro)
+___
+
 ## (4) Inference in the OLS regression [Chapters 3 and 5, plus materials provided below]
 <div id="OLS-II" />
    * Bias and variance of OLS estimates
@@ -109,16 +118,25 @@ ___
    * Numerical optimisation (application to GLM)
    * The Newton-Rapson Method
    * Data Augmentation and the EM-algoritm
-    
+
+[Back to Outline](#intro)
+___
+
 ## (6) Non-linear regression using splines [Chapter 7]	
 <div id="splines" />
    * Basis functions
    * Non-linear regression using splines
 
+[Back to Outline](#intro)
+___
+
 ## (7)  Multi-core computing in R [the parrallel R-package](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf)
 <div id="parallel" />
    * Introduction to multi-core computing
    * The `parallel` package
+
+[Back to Outline](#intro)
+___
 
 ## (8) Simulation of Random Variables
 <div id="RV" />
@@ -126,7 +144,10 @@ ___
    * Transformations of RV
    * Generating dras from Multivariate Normal
    * Inverse CDF
-	
+
+[Back to Outline](#intro)
+___
+
 ## (9) Monte Carlo Markov Chain Methods [References provided below]
 <div id="MCMC" />
    * Introduction
@@ -135,7 +156,10 @@ ___
    	* Rejection Sampling
    	* Gibbs Sampler
    	* Metropolis Hastings
-	
+
+[Back to Outline](#intro)
+___
+
 ## (10) Cross-validation Methods [Chapter 5]
 <div id="CV" />
    * Why we need it?
@@ -146,7 +170,10 @@ ___
    	* q-fold CV
    * Leave-one-out CV in OLS
    * Choosing the optimal number of knots in a spline using CV.
-	
+
+[Back to Outline](#intro)
+___
+
 ## (11) Penalised Regressions [Chapter 6]
 <div id="penalised" />
    * Why are penalized regressions needed? The variance-bias trade off
