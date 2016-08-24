@@ -42,51 +42,51 @@
 		* `readBin` and `writeBin`
 
 ## (2) Matrix Algebra (definitions and computational methods)
-	* Basic definitions
-	* Matrix addition and subtraction
-	* Transpose
-	* Matrix product
-	* Inversion
-	* Singular Value Decomposition
-	* Generalized Inverse
+   * Basic definitions
+   * Matrix addition and subtraction
+   * Transpose
+   * Matrix product
+   * Inversion
+   * Singular Value Decomposition
+   * Generalized Inverse
 	
 ## (3) Ordinary-least squares
-	* The problem
-	* Analytical solution
-	* The lm and ls.fit functions
-	* Regression with categorical predictors (`model.matrix`)
-	* Computing OLS estimates using matrix operations
-	* OLS using the QR and SVD decompositions
-	* Iterative Procedures: Gauss-Seidel method
+   * The problem
+   * Analytical solution
+   * The lm and ls.fit functions
+   * Regression with categorical predictors (`model.matrix`)
+   * Computing OLS estimates using matrix operations
+   * OLS using the QR and SVD decompositions
+   * Iterative Procedures: Gauss-Seidel method
 	
 ## (4) Inference in the OLS regression
-	* Bias and variance of OLS estimates
-	* Evaluation of Bias and Variance Using Monte Carlo Methods
-	* The Bootstrap method
+   * Bias and variance of OLS estimates
+   * Evaluation of Bias and Variance Using Monte Carlo Methods
+   * The Bootstrap method
 	
 ## (5) Maximum Likelihood estimation
-	* The likelihood function
-	* Analytical solution in the Gaussian and Bernoulli models
-	* Numerical optimisation (application to GLM)
-	* The Newton-Rapson Method
-	* Data Augmentation and the EM-algoritm
+   * The likelihood function
+   * Analytical solution in the Gaussian and Bernoulli models
+   * Numerical optimisation (application to GLM)
+   * The Newton-Rapson Method
+   * Data Augmentation and the EM-algoritm
 
 ## (6)  Multi-core computing in R
-	* Introduction to multi-core computing
-	* The `parallel` package
+   * Introduction to multi-core computing
+   * The `parallel` package
 
 ## (7) Simulation of Random Variables
-	* Random numbers
-	* Transformations of RV
-	* Generating dras from Multivariate Normal
-	* Inverse CDF
+   * Random numbers
+   * Transformations of RV
+   * Generating dras from Multivariate Normal
+   * Inverse CDF
 	
 ## (8) Monte Carlo Markov Chain
-	* Introduction
-	* Monte-Carlo Errors
-	* Rejection Sampling
-	* Gibbs Sampler
-	* Metropolis Hastings
+   * Introduction
+   * Monte-Carlo Errors
+   * Rejection Sampling
+   * Gibbs Sampler
+   * Metropolis Hastings
 	
 ## (9) Cross-validation Methods
 	* Why we need it?
