@@ -26,7 +26,7 @@ In this course we will cover computational methods commonly used in statistics, 
   * [Simulation of random variables](#RV)
   * [Monte Carlo Markov Chain Methods](#MCMC)
   * [Cross-Validation](#CV)
-  * [Penalised Regressions](#penalized)
+  * [Penalised Regressions](#penalised)
 
 
 <div id="intro" />
@@ -185,6 +185,7 @@ ___
 ___
 
 <div id="penalised" />
+
 ## (11) Penalised Regressions [Chapter 6]
 
    * Why are penalized regressions needed? The variance-bias trade off
