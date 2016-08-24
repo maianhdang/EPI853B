@@ -1,13 +1,26 @@
 # Statistical Computing  (EPI-853B)
 
-*Instructor*: Gustavo de los Campos (gustavoc@msu.edu)
+In this course we will cover computational methods commonly used in statistics, including algorithms commonly used for fitting linear models, maximum likelihood esitmation, simulation of random variables, bootstrap, cross-validation and algorithms for implementing high dimensional regression.s
+
+**Software**: The course will be mostly based on [R](https://www.r-project.org/). If time permits we will also work with [Julia](http://julialang.org/).
+
+**Approach**: Althought the focus of the coruse is on computational methods, for each topic  we will first describe the problem from an statistical perspective. If they exhist, exact analythical solutions will be discuss and implemented. Otherwise numerical methods will be presented. Derivations will be presented in class and students are expected to take their own notes. Scripts for computations will be develped in class and a summary will be posted in this repository. Students are expected to bring their own laptops. If you do not have access to a laptop, please check with the instructor to get access to one.
+
+**Evaluation**: The evaluation will be based on HW (number to be determined) and two in-class exam.
+
+**Textbook**: [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/index.html). This book covers many of the topics we will discuss. For topics not covered in the book we will provide aditional materials.
+
+**Instructor**: Gustavo de los Campos (gustavoc@msu.edu)
+
+# Outline
+
 ## Introduction 
    * Goals
    * Rules
    * Approach
    * Evaluation and grading
 
-## (1) The R-software
+## (1) The R-software  [Section 2.3, plus materials provided below]
    * Installation [CRAN]()
    * Variables and simple operations
    * Arrays 
@@ -50,7 +63,7 @@
    * Singular Value Decomposition
    * Generalized Inverse
 	
-## (3) Ordinary-least squares
+## (3) Ordinary-least squares [Chapter 3, plus materials provided below]
    * The problem
    * Analytical solution
    * The lm and ls.fit functions
@@ -59,44 +72,51 @@
    * OLS using the QR and SVD decompositions
    * Iterative Procedures: Gauss-Seidel method
 	
-## (4) Inference in the OLS regression
+## (4) Inference in the OLS regression [Chapters 3 and 5, plus materials provided below]
    * Bias and variance of OLS estimates
    * Evaluation of Bias and Variance Using Monte Carlo Methods
-   * The Bootstrap method
-	
-## (5) Maximum Likelihood estimation
+   * The Bootstrap method [Chapter 5, Section 5.2]
+
+## (5) Maximum Likelihood estimation [Chapter 4, sections 4.1-4.3]
    * The likelihood function
    * Analytical solution in the Gaussian and Bernoulli models
    * Numerical optimisation (application to GLM)
    * The Newton-Rapson Method
    * Data Augmentation and the EM-algoritm
+    
+## (6) Non-linear regression using splines [Chapter 7]	
+   * Basis functions
+   * Non-linear regression using splines
 
-## (6)  Multi-core computing in R
+## (7)  Multi-core computing in R [the parrallel R-package](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf)
    * Introduction to multi-core computing
    * The `parallel` package
 
-## (7) Simulation of Random Variables
+## (8) Simulation of Random Variables
    * Random numbers
    * Transformations of RV
    * Generating dras from Multivariate Normal
    * Inverse CDF
 	
-## (8) Monte Carlo Markov Chain
+## (9) Monte Carlo Markov Chain [References provided below]
    * Introduction
-   * Monte-Carlo Errors
-   * Rejection Sampling
-   * Gibbs Sampler
-   * Metropolis Hastings
+   * The Monte-Carlo Error
+   * Basic sampling methods
+   	* Rejection Sampling
+   	* Gibbs Sampler
+   	* Metropolis Hastings
 	
-## (9) Cross-validation Methods
+## (10) Cross-validation Methods [Chapter 5]
    * Why we need it?
    * Different types of prediction errors
-   * Training-testing
-   * Replicated training-testint
-   * q-fold CV
+   * Validation methods
+   	* Training-testing
+   	* Replicated training-testint
+   	* q-fold CV
    * Leave-one-out CV in OLS
+   * Choosing the optimal number of knots in a spline using CV.
 	
-## (10) Penalised Regressions
+## (11) Penalised Regressions [Chapter 6]
    * Why are penalized regressions needed? The variance-bias trade off
    * Penalized RSS 
    * Standard penalty functions and the solutions they induce
@@ -104,8 +124,3 @@
 	* Lasso
 	* Bridge Regression
 	* The coordinate descent gradient algorithm 
-	
-	
-	
-	
-		   		
