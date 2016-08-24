@@ -36,7 +36,9 @@ In this course we will cover computational methods commonly used in statistics, 
    * Rules
    * Approach
    * Evaluation and grading
-[Outline](#intro)
+
+														[Outline](#intro)
+-------------------------------------------
 
 ## (1) The R-software  [Section 2.3, plus materials provided below]
 <div id="R" />
