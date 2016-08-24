@@ -37,7 +37,7 @@ In this course we will cover computational methods commonly used in statistics, 
    * Approach
    * Evaluation and grading
 
-[Back to Outline](#intro)
+[Back to Outline](#Outline)
 ___
 
 ## (1) The R-software  [Section 2.3, plus materials provided below]
@@ -75,7 +75,7 @@ ___
 		* `scan` and `wirte`
 		* `readBin` and `writeBin`
 
-[Back to Outline](#intro)
+[Back to Outline](#Outline)
 ___
 
 ## (2) Matrix Algebra (definitions and computational methods)
@@ -88,7 +88,7 @@ ___
    * Singular Value Decomposition
    * Generalized Inverse
 
-[Back to Outline](#intro)
+[Back to Outline](#Outline)
 ___
 
 ## (3) Ordinary-least squares [Chapter 3, plus materials provided below]
@@ -101,7 +101,7 @@ ___
    * OLS using the QR and SVD decompositions
    * Iterative Procedures: Gauss-Seidel method
 
-[Back to Outline](#intro)
+[Back to Outline](#Outline)
 ___
 
 ## (4) Inference in the OLS regression [Chapters 3 and 5, plus materials provided below]
@@ -119,7 +119,7 @@ ___
    * The Newton-Rapson Method
    * Data Augmentation and the EM-algoritm
 
-[Back to Outline](#intro)
+[Back to Outline](#Outline)
 ___
 
 ## (6) Non-linear regression using splines [Chapter 7]	
@@ -127,7 +127,7 @@ ___
    * Basis functions
    * Non-linear regression using splines
 
-[Back to Outline](#intro)
+[Back to Outline](#Outline)
 ___
 
 ## (7)  Multi-core computing in R [the parrallel R-package](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf)
@@ -135,7 +135,7 @@ ___
    * Introduction to multi-core computing
    * The `parallel` package
 
-[Back to Outline](#intro)
+[Back to Outline](#Outline)
 ___
 
 ## (8) Simulation of Random Variables
@@ -145,7 +145,7 @@ ___
    * Generating dras from Multivariate Normal
    * Inverse CDF
 
-[Back to Outline](#intro)
+[Back to Outline](#Outline)
 ___
 
 ## (9) Monte Carlo Markov Chain Methods [References provided below]
@@ -157,7 +157,7 @@ ___
    	* Gibbs Sampler
    	* Metropolis Hastings
 
-[Back to Outline](#intro)
+[Back to Outline](#Outline)
 ___
 
 ## (10) Cross-validation Methods [Chapter 5]
@@ -171,7 +171,7 @@ ___
    * Leave-one-out CV in OLS
    * Choosing the optimal number of knots in a spline using CV.
 
-[Back to Outline](#intro)
+[Back to Outline](#Outline)
 ___
 
 ## (11) Penalised Regressions [Chapter 6]
