@@ -11,9 +11,9 @@ In this course we will cover computational methods commonly used in statistics, 
 **Textbook**: [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/index.html). This book covers many of the topics we will discuss. For topics not covered in the book we will provide aditional materials.
 
 **Instructor**: Gustavo de los Campos (gustavoc@msu.edu)
+<div id="Outline" />
 
 ## Outline
-<div id="Outline" />
 
   * [Introduction](#intro)
   * [The R-software](#R)
