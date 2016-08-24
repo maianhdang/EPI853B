@@ -29,9 +29,9 @@ In this course we will cover computational methods commonly used in statistics, 
   * [Penalised Regressions](#penalized)
 
 
-
-## Introduction 
 <div id="intro" />
+## Introduction 
+
    * Goals
    * Rules
    * Approach
@@ -40,8 +40,9 @@ In this course we will cover computational methods commonly used in statistics, 
 [Back to Outline](#Outline)
 ___
 
-## (1) The R-software  [Section 2.3, plus materials provided below]
 <div id="R" />
+## (1) The R-software  [Section 2.3, plus materials provided below]
+
    * Installation [CRAN]()
    * Variables and simple operations
    * Arrays 
@@ -78,8 +79,9 @@ ___
 [Back to Outline](#Outline)
 ___
 
-## (2) Matrix Algebra (definitions and computational methods)
 <div id="Matrix" />
+## (2) Matrix Algebra (definitions and computational methods)
+
    * Basic definitions
    * Matrix addition and subtraction
    * Transpose
@@ -91,8 +93,9 @@ ___
 [Back to Outline](#Outline)
 ___
 
-## (3) Ordinary-least squares [Chapter 3, plus materials provided below]
 <div id="OLS-I" />
+## (3) Ordinary-least squares [Chapter 3, plus materials provided below]
+
    * The problem
    * Analytical solution
    * The lm and ls.fit functions
@@ -104,15 +107,17 @@ ___
 [Back to Outline](#Outline)
 ___
 
-## (4) Inference in the OLS regression [Chapters 3 and 5, plus materials provided below]
 <div id="OLS-II" />
+## (4) Inference in the OLS regression [Chapters 3 and 5, plus materials provided below]
+
    * Bias and variance of OLS estimates
    * Omitted variable bias
    * Evaluation of Bias and Variance Using Monte Carlo Methods
    * The Bootstrap method [Chapter 5, Section 5.2]
 
-## (5) Maximum Likelihood estimation [Chapter 4, sections 4.1-4.3]
 <div id="ML" />
+## (5) Maximum Likelihood estimation [Chapter 4, sections 4.1-4.3]
+
    * The likelihood function
    * Analytical solution in the Gaussian and Bernoulli models
    * Numerical optimisation (application to GLM)
@@ -122,24 +127,27 @@ ___
 [Back to Outline](#Outline)
 ___
 
-## (6) Non-linear regression using splines [Chapter 7]	
 <div id="splines" />
+## (6) Non-linear regression using splines [Chapter 7]	
+
    * Basis functions
    * Non-linear regression using splines
 
 [Back to Outline](#Outline)
 ___
 
-## (7)  Multi-core computing in R [the parrallel R-package](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf)
 <div id="parallel" />
+## (7)  Multi-core computing in R [the parrallel R-package](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf)
+
    * Introduction to multi-core computing
    * The `parallel` package
 
 [Back to Outline](#Outline)
 ___
 
-## (8) Simulation of Random Variables
 <div id="RV" />
+## (8) Simulation of Random Variables
+
    * Random numbers
    * Transformations of RV
    * Generating dras from Multivariate Normal
@@ -148,8 +156,9 @@ ___
 [Back to Outline](#Outline)
 ___
 
-## (9) Monte Carlo Markov Chain Methods [References provided below]
 <div id="MCMC" />
+## (9) Monte Carlo Markov Chain Methods [References provided below]
+
    * Introduction
    * The Monte-Carlo Error
    * Basic sampling methods
@@ -160,8 +169,9 @@ ___
 [Back to Outline](#Outline)
 ___
 
-## (10) Cross-validation Methods [Chapter 5]
 <div id="CV" />
+## (10) Cross-validation Methods [Chapter 5]
+
    * Why we need it?
    * Different types of prediction errors
    * Validation methods
@@ -174,8 +184,9 @@ ___
 [Back to Outline](#Outline)
 ___
 
-## (11) Penalised Regressions [Chapter 6]
 <div id="penalised" />
+## (11) Penalised Regressions [Chapter 6]
+
    * Why are penalized regressions needed? The variance-bias trade off
    * Penalized RSS 
    * Standard penalty functions and the solutions they induce
