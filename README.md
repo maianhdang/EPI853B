@@ -42,13 +42,13 @@
 		* `readBin` and `writeBin`
 
 ## (2) Matrix Algebra
-	* Basic definition
+	* Basic definitions
 	* Matrix addition and subtraction
 	* Transpose
 	* Matrix product
 	* Inversion
-	* QR-decomposition
 	* Singular Value Decomposition
+	* Generalized Inverse
 	
 ## (3) Ordinary-least squares
 	* The problem
@@ -70,21 +70,25 @@
 	* Numerical optimisation (application to GLM)
 	* The Newton-Rapson Method
 	* Data Augmentation and the EM-algoritm
-		
-## (6) Simulation of Random Variables
+
+## (6)  Multi-core computing in R
+	* Introduction to multi-core computing
+	* The `parallel` package
+
+## (7) Simulation of Random Variables
 	* Random numbers
 	* Transformations of RV
 	* Generating dras from Multivariate Normal
 	* Inverse CDF
 	
-## (7) Monte Carlo Markov Chain
+## (8) Monte Carlo Markov Chain
 	* Introduction
 	* Monte-Carlo Errors
 	* Rejection Sampling
 	* Gibbs Sampler
 	* Metropolis Hastings
 	
-## (8) Cross-validation Methods
+## (9) Cross-validation Methods
 	* Why we need it?
 	* Different types of prediction errors
 	* Training-testing
@@ -92,7 +96,7 @@
 	* q-fold CV
 	* Leave-one-out CV in OLS
 	
-## (9) Penalised Regressions
+## (10) Penalised Regressions
 	* Why we needed it
 	* Penalized RSS 
 	* Standard penalty functions and the solutions they induce
