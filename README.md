@@ -41,7 +41,7 @@
 		* `scan` and `wirte`
 		* `readBin` and `writeBin`
 
-## (2) Matrix Algebra
+## (2) Matrix Algebra (definitions and computational methods)
 	* Basic definitions
 	* Matrix addition and subtraction
 	* Transpose
