@@ -14,7 +14,7 @@ In this course we will cover computational methods commonly used in statistics, 
 **Instructor**: Gustavo de los Campos (gustavoc@msu.edu)
 <div id="Outline" />
 
-**Syllabus**: 
+[**Syllabus**](https://github.com/gdlc/EPI853B/blob/master/EPI853B_Syllabus.docx) 
 
 ## Course Content
 
