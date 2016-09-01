@@ -48,21 +48,10 @@ ___
 <div id="R" />
 ## (1) The [R](https://www.r-project.org/)-software 
 
-You can find a very nice introduction to R [here](http://adv-r.had.co.nz/).
-
 **Topics you should be familiar with**
    * Installation [CRAN](https://cran.r-project.org/mirrors.html)
+   * Types (boolean, integer, numeric, character, factors)
    * Variables and simple operations
- ```R
-   x=10
-   x+5
-   x*5
-   x/3
-   sqrt(x)
-   y=12
-   x+y
- ```
-   
    * Arrays 
    	* Vectors
    	* Matrices
@@ -77,6 +66,7 @@ You can find a very nice introduction to R [here](http://adv-r.had.co.nz/).
 	* `dput` and `dget`
 	* `scan` and `wirte`
 	* `readBin` and `writeBin`
+   * Functions 
 
 **Materials**
    * Section 2.3 of the book
@@ -93,7 +83,10 @@ ___
    * Matrix addition and subtraction
    * Transpose
    * Matrix product
-   * Inversion
+   * `crossprod` and `tcrossprod`
+   * Rank
+   * Determinant
+   * Matrix Inversion
    * Singular Value Decomposition
    * Generalized Inverse
 
