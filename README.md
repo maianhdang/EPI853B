@@ -48,9 +48,21 @@ ___
 <div id="R" />
 ## (1) The [R](https://www.r-project.org/)-software 
 
-**Topics**
+You can find a very nice introduction to R [here](http://adv-r.had.co.nz/).
+
+**Topics you should be familiar with**
    * Installation [CRAN](https://cran.r-project.org/mirrors.html)
    * Variables and simple operations
+ ```R
+   x=10
+   x+5
+   x*5
+   x/3
+   sqrt(x)
+   y=12
+   x+y
+ ```
+   
    * Arrays 
    	* Vectors
    	* Matrices
