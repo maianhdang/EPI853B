@@ -65,6 +65,7 @@ ___
 	* `dput` and `dget`
 	* `scan` and `wirte`
 	* `readBin` and `writeBin`
+
 **Materials**
    * Section 2.3 of the book
    * [R website](https://www.r-project.org/) (see entry for manuals)
