@@ -46,10 +46,10 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 ___
 
 <div id="R" />
-## (1) The R-software 
+## (1) The [R](https://www.r-project.org/)-software 
 
 **Topics**
-   * Installation [CRAN]()
+   * Installation [CRAN](https://cran.r-project.org/mirrors.html)
    * Variables and simple operations
    * Arrays 
    	* Vectors
