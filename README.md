@@ -79,8 +79,30 @@ ___
 <div id="Matrix" />
 ## (2) Matrix Algebra (definitions and computational methods)
 
-   * Basic definitions
+   * A few matrices and vectors for demonstration
+```R
+  x1=c(1,2,0)
+  x2=c(1,-1,3)
+  A=cbind(x1,x2)
+  x3=c(3,4,1)
+  x4=c(2,0,1)
+  B=rbind(x3,x4)
+  
+  # cell-by-cell operations
+  B+B
+  B-B
+  B^2
+  exp(B) # note, this is very different than the matrix exponential, see below
+  B*B    # note, this is very different than the matrix product
+```
+
    * Matrix addition and subtraction
+```R
+  # Addition
+  
+```
+
+
    * Transpose
    * Matrix product
    * `crossprod` and `tcrossprod`
@@ -89,6 +111,11 @@ ___
    * Matrix Inversion
    * Singular Value Decomposition
    * Generalized Inverse
+
+**Materials**
+   * Book: pages 9-12
+   * A Review of [Matrix Algebra ](http://cs229.stanford.edu/section/cs229-linalg.pdf)
+
 
 [Back to Outline](#Outline)
 ___
