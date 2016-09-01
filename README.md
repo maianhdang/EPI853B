@@ -79,7 +79,7 @@ ___
 <div id="Matrix" />
 ## (2) Matrix Algebra (definitions and computational methods)
 
-   * A few matrices and vectors for demonstration
+**A few matrices and vectors for demonstration**
 ```R
   x1=c(1,2,0)
   x2=c(1,-1,3)
@@ -87,7 +87,12 @@ ___
   x3=c(3,4,1)
   x4=c(2,0,1)
   B=rbind(x3,x4)
-  
+  dim(A)
+  dim(B)
+```
+
+**Matrix addition, subtraction and other cell-by-cell operations**
+```R
   # cell-by-cell operations
   B+B
   B-B
@@ -96,14 +101,30 @@ ___
   B*B    # note, this is very different than the matrix product
 ```
 
-   * Matrix addition and subtraction
+
+**Transpose**
 ```R
-  # Addition
-  
+  Bt=t(B)
+  all.equal(t(Bt),B)
+```
+Let's write our own function to transopose a matrix
+
+```R
+ myT=function(X){
+    nRowIn=nrow(X)
+    nColIn=ncol(X)
+    Z=matrix(nrow=nColIn,ncol=nRowIn,NA)
+    for(i in 1:nRowIn){
+    	for(j in 1:nColIn){
+    	   Z[j,i]=X[i,j]
+    	}
+    }
+    return(Z)
+ }
+ all(t(B)==myT(B)) # Try all.equal(), note the difference....
+ 
 ```
 
-
-   * Transpose
    * Matrix product
    * `crossprod` and `tcrossprod`
    * Rank
