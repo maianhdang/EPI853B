@@ -110,18 +110,7 @@ ___
 Let's write our own function to transopose a matrix
 
 ```R
- myT=function(X){
-    nRowIn=nrow(X)
-    nColIn=ncol(X)
-    Z=matrix(nrow=nColIn,ncol=nRowIn,NA)
-    for(i in 1:nRowIn){
-    	for(j in 1:nColIn){
-    	   Z[j,i]=X[i,j]
-    	}
-    }
-    return(Z)
- }
- all(t(B)==myT(B)) # Try all.equal(), note the difference....
+
  
 ```
 
