@@ -101,7 +101,6 @@ ___
   B*B    # note, this is very different than the matrix product
 ```
 
-
 **Transpose**
 ```R
   Bt=t(B)
