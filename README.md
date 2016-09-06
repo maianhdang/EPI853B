@@ -124,16 +124,30 @@ Let's write our own function to transopose a matrix
    return(OUT)
  }
  
- all(t(B),myT(B))
+ all(t(B)==myT(B))
+
 ```
 
-   * Matrix product
-   * `crossprod` and `tcrossprod`
-   * Rank
-   * Determinant
-   * Matrix Inversion
-   * Singular Value Decomposition
-   * Generalized Inverse
+**Matrix product** (`%*%`, `crossprod` and `tcrossprod`)
+
+**Rank** (`qr(X)$rank`)
+
+**Determinant**
+
+**Matrix Inversion**
+
+**Singular Value Decomposition**
+
+**Generalized Inverse**
+
+## Homework 1
+
+Create a function to carry out:
+	- Matrix products (`matProd(x,y)`)
+	- crossprod (`crossprod_b(x,y)`, allow for the function to have only argument x)
+	- tcrossprod (`tcrossprod_b(x,y)`, allow for the function to have only argument x)
+	- Test your function using a randomnly genreated matrix with 5 rows and 10 columns, conduct 100 random tests.
+
 
 **Materials**
    * Book: pages 9-12
