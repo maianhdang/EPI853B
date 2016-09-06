@@ -129,8 +129,30 @@ Let's write our own function to transopose a matrix
 
 **Matrix product** (`%*%`, `crossprod` and `tcrossprod`)
 
+```R
+  x=matrix(nrow=5,ncol=3,data=rnorm(15))
+  t(X)%*%X   # X'X
+  crossprod(X) # same but a bit faster
+  X%*%t(X)   # XX'
+  tcrossprod(X) # same but a bit faster
+```
+
+**QR-decomposition**
+
+The QR-decomposition can be used to factorize a matrix into the product of an orthonomal basis (Q) and a triangular matrix (R) so that X=QR with Q'Q=I.
+
+```R
+ TMP=qr(X) # computes QR decomposition, returns a list
+ qr.Q(TMP) # recovers Q from a QR decomposition
+ qr.R(TMP) # recovers R from a QR decomposition
+ all(qr.X(TMP)==X) # recovers X
+ round(crossprod(qr.Q),5) # Q is orthonormal
+```
 **Rank** (`qr(X)$rank`)
 
+```R
+  qr(X)$rank
+```
 **Determinant**
 
 **Matrix Inversion**
