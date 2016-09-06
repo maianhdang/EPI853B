@@ -110,8 +110,21 @@ ___
 Let's write our own function to transopose a matrix
 
 ```R
-
+ ## A very inneficient function that illustrates matrix transposition and the creation of functions in R
+ myT=function(X){
+   nCol.out=nrow(X)
+   nRow.out=ncol(X)
+   OUT=matrix(nrow=nRow.out,ncol=nCol.out,NA)
+   
+   for(i in 1:nRow.out){
+   	for(j in 1:nCol.out){
+   		OUT[i,j]=X[j,i] # simply flip the indexes
+   	}
+   }
+   return(OUT)
+ }
  
+ all(t(B),myT(B))
 ```
 
    * Matrix product
