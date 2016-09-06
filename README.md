@@ -173,8 +173,7 @@ The QR-decomposition can be used to factorize a matrix into the product of an or
    
 ```
 **Singular Value Decomposition**
-
-  X=UDV'
+ Any matrix X (nxp) can be decomposed as  X=UDV', where U(nxq), is an orthonormal basis for the row-space of X, V(qxn) is an orthonormal basis for the column-space of X and  D(qxq) is a diagnoal matrix with singular values in the diagnoal. Here q=min(n,p).
   
 ```R
    SVD=svd(X)
