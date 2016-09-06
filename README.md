@@ -189,8 +189,14 @@ The QR-decomposition can be used to factorize a matrix into the product of an or
 
 **Generalized Inverse**
 
+**Materials**
+   * Book: pages 9-12
+   * A Review of [Matrix Algebra ](http://cs229.stanford.edu/section/cs229-linalg.pdf)
 
-----
+
+[Back to Outline](#Outline)
+___
+
 
 <div id="HW1" />
 ## Homework 1 (due Tr. 9/7/2016, submit through D2L)
@@ -205,17 +211,6 @@ Tasks:
    3. Same as (2) with tcrossprod (`tcrossprod_b(x,y)`, allow for the function to have only argument x)
 	
 Report your results, for each task include the function, the test you run and the results you obtained. Your report should have at most 1 page per task.
-
-
-[Back to Outline](#Outline)
-___
-
-
-
-
-**Materials**
-   * Book: pages 9-12
-   * A Review of [Matrix Algebra ](http://cs229.stanford.edu/section/cs229-linalg.pdf)
 
 
 [Back to Outline](#Outline)
