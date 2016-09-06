@@ -22,7 +22,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 
   * [Introduction](#intro)
   * [The R-software](#R)
-  * [Matrix Algebra in R](#Matrix)
+  * [Matrix Algebra in R](#Matrix)   [HW1](#HW1)
   * [Ordinary Least Squares I: Estimation](#OLS-I)
   * [Ordinary Least Squares II: Inference](#OLS-II)
   * [Maximum Likelihood](#ML)
@@ -200,9 +200,9 @@ For each of the following tasks:
    - Check, using 100 random tests your function against the native R function that does the same task. You can use small matrices (i.e., nrow and ncol <10 for your tests. 
  
 Tasks:
-   -(1) Matrix products (`matProd(x,y)`)
-   -(2) Crossproduct of two matrices (`crossprod_b(x,y)`, allow for the function to have only argument x or two (x, and y).
-   -(3) Same as (2) with tcrossprod (`tcrossprod_b(x,y)`, allow for the function to have only argument x)
+   1. Matrix products (`matProd(x,y)`)
+   2. Crossproduct of two matrices (`crossprod_b(x,y)`, allow for the function to have only argument x or two (x, and y).
+   3. Same as (2) with tcrossprod (`tcrossprod_b(x,y)`, allow for the function to have only argument x)
 	
 Report your results, for each task include the function, the test you run and the results you obtained. Your report should have at most 1 page per task.
 
