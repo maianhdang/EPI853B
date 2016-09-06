@@ -148,16 +148,45 @@ The QR-decomposition can be used to factorize a matrix into the product of an or
  all(qr.X(TMP)==X) # recovers X
  round(crossprod(qr.Q),5) # Q is orthonormal
 ```
-**Rank** (`qr(X)$rank`)
+**Rank**
 
 ```R
   qr(X)$rank
 ```
 **Determinant**
 
+```R
+ X=matrix(nrow=3,ncol=3,data=rnorm(9))
+ det(X)
+ XtX=crossprod(cbind(X,X[,1])) # det of a singular (or rank defficient) matrix is zero
+ det(XtX)
+ qr(XtX)$rank
+ 
+```
 **Matrix Inversion**
-
+ 
+```R
+   XInv=solve(X)
+   round(XInv%*%X,5)
+   round(X%*%XInv,5) 
+   solve(XtX) # rank-deficient matrix does not have an inverse
+   
+```
 **Singular Value Decomposition**
+
+  X=UDV'
+  
+```R
+   SVD=svd(X)
+   str(SVD)
+   round(crossprod(SVD$u),5) #$u gives an orthonormal basis for the row-space of X
+   round(crossprod(SVD$v),5) #$v gives an orthonormal basis for the row-space of X
+   SVD$d
+   
+   ## Now for a rank-deficient matrix
+   SVD=svd(XtX) 
+   sum(SVD$d>1e-10) # the rank is the sum of positive singular values
+```
 
 **Generalized Inverse**
 
