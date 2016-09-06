@@ -193,7 +193,7 @@ The QR-decomposition can be used to factorize a matrix into the product of an or
 ----
 
 <div id="HW1" />
-## Homework 1 (due Tr. 9/7/2016)
+## Homework 1 (due Tr. 9/7/2016, submit through D2L)
 
 For each of the following tasks:
    - Create, using loops, a function that carry out the needed computations,
