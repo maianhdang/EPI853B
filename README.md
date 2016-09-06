@@ -189,13 +189,28 @@ The QR-decomposition can be used to factorize a matrix into the product of an or
 
 **Generalized Inverse**
 
-## Homework 1
 
-Create a function to carry out:
-	- Matrix products (`matProd(x,y)`)
-	- crossprod (`crossprod_b(x,y)`, allow for the function to have only argument x)
-	- tcrossprod (`tcrossprod_b(x,y)`, allow for the function to have only argument x)
-	- Test your function using a randomnly genreated matrix with 5 rows and 10 columns, conduct 100 random tests.
+----
+
+<div id="HW1" />
+## Homework 1 (due Tr. 9/7/2016)
+
+For each of the following tasks:
+   - Create, using loops, a function that carry out the needed computations,
+   - Check, using 100 random tests your function against the native R function that does the same task. You can use small matrices (i.e., nrow and ncol <10 for your tests. 
+ 
+Tasks:
+   -(1) Matrix products (`matProd(x,y)`)
+   -(2) Crossproduct of two matrices (`crossprod_b(x,y)`, allow for the function to have only argument x or two (x, and y).
+   -(3) Same as (2) with tcrossprod (`tcrossprod_b(x,y)`, allow for the function to have only argument x)
+	
+Report your results, for each task include the function, the test you run and the results you obtained. Your report should have at most 1 page per task.
+
+
+[Back to Outline](#Outline)
+___
+
+
 
 
 **Materials**
