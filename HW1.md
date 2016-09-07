@@ -3,7 +3,7 @@
 
 For each of the tasks described below:
    - Create, using loops, a function that carry out the needed computations,
-   - Check, using 100 random tests your function against the native R function that does the same task. You can use small matrices (i.e., nrow and ncol <10 for your tests. 
+   - Check, using 100 random tests, your function against the native R function that does the same task. You can use small matrices (i.e., nrow and ncol <10 for your tests. 
  
 Tasks:
    1. Matrix products (`matProd(x,y)`)
