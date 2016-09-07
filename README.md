@@ -22,7 +22,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 
   * [Introduction](#intro)
   * [The R-software](#R)
-  * [Matrix Algebra in R](#Matrix)   |   [HW1](https://github.com/gdlc/EPI853B/blob/master/HW1)
+  * [Matrix Algebra in R](#Matrix)   
   * [Ordinary Least Squares I: Estimation](#OLS-I)
   * [Ordinary Least Squares II: Inference](#OLS-II)
   * [Maximum Likelihood](#ML)
@@ -33,6 +33,8 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * [Cross-Validation](#CV)
   * [Penalised Regressions](#penalised)
 
+## Homework
+  * [HW1](https://github.com/gdlc/EPI853B/blob/master/HW1)
 
 <div id="intro" />
 ## Introduction 
