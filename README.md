@@ -34,7 +34,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * [Penalised Regressions](#penalised)
 
 ## Homework
-  * [HW1](https://github.com/gdlc/EPI853B/blob/master/HW1)
+  * [HW1](https://github.com/gdlc/EPI853B/blob/master/HW1.md)
 
 <div id="intro" />
 ## Introduction 
