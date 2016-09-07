@@ -22,7 +22,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 
   * [Introduction](#intro)
   * [The R-software](#R)
-  * [Matrix Algebra in R](#Matrix) |   [HW1](#HW1)
+  * [Matrix Algebra in R](#Matrix)   |   [HW1](https://github.com/gdlc/EPI853B/blob/master/HW1)
   * [Ordinary Least Squares I: Estimation](#OLS-I)
   * [Ordinary Least Squares II: Inference](#OLS-II)
   * [Maximum Likelihood](#ML)
