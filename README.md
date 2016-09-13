@@ -222,6 +222,14 @@ The steps to find the analythical solution arre:
       (X'X)bHat=X'y
       
  
+ If X is full-column rank, then we have
+ 
+     bHat=solve(X'X)%*%X'y
+     
+**Notation**: We usually call C=X'X the matrix of coefficients of the system of equations, rhs=X'y, the 'right-and-side' of the sytem and sol=bHat. The short notation for the OLS system is
+
+    C%*%sol=rhs
+    
 ## Computing OLS esitmates
 
 In this examples we show alternative ways of computing OLS estimates. We begin with R functions (`lm` and `lsfit`) and then include
@@ -255,13 +263,7 @@ alternative ways of computing estimates using matrix operations, factorizations 
 ```
 **Our own lm using matrix operations**
 
-**Inversion using cholesky decomposition**
-
-**OLS using the QR-decomposition**
-
-**OLS using the singular-value decomposition**
-
-
+```R
 myLS.solve=function(y,X,int=TRUE){
   if(int){
          X=cbind(1,X)
@@ -272,30 +274,39 @@ myLS.solve=function(y,X,int=TRUE){
   sol=crossprod(CInv,rhs)
   return(sol)
 }
+```
+**Inversion using cholesky decomposition**
 
-timeIn=proc.time()
-for(i in 1:1000){
-  fm=lm(y~X)
-}
-timeOut=proc.time()
+The coefficient matrix (X'X) is symetric. If X is full-rank, then X'X is postivie definite (pd), meaning that a'X'Xa>0 for all vectors a different than zero. If X is rank deficient X'X is positive semi-definite (psd), meaning that  a'X'Xa>=0 for all vectors a different than zero. Next we will show how to obtain the inverse of the coefficient matrix using the Cholesky decomposition of X'X.
 
-timeIn=proc.time()
-for(i in 1:1000){
-  fm=myLS.solve(y,X)
-}
-timeOut=proc.time()
+Symmetric PD matrices can be decomposed using the [Cholesky]() decomposition.
 
-myLS.chol=function(y,X,int=TRUE){
-  if(int){ 
-         X=cbind(1,X)
-  }
-  C=crossprod(X)
-  rhs=crossprod(X,y)
-  CInv=chol2inv(chol(C))
-  sol=crossprod(CInv,rhs)
-  return(sol)
-}
+Lower-triangular Cholesky of PD matrix A:    A=LL'
+Upper-triangular Cholesky of PD matrix A: U=L', A=U'U.
 
+The `chol()` function of R returns the upper-triangular Cholesky factor of a matrix. 
+
+Using solve(A%*%B)=solve(B)%*%solve(A), we get that 
+
+solve(C)=solve(U)%*%t(solve(U))
+
+where U is the Cholesky of C. Inverting a triangular matrix is much simpler than inverting any general non-singular sqaure matrix. The function
+
+    chol2inv()
+    
+ takes as an argument the cholseky factor of a PD matrix and returns the inverse of the same matrix, but the inversion is much faster than using solve when p is large.
+ 
+ ```R
+  Z=matrix(nrow=10000,ncol=1000,rnorm(1000*10000))
+  C=crossprod(cbind(Z))
+  system.time(CInv.solve<-solve(C))
+  system.time(CInv.chol<-chol2inv(chol(C)))
+  all(round(CInv.solve,8)==round(CInv.chol,8))
+
+ ```
+**OLS using the QR-decomposition**
+
+```R
 myLS.qr=function(y,X,int=TRUE){
   if(int){
       X=cbind(1,X)
@@ -308,6 +319,12 @@ myLS.qr=function(y,X,int=TRUE){
   sol=RInv%*%gHat
   return(sol)
 }
+```
+**OLS using the singular-value decomposition**
+
+
+
+
 **Inversion using iterative procedures (Gauss-Seidel method)**
 
 
