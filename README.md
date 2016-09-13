@@ -205,9 +205,9 @@ ___
   
       y=Xb+e
       
- where: y (nx1) is a response vector, X (nxp) is a design matrix of effects, b (px1) is a vector of regression coefficients and e (nx1) is a vector of model residuals.
+ where: `y` (nx1) is a response vector, X (nxp) is a design matrix of effects, `b` (px1) is a vector of regression coefficients and `e` (nx1) is a vector of model residuals.
  
- The ordinary least-squares estimate of b is obtained by miniminzing the residual sum of squares, RSS=e'e=(y-Xb)'(y-Xb), with respect to b.
+ The ordinary least-squares estimate of b is obtained by miniminzing the residual sum of squares, `RSS=e'e=(y-Xb)'(y-Xb)`, with respect to `b`.
  
 **Derivation**
 The steps to find the analythical solution arre:
@@ -219,16 +219,24 @@ The steps to find the analythical solution arre:
  
  We show in class that the solution is given by the vector bHat that solves the follwing systems of equations
  
- ```R     (X'X)bHat=X'y ```
+ ```R     
+ (X'X)bHat=X'y 
+ 
+ ```
       
  
  If X is full-column rank, then we have
  
- ```R    bHat=solve(X'X)%*%X'y ```
+ ```R    
+ bHat=solve(X'X)%*%X'y 
+ 
+ ```
      
-**Notation**: We usually call ```R C=X'X ``` the matrix of coefficients of the system of equations, ```R rhs=X'y ```, the *right-and-side* of the sytem and `sol=bHat.` The short notation for the OLS system is
+**Notation**: We usually call `C=X'X` the matrix of coefficients of the system of equations, `rhs=X'y`, the *right-and-side* of the sytem and `sol=bHat.` The short notation for the OLS system is
 
-   ```R C%*%sol=rhs ```
+   ```R 
+   C%*%sol=rhs 
+   ```
     
 ## Computing OLS esitmates
 
