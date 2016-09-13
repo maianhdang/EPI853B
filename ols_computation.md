@@ -6,7 +6,7 @@ alternative ways of computing estimates using matrix operations, factorizations 
 **A simple simulated data set**
 
 ```R
- p=100
+ p=5
  n=5000
  b=rnorm(p)
  X=matrix(nrow=n,ncol=p,data=runif(n*p))
@@ -17,9 +17,20 @@ alternative ways of computing estimates using matrix operations, factorizations 
 ```
 
 **The `lm` function**
-
+```R
+ fm<-lm(y~X)
+ bHat=coef(fm)
+ summary(fm)
+```
 **The `lsfit` function**
-
+```R
+```R
+ fm2<-lsfit(y=y,x=X)
+ bHat=coef(fm)
+ ls.print(fm2) # the summary method is not very useful with lsfit
+ 
+```
+```
 **Our own lm using matrix operations**
 
 **Inversion using cholesky decomposition**
