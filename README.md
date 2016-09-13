@@ -189,8 +189,6 @@ The QR-decomposition can be used to factorize a matrix into the product of an or
    sum(SVD$d>1e-10) # the rank is the sum of positive singular values
 ```
 
-**Generalized Inverse**
-
 **Materials**
    * Book: pages 9-12
    * A Review of [Matrix Algebra ](http://cs229.stanford.edu/section/cs229-linalg.pdf)
@@ -201,10 +199,119 @@ ___
 <div id="OLS-I" />
 ## (3) Ordinary-least squares [Chapter 3, plus materials provided below]
 
-   * The problem
-   * Analytical solution
-   * [Alternative ways of computing OLS estimates](ols_computation.md)
-   * Regression with categorical predictors (`model.matrix`)
+####The OLS Problem
+
+  Consider a regression problem of the form
+  
+      y=Xb+e
+      
+ where: y (nx1) is a response vector, X (nxp) is a design matrix of effects, b (px1) is a vector of regression coefficients and e (nx1) is a vector of model residuals.
+ 
+ The ordinary least-squares estimate of b is obtained by miniminzing the residual sum of squares, RSS=e'e=(y-Xb)'(y-Xb), with respect to b.
+ 
+**Derivation**
+The steps to find the analythical solution arre:
+   - Differentiate RSS(y,X,b) with respect to the jth coefficient (bj)
+   - Set all the queations equal to zero (this gives a stationary point).
+
+
+**Analythical Solutions**
+ 
+ We show in class that the solution is given by the vector bHat that solves the follwing systems of equations
+ 
+      (X'X)bHat=X'y
+      
+ 
+## Computing OLS esitmates
+
+In this examples we show alternative ways of computing OLS estimates. We begin with R functions (`lm` and `lsfit`) and then include
+alternative ways of computing estimates using matrix operations, factorizations and with iterative procedures.
+
+**A simple simulated data set**
+
+```R
+ p=100
+ n=5000
+ b=rnorm(p)
+ X=matrix(nrow=n,ncol=p,data=runif(n*p))
+ signal=150+X%*%b
+ error=rnorm(sd=sd(signal),n=n)
+ y=signal+error
+
+```
+
+**The `lm` function**
+```R
+ fm<-lm(y~X)
+ bHat=coef(fm)
+ summary(fm)
+```
+**The `lsfit` function**
+```R
+
+ fm2<-lsfit(y=y,x=X)
+ bHat=coef(fm)
+ ls.print(fm2) # the summary method is not very useful with lsfit
+```
+**Our own lm using matrix operations**
+
+**Inversion using cholesky decomposition**
+
+**OLS using the QR-decomposition**
+
+**OLS using the singular-value decomposition**
+
+
+myLS.solve=function(y,X,int=TRUE){
+  if(int){
+         X=cbind(1,X)
+  }
+  C=crossprod(X)
+  rhs=crossprod(X,y)
+  CInv=solve(C)  
+  sol=crossprod(CInv,rhs)
+  return(sol)
+}
+
+timeIn=proc.time()
+for(i in 1:1000){
+  fm=lm(y~X)
+}
+timeOut=proc.time()
+
+timeIn=proc.time()
+for(i in 1:1000){
+  fm=myLS.solve(y,X)
+}
+timeOut=proc.time()
+
+myLS.chol=function(y,X,int=TRUE){
+  if(int){ 
+         X=cbind(1,X)
+  }
+  C=crossprod(X)
+  rhs=crossprod(X,y)
+  CInv=chol2inv(chol(C))
+  sol=crossprod(CInv,rhs)
+  return(sol)
+}
+
+myLS.qr=function(y,X,int=TRUE){
+  if(int){
+      X=cbind(1,X)
+  }
+  QR=qr(X)
+  Q=qr.Q(QR)
+  gHat=crossprod(Q,y)
+  R=qr.R(QR)
+  RInv=solve(R)
+  sol=RInv%*%gHat
+  return(sol)
+}
+**Inversion using iterative procedures (Gauss-Seidel method)**
+
+
+* Regression with categorical predictors (`model.matrix`)
 
 
 [Back to Outline](#Outline)
