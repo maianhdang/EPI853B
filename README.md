@@ -213,22 +213,22 @@ ___
 The steps to find the analythical solution arre:
    - Differentiate RSS(y,X,b) with respect to the jth coefficient (bj)
    - Set all the queations equal to zero (this gives a stationary point).
-
+   - Because e'e is a quadratic form, the matrix of second deriviatives is PSD, so we know that the stationary point is *a* solution.
 
 **Analythical Solutions**
  
  We show in class that the solution is given by the vector bHat that solves the follwing systems of equations
  
-      (X'X)bHat=X'y
+ ```R     (X'X)bHat=X'y ```
       
  
  If X is full-column rank, then we have
  
-     bHat=solve(X'X)%*%X'y
+ ```R    bHat=solve(X'X)%*%X'y ```
      
-**Notation**: We usually call C=X'X the matrix of coefficients of the system of equations, rhs=X'y, the 'right-and-side' of the sytem and sol=bHat. The short notation for the OLS system is
+**Notation**: We usually call ```R C=X'X ``` the matrix of coefficients of the system of equations, ```R rhs=X'y ```, the *right-and-side* of the sytem and `sol=bHat.` The short notation for the OLS system is
 
-    C%*%sol=rhs
+   ```R C%*%sol=rhs ```
     
 ## Computing OLS esitmates
 
