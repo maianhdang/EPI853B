@@ -11,7 +11,7 @@ alternative ways of computing estimates using matrix operations, factorizations 
  b=rnorm(p)
  X=matrix(nrow=n,ncol=p,data=runif(n*p))
  signal=150+X%*%b
- error=rnorm(sd=sd(signals),n=n)
+ error=rnorm(sd=sd(signal),n=n)
  y=signal+error
 
 ```
