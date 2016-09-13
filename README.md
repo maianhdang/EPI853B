@@ -195,9 +195,7 @@ The QR-decomposition can be used to factorize a matrix into the product of an or
    * Book: pages 9-12
    * A Review of [Matrix Algebra ](http://cs229.stanford.edu/section/cs229-linalg.pdf)
 
-
 [Back to Outline](#Outline)
-
 ___
 
 <div id="OLS-I" />
@@ -205,11 +203,9 @@ ___
 
    * The problem
    * Analytical solution
-   * The lm and ls.fit functions
+   * [Alternative ways of computing OLS estimates](ols_computation.md)
    * Regression with categorical predictors (`model.matrix`)
-   * Computing OLS estimates using matrix operations
-   * OLS using the QR and SVD decompositions
-   * Iterative Procedures: Gauss-Seidel method
+
 
 [Back to Outline](#Outline)
 ___
