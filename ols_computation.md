@@ -24,12 +24,10 @@ alternative ways of computing estimates using matrix operations, factorizations 
 ```
 **The `lsfit` function**
 ```R
-```R
+
  fm2<-lsfit(y=y,x=X)
  bHat=coef(fm)
  ls.print(fm2) # the summary method is not very useful with lsfit
- 
-```
 ```
 **Our own lm using matrix operations**
 
