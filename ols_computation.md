@@ -18,7 +18,7 @@ alternative ways of computing estimates using matrix operations, factorizations 
 
 **The `lm` function**
 
-**``lsfit` is faster**
+**The `lsfit` function**
 
 **Our own lm using matrix operations**
 
