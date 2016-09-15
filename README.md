@@ -288,6 +288,8 @@ myLS.solve=function(y,X,int=TRUE){
 **Inversion using cholesky decomposition**
 
 This method will work only if X has a rank equal to the number of columsn of X. This guarantees that `X'X` can be factorized using the [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition). Sinche the cholesky factor is triangular (upper-triangular for R, we have `X'X=U'U`, where `U` is the upper-triangular Cholesky), we can easily compute the inverse of `X'X` from its Cholesky. 
+
+Let's check that the inverse obtained via Cholesky is equivalent than the one computed using `solve`
  ```R
   Z=matrix(nrow=10000,ncol=1000,rnorm(1000*10000))
   C=crossprod(cbind(Z))
@@ -296,6 +298,21 @@ This method will work only if X has a rank equal to the number of columsn of X. 
   all(round(CInv.solve,8)==round(CInv.chol,8))
 
  ```
+
+OLS via Cholesky
+
+```R
+myLS.chol=function(y,X,int=TRUE){
+  if(int){
+         X=cbind(1,X)
+  }
+  C=crossprod(X)
+  rhs=crossprod(X,y)
+  CInv=chol2inv(chol(C))  
+  sol=crossprod(CInv,rhs)
+  return(sol)
+}
+```
 **OLS using the QR-decomposition**
 
 ```R
