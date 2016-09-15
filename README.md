@@ -35,7 +35,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 
 ## Homework
   * [HW1](https://github.com/gdlc/EPI853B/blob/master/HW1.md)
-
+  * [HW2](https://github.com/gdlc/EPI853B/blob/master/HW2.md)
 <div id="intro" />
 ## Introduction 
 
