@@ -322,16 +322,26 @@ myLS.qr=function(y,X,int=TRUE){
   }
   QR=qr(X)
   Q=qr.Q(QR)
-  gHat=crossprod(Q,y)
   R=qr.R(QR)
-  RInv=solve(R)
-  sol=RInv%*%gHat
+  gHat=crossprod(Q,y)
+  sol=backsolve(R,gHat)
   return(sol)
 }
 ```
+
 **OLS using the singular-value decomposition**
 
-
+```R
+myLS.svd=function(y,X,int=TRUE){
+  if(int){
+      X=cbind(1,X)
+  }
+  SVD=svd(X)
+  gHat=crossprod(SVD$u,y)
+  sol=SVD$v%*%(gHat/SVD$d)
+  return(sol)
+}
+```
 
 
 **Inversion using iterative procedures (Gauss-Seidel method)**
