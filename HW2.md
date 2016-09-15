@@ -1,5 +1,6 @@
 
-## Homework 2 (due Tuesday 9/20/2016, submit va e-mail to gustavoc@msu.edu )
+###Homework 2 
+(due Tuesday 9/20/2016, submit va e-mail to gustavoc@msu.edu )
 
 1. Solving a "triangular" system of linear equations.
 
