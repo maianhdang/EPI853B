@@ -271,6 +271,8 @@ alternative ways of computing estimates using matrix operations, factorizations 
 ```
 **Our own lm using matrix operations**
 
+This method will work only if X has a rank equal to the number of columsn of X.
+
 ```R
 myLS.solve=function(y,X,int=TRUE){
   if(int){
@@ -285,25 +287,7 @@ myLS.solve=function(y,X,int=TRUE){
 ```
 **Inversion using cholesky decomposition**
 
-The coefficient matrix (X'X) is symetric. If X is full-rank, then X'X is postivie definite (pd), meaning that a'X'Xa>0 for all vectors a different than zero. If X is rank deficient X'X is positive semi-definite (psd), meaning that  a'X'Xa>=0 for all vectors a different than zero. Next we will show how to obtain the inverse of the coefficient matrix using the Cholesky decomposition of X'X.
-
-Symmetric PD matrices can be decomposed using the [Cholesky]() decomposition.
-
-Lower-triangular Cholesky of PD matrix A:    A=LL'
-Upper-triangular Cholesky of PD matrix A: U=L', A=U'U.
-
-The `chol()` function of R returns the upper-triangular Cholesky factor of a matrix. 
-
-Using solve(A%*%B)=solve(B)%*%solve(A), we get that 
-
-solve(C)=solve(U)%*%t(solve(U))
-
-where U is the Cholesky of C. Inverting a triangular matrix is much simpler than inverting any general non-singular sqaure matrix. The function
-
-    chol2inv()
-    
- takes as an argument the cholseky factor of a PD matrix and returns the inverse of the same matrix, but the inversion is much faster than using solve when p is large.
- 
+This method will work only if X has a rank equal to the number of columsn of X. This guarantees that `X'X` can be factorized using the [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition). Sinche the cholesky factor is triangular (upper-triangular for R, we have `X'X=U'U`, where `U` is the upper-triangular Cholesky), we can easily compute the inverse of `X'X` from its Cholesky. 
  ```R
   Z=matrix(nrow=10000,ncol=1000,rnorm(1000*10000))
   C=crossprod(cbind(Z))
