@@ -17,7 +17,8 @@
   - Report a table per method containing the average time, relative to `lm`, for each of the methods.
   
   Note: for time estimation it is usually good to run each process multiple times, especially if the time of the task is small.
-  You can time your examples as follows:
+ 
+ You can time your examples as follows:
   
 ```R
   timeIn=proc.time()
@@ -28,8 +29,8 @@
  Use the following n-p values.
  
 ```R
-  nRep=c(1e3,100,10,5)
-  n=c(100,1e3,1e4,5e4)
+  nRep=c(1e3,100,5,1)
+  n=c(100,1e3,1e4,1e4)
   p=c(10,100,1000,5000)
   GRID=cbind(nRep,n,p)
 ```
