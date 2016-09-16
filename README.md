@@ -240,7 +240,7 @@ The steps to find the analythical solution arre:
     
 ## Computing OLS esitmates
 
-In this examples we show alternative ways of computing OLS estimates. We begin with R functions (`lm` and `lsfit`) and then include
+In this examples we show alternative ways of computing OLS estimates. We begin with R functions `lm` and `lsfit` and then include
 alternative ways of computing estimates using matrix operations, factorizations and with iterative procedures.
 
 **A simple simulated data set**
@@ -336,7 +336,8 @@ myLS.svd=function(y,X,int=TRUE){
   if(int){
       X=cbind(1,X)
   }
-  SVD=svd(X)
+  p=min(dim(X))
+  SVD=svd(X,nu=p,nv=p)
   gHat=crossprod(SVD$u,y)
   sol=SVD$v%*%(gHat/SVD$d)
   return(sol)
