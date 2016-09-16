@@ -31,7 +31,7 @@
 ```R
   nRep=c(1e3,100,5,1)
   n=c(100,1e3,1e4,1e4)
-  p=c(10,100,1000,5000)
+  p=c(10,100,1000,2000)
   GRID=cbind(nRep,n,p)
 ```
 [Back to Outline](https://github.com/gdlc/EPI853B/#Outline)
