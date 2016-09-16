@@ -10,10 +10,10 @@
     - Create two R functions ( `backsolve_2(C,r)` and `forwardsolve_2(C,r)` ) that solve upper and lower-triangular systems using a loop.
     - Show with a small example that your function delivers the right solution (compare with either `solve(C,r)` or `backsolve()` or `forwardsolve()`.
 
-2. **Benchmark of the different strategies we discussed for computing OLS estimates**
+2. **Benchmark of alternative ways of computing OLS estimates**
 
-  - Goal: to estimate the computing time needed to obtain OLS using the different methods we discuss in class (`lm`,`lsfit`,`solve`,`chol`,`qr`,`svd`).
-  - Task: compute for an array of values of `n` and `p` the time it takes to compute OLS for each of the mehtods listed.
+  - Goal: to estimate the computing time needed to obtain OLS using the methods discussed in class: `lm`,`lsfit`,`solve`,`chol`,`qr`,`svd`.
+  - Task: compute for an array of values of `n` and `p` (see bellow) the time it takes to compute OLS for each of the mehtods listed.
   - Report a table per method containing the average time, relative to `lm`, for each of the methods.
   
   Note: for time estimation it is usually good to run each process multiple times, especially if the time of the task is small.
@@ -25,12 +25,12 @@
   timeOut=proc.time()
   timeOut-timeIn
 ```
- 
+ Use the following n-p values.
  
 ```R
-  nRep=c(1e3,100,50,10)
-  n=c(100,1e3,1e4,1e5)
-  p=c(10,100,1000,1e4)
+  nRep=c(1e3,100,10,5)
+  n=c(100,1e3,1e4,5e4)
+  p=c(10,100,1000,5000)
   GRID=cbind(nRep,n,p)
 ```
 [Back to Outline](https://github.com/gdlc/EPI853B/#Outline)
