@@ -358,7 +358,7 @@ myLS.svd=function(y,X,int=TRUE){
 **Inversion using iterative procedures (Gauss-Seidel method)**
 
 
-* Regression with categorical predictors (`model.matrix`)
+## Regression with categorical predictors (`model.matrix`)
 
 
 [Back to Outline](#Outline)
