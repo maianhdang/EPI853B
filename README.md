@@ -327,6 +327,16 @@ myLS.qr=function(y,X,int=TRUE){
   sol=backsolve(R,gHat)
   return(sol)
 }
+#or
+
+myLS.qr=function(y,X,int=TRUE){
+  if(int){
+      X=cbind(1,X)
+  }
+  QR=qr(X)
+  sol=qr.coef(QR,y)
+  return(sol)
+}
 ```
 
 **OLS using the singular-value decomposition**
@@ -339,7 +349,7 @@ myLS.svd=function(y,X,int=TRUE){
   p=min(dim(X))
   SVD=svd(X,nu=p,nv=p)
   gHat=crossprod(SVD$u,y)
-  sol=SVD$v%*%(gHat/SVD$d)
+  sol=tcrossprod(SVD$v,t(gHat/SVD$d))
   return(sol)
 }
 ```
