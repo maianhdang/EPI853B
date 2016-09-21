@@ -354,9 +354,57 @@ myLS.svd=function(y,X,int=TRUE){
 }
 ```
 
+**Computing OLS estimates iterative procedures (Gauss-Seidel method)**
 
-**Inversion using iterative procedures (Gauss-Seidel method)**
+We can also find OLS estimates using iterative procedures. The following function implements the Gauss-Seidel method.
+This method is equivalent to the back-fitting algorithm and it is also a coordinate descent gradient algorithm.
 
+```R
+ GS.solver=function(X,y,tol=1e-5,int=TRUE,center=TRUE){
+  if(center){
+       X=scale(X,center=TRUE,scale=FALSE) 
+  }
+  if(int){
+   X=cbind(1,X)
+  }
+  C=crossprod(X)
+  rhs=crossprod(X,y)
+  p=ncol(X)
+  b=rep(0,p)
+  if(center&int){ b[1]=mean(y) }
+  ready=FALSE
+  iter=0
+   while(!ready){
+     iter=iter+1
+     b0=b
+     for(j in 1:p){
+      tmp=sum(C[j,-j]*b[-j])
+      b[j]=(rhs[j]- tmp )/C[j,j]
+     }
+     tmp=abs(b-b0)
+     ready= all(tmp<tol)
+     print(paste0('Iter=',iter, ' Max abs dif=',(max(tmp))))
+   }
+   return(b)
+ }
+```
+
+Let's test it with a simple simulation.
+
+```R
+ n=5000
+ p=100
+ X=matrix(nrow=n,ncol=p,data=rnorm(n*p))
+ bTRUE=c(runif(p))
+ signal=X%*%bTRUE+100
+ error=rnorm(n=length(signal),mean=0,sd=sd(signal)/2)
+ y=signal+error
+
+ system.time(bOLS<-coef(lm(y~X)))
+ system.time(bOLS.GS<-GS.solver(y=y,X=X,center=TRUE,int=TRUE))
+
+ max(abs(bOLS[-1]-bOLS.GS[-1])) # note: since we are centering for GS, the est. intercepts are different
+```
 
 ## Regression with categorical predictors (`model.matrix`)
 
