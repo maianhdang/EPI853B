@@ -2,87 +2,41 @@
 (due Monday 9/26/2016, submit va e-mail to gustavoc@msu.edu )
 
 1. Write a function that implements a backfitting algorithm for OLS. Name your function `LS.backfit`, your function must: have, 'y' and 'X' 
-arguments for the response and incidence matrix, and options for adding and intercept and centering (by default `int=TRUE` and `center=TRUE`).
-The return value must be eual to that of `lm`. To get full credit your function must pass all the tests listed below.
+arguments for the response and incidence matrix, and options for tolerance for convergengence (`tol`) and for adding an intercept (`int`). To get full credit your function must pass all the tests listed below.
 
 
 Hint: if you center, the intercept changes, you can get the original intercept (the one you would obtain if you do not center) by adding the 
 intercept of the centered model plus `b[-1]'xBar`, where `b` are the regression coefficients you obtained and `xBar=colMeans(X)` are the means for
 all the predictors.
 
-
-**Tests**. Your function must pass all these tests. Your grade will be the sum of tests that passed.
-
-*Simulation*
+**Simulation**
 
 ```R
- n=150
+ n=1000
  p=20
- X=matrix(nrow=n,ncol=p,data=runif(n*p))
+ Z=matrix(nrow=n,ncol=p,data=runif(n*p))
  b=rgamma(shape=1,rate=1,n=p)*sample(c(-1,1),size=p,replace=T)
- signal=X%*%b+25
+ signal=Z%*%b+25
  error=rnorm(n=n,sd=sd(signal))
  y=error+signal
- TEST=rep(NA,7)  
 ```
 
-*Test 1*.
+**Tests**
 ```R
- bHat_1=coef(lm(y~X))
- bHat_2=LS.backfit(y=y,X=X)
+#Test 1
+ TEST=rep(NA,3)
+ bHat_1=coef(lm(y~Z))
+ bHat_2=LS.backfit(y=y,X=Z)
  TEST[1]=max(abs(bHat_1-bHat_2))<1e-5
-````
 
-*Test 2*.
-```R
- bHat_1=coef(lm(y~X))
- bHat_2=LS.backfit(y=y,X=X,int=T)
+#Test 2
+ bHat_1=coef(lm(y~Z))
+ bHat_2=LS.backfit(y=y,X=Z,int=T)
  TEST[2]=max(abs(bHat_1-bHat_2))<1e-5  
-```
 
-*Test 3*.
-```R
- bHat_1=coef(lm(y~X-1))
- bHat_2=LS.backfit(y=y,X=X,int=F)
+#Test 3
+ bHat_1=coef(lm(y~Z-1))
+ bHat_2=LS.backfit(y=y,X=Z,int=F)
  TEST[3]=max(abs(bHat_1-bHat_2))<1e-5  
-```
-
-*Test 4*.
-```R
- bHat_1=coef(lm(y~X))
- bHat_2=LS.backfit(y=y,X=X,center=T)
- TEST[4]=max(abs(bHat_1-bHat_2))<1e-5  
-```
-
-*Test 5*.
-```R
- bHat_1=coef(lm(y~X))
- bHat_2=LS.backfit(y=y,X=X,center=F)
- TEST[5]=max(abs(bHat_1-bHat_2))<1e-5  
-```
-
-*Test 6*.
-```R
- bHat_1=coef(lm(y~X))
- bHat_2=LS.backfit(y=y,X=X,int=F,center=F)
- TEST[6]=max(abs(bHat_1-bHat_2))<1e-5  
-```
-
-*Test 7*.
-```R
- x=proc.time()[3]
- for(i in 1:1000){
-  fm=lm(y~X)
- }
- timeLM=proc.time()[3]-x
- 
- x=proc.time()[3]
- for(i in 1:1000){
-  fm=LS.backfit(y,X)
- }
- timeBF=proc.time()[3]-x
- 
- TEST[7]=timeBF/timeLM < .5
 
 ```
-
