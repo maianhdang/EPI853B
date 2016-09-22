@@ -32,11 +32,11 @@ all the predictors.
 #Test 2
  bHat_1=coef(lm(y~Z))
  bHat_2=LS.backfit(y=y,X=Z,int=T)
- TEST[2]=max(abs(bHat_1-bHat_2))<1e-5  
+ TEST[2]=max(abs(bHat_1-bHat_2))<1e-5 
 
 #Test 3
  bHat_1=coef(lm(y~Z-1))
- bHat_2=LS.backfit(y=y,X=Z,int=F)
+ bHat_2=LS.backfit(y=y,X=Z,int=F,tol=1e-7)
  TEST[3]=max(abs(bHat_1-bHat_2))<1e-5  
 
 ```
