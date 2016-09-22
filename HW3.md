@@ -42,30 +42,47 @@ all the predictors.
 
 *Test 3*.
 ```R
- bHat_1=coef(lm(y~X))
+ bHat_1=coef(lm(y~X-1))
  bHat_2=LS.backfit(y=y,X=X,int=F)
  TEST[3]=max(abs(bHat_1-bHat_2))<1e-5  
 ```
 
 *Test 4*.
 ```R
- bHat_1=coef(lm(y~X-1))
- bHat_2=LS.backfit(y=y,X=X,int=F,center=F)
+ bHat_1=coef(lm(y~X))
+ bHat_2=LS.backfit(y=y,X=X,center=T)
  TEST[4]=max(abs(bHat_1-bHat_2))<1e-5  
 ```
 
-
 *Test 5*.
 ```R
- bHat_1=coef(lm(y~X))[-1]
- bHat_2=LS.backfit(y=y,X=X,int=F,center=T)[-1]
+ bHat_1=coef(lm(y~X))
+ bHat_2=LS.backfit(y=y,X=X,center=F)
  TEST[5]=max(abs(bHat_1-bHat_2))<1e-5  
 ```
 
 *Test 6*.
 ```R
- yHat_1=predict(lm(y~X))
- yHat_2=cbind(1,X)%*%LS.backfit(y=y,X=X)
- TEST[6]=max(abs(yHat_1-yHat_2))<1e-5  
+ bHat_1=coef(lm(y~X))
+ bHat_2=LS.backfit(y=y,X=X,int=F,center=F)
+ TEST[6]=max(abs(bHat_1-bHat_2))<1e-5  
+```
+
+*Test 7*.
+```R
+ x=proc.time()[3]
+ for(i in 1:1000){
+  fm=lm(y~X)
+ }
+ timeLM=proc.time()[3]-x
+ 
+ x=proc.time()[3]
+ for(i in 1:1000){
+  fm=LS.backfit(y,X)
+ }
+ timeBF=proc.time()[3]-x
+ 
+ TEST[7]=timeBF/timeLM < .5
+
 ```
 
