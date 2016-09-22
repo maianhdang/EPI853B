@@ -1,7 +1,7 @@
 ###Homework 3
 (due Monday 9/26/2016, submit va e-mail to gustavoc@msu.edu )
 
-1. Write a function that implements a backfitting algorithm for OLS. Name your function `LS.backfit`, your function must: have, 'y' and 'X' 
+1. Write a function that implements a backfitting algorithm for OLS. Name your function `LS.backfit`, your function must: have, `y` and `X`
 arguments for the response and incidence matrix, and options for tolerance for convergengence (`tol`) and for adding an intercept (`int`). To get full credit your function must pass all the tests listed below.
 
 
