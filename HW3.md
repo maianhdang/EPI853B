@@ -23,7 +23,7 @@ all the predictors.
  signal=X%*%b+25
  error=rnorm(n=n,sd=sd(signal))
  y=error+signal
- TEST=rep(NA,8)  
+ TEST=rep(NA,7)  
 ```
 
 *Test 1*.
