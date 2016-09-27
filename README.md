@@ -417,6 +417,8 @@ The following example illustrates how to produce contrats for a means-model.
 
 #### Contrasts for categorical predictors
 
+The following [webpage](http://www.ats.ucla.edu/stat/r/library/contrast_coding.htm) has a summary of some of the contrasts commonly used.
+
 **Contrasts for Means Model**
 
 ```r
@@ -431,10 +433,10 @@ The following example illustrates how to produce contrats for a means-model.
 **Specifying the contrasts to be used**
 
 
-**Orthogonal contrasts: Helmert**
+**Helmert contrasts**
 
 
-**Orthogonal contrasts: sums**
+**Contrasts sums**
 
 
 #### Contrasts for covariates
