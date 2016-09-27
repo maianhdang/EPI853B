@@ -300,7 +300,7 @@ Let's check that the inverse obtained via Cholesky is equivalent than the one co
 
  ```
 
-OLS via Cholesky
+**OLS via Cholesky**
 
 ```R
 myLS.chol=function(y,X,int=TRUE){
@@ -408,6 +408,51 @@ Let's test it with a simple simulation.
 ```
 
 ## Regression with categorical predictors (`model.matrix`)
+
+
+
+The `model.matrix()` function can be used to generate incidence matrices for regression models.
+The following example illustrates how to produce contrats for a means-model.
+
+
+#### Contrasts for categorical predictors
+
+**Contrasts for Means Model**
+
+```r
+  sex=sample(c('M','F'),size=10,replace=T)
+  Z=model.matrix(~sex-1) # '-1' means remove the intercept, when used with dummy coding it produces contrasts for the cell-means
+  crossprod(Z)
+  table(sex)
+```
+
+**Reference Treatment**
+
+**Specifying the contrasts to be used**
+
+
+**Orthogonal contrasts: Helmert**
+
+
+**Orthogonal contrasts: sums**
+
+
+#### Contrasts for covariates
+
+**Polynomials**
+
+**Orthogonal polynomials**
+
+#### Contrasts for interactions
+
+
+#### Alternative parameterizations and interpretations of results
+
+
+**The oats data set**
+
+
+
 
 
 [Back to Outline](#Outline)
