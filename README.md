@@ -423,7 +423,7 @@ The following [webpage](http://www.ats.ucla.edu/stat/r/library/contrast_coding.h
 
 ```r
   sex=sample(c('M','F'),size=10,replace=T)
-  Z=model.matrix(~sex-1) # '-1' means remove the intercept, when used with dummy coding it produces contrasts for the cell-means
+  Z=model.matrix(~sex-1) # by default R uses treatment contrasts, '-1' means removes the intercept
   crossprod(Z)
   table(sex)
 ```
