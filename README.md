@@ -482,7 +482,9 @@ ___
    * Bias and variance of OLS estimates   
    * Omitted variable bias
    * Evaluation of Bias and Variance Using Monte Carlo Methods
-   * The Bootstrap method [Chapter 5, Section 5.2]
+   
+## (5) Assesment of statitical properties using bootstrap and permutation tests
+   * The Bootstrap method [Chapter 5, Section 5.2]  [Efron & Gong, Am. Stat., 2012](http://www.tandfonline.com/doi/pdf/10.1080/00031305.1983.10483087?needAccess=true)
    * Permutation tests
    
 <div id="parallel" />
