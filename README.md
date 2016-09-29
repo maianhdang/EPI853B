@@ -410,7 +410,6 @@ Let's test it with a simple simulation.
 ## Regression with categorical predictors (`model.matrix`)
 
 
-
 The `model.matrix()` function can be used to generate incidence matrices for regression models.
 The following example illustrates how to produce contrats for a means-model.
 
@@ -428,34 +427,18 @@ The following [webpage](http://www.ats.ucla.edu/stat/r/library/contrast_coding.h
   table(sex)
 ```
 
-**Reference Treatment**
-
-**Specifying the contrasts to be used**
-
-
-**Helmert contrasts**
-
-
-**Contrasts sums**
-
-
-#### Contrasts for covariates
-
-**Polynomials**
-
-**Orthogonal polynomials**
-
-#### Contrasts for interactions
-
-
-#### Alternative parameterizations and interpretations of results
-
-
-**The oats data set**
-
-
-
-
+R offers various types of contrasts, the following functions generate contrasts for factors with n levels:
+  * `contr.treatment(n,...)` is the default option and generates contrasts for differences with a reference category.
+  * `contr.helmert(n,...)` sequencial differences (group 2-group1, group3-mean of groups 1 and 2,...etc.
+  * `contr.poly(n,...)`
+  * `contr.sum(n,...)`
+  * `contr.SAS(n,...)`
+ 
+```R
+  contr.treatment(4)
+  contr.helmert(4)
+  contr.sum(4)
+```
 
 [Back to Outline](#Outline)
 ___
@@ -463,7 +446,7 @@ ___
 <div id="OLS-II" />
 ## (4) Inference in the OLS regression [Chapters 3 and 5, plus materials provided below]
 
-   * Bias and variance of OLS estimates
+   * Bias and variance of OLS estimates   
    * Omitted variable bias
    * Evaluation of Bias and Variance Using Monte Carlo Methods
    * The Bootstrap method [Chapter 5, Section 5.2]
