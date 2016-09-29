@@ -439,6 +439,39 @@ R offers various types of contrasts, the following functions generate contrasts 
   contr.helmert(4)
   contr.sum(4)
 ```
+We can tell `model.matrix` whant contrasts to use using the `contrasts.arg` argument.
+
+```R
+x1=c('a','a','b','b','b','c','c','c')
+x2=c('1','1','2','2','1','3','3','1')
+X=model.matrix(~x1+x2,contrasts.arg=list(x1=contr.treatment,x2=contr.helmert))
+```
+
+We can also recover the contrasts used by model matrix using the `attr()` function.
+
+```R
+attr(X,'contrasts')
+```
+
+We can also pass these arguments into lm.
+
+```R
+ y=rnorm(8)
+ 
+ fm1=lm(y~x1+x2) # uses standars dummy coding (contr.tratment)
+ fm2=lm(y~x1+x2,contrasts=list(x1=contr.helmert,x2=contr.sum))
+ fm1$contrasts 
+```
+We can control what level will be the reference for the treatment contrasts by changhing the order of the levls of a factor.
+
+```R
+ x=factor(c('a','a','b','b','b','c','c','c'))
+ levels(x)
+ y=rnorm(length(x))
+ summary(lm(y~x))
+ z=factor(x,levels=c('c','a','b'))
+ summary(lm(y~z))
+```
 
 [Back to Outline](#Outline)
 ___
@@ -450,7 +483,9 @@ ___
    * Omitted variable bias
    * Evaluation of Bias and Variance Using Monte Carlo Methods
    * The Bootstrap method [Chapter 5, Section 5.2]
-
+   * Permutation tests
+   
+  ## (5) Parallel computing in R (Alexander Grueneberg) 
 <div id="ML" />
 ## (5) Maximum Likelihood estimation [Chapter 4, sections 4.1-4.3]
 
