@@ -485,9 +485,8 @@ ___
    * The Bootstrap method [Chapter 5, Section 5.2]
    * Permutation tests
    
-## (5) Parallel computing in R (Alexander Grueneberg) 
 <div id="parallel" />
-## (5)  Multi-core computing in R (Alexander Grueneberg) 
+## (5) Parallel computing in R (Alexander Grueneberg) 
 
    * Introduction to multi-core computing
    * The [parallel](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf) package
