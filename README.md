@@ -485,9 +485,18 @@ ___
    * The Bootstrap method [Chapter 5, Section 5.2]
    * Permutation tests
    
-  ## (5) Parallel computing in R (Alexander Grueneberg) 
+## (5) Parallel computing in R (Alexander Grueneberg) 
+<div id="parallel" />
+## (5)  Multi-core computing in R (Alexander Grueneberg) 
+
+   * Introduction to multi-core computing
+   * The [parallel](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf) package
+   
+[Back to Outline](#Outline)
+___
+
 <div id="ML" />
-## (5) Maximum Likelihood estimation [Chapter 4, sections 4.1-4.3]
+## (6) Maximum Likelihood estimation [Chapter 4, sections 4.1-4.3]
 
    * The likelihood function
    * Analytical solution in the Gaussian and Bernoulli models
@@ -499,7 +508,7 @@ ___
 ___
 
 <div id="splines" />
-## (6) Non-linear regression using splines [Chapter 7]	
+## (7) Non-linear regression using splines [Chapter 7]	
 
    * Basis functions
    * Non-linear regression using splines
@@ -507,14 +516,6 @@ ___
 [Back to Outline](#Outline)
 ___
 
-<div id="parallel" />
-## (7)  Multi-core computing in R [the parrallel R-package](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf)
-
-   * Introduction to multi-core computing
-   * The `parallel` package
-
-[Back to Outline](#Outline)
-___
 
 <div id="RV" />
 ## (8) Simulation of Random Variables
