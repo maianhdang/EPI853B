@@ -481,9 +481,10 @@ ___
 ## (4) Inference in the OLS regression [Chapters 3 and 5, plus materials provided below]
 
    
-**Bias** Ordinary least square estimates are unbiased, meaning that on average, if we take the expected value of the estimator over conceptual repeated sampling, the average of the estimators equal the true value of the parameter. What are the conditions that are needed for the OLS estimates to be unbiased? How do we show that OLS are unbiased? What conditions can lead to systematic bias? 
+**Bias** Under relatively minimal conditions, OLS estimates are unbiased. What are these conditions? How do we show that OLS are unbiased? What conditions can lead to systematic bias?  
    
-Consider a linear regession of the form  `y=Xb+e`, if `X` is a full-rank matrix, the OLS estimate of b is given by 
+   
+Consider a linear regession of the form  `y=Xb+e`, if `X` is a full-rank matrix and `b` is a vector of effects. The OLS estimate of `b` is given by 
    
        `bHat=Inv(X'X)X'y` 
        
@@ -491,20 +492,20 @@ The expected value of this estimator, for fixed X is
    
    `E[bHat|X]=E[Inv(X'X)X'y|X]=Inv(X'X)X'E[y|X]`
    
-*Case 1:* If the linear model holds, that is if `E[y|X]=E[Xb+e|X]=Xb+E[e|X]=Xb`, then we have `E[bHat|X]==Inv(X'X)X'Xb=b`; therfore, we conclude that OLS are unbiased.
+*Case 1:* If the linear model holds, that is if `E[y|X]=Xb`, then we have `E[bHat|X]==Inv(X'X)X'Xb=b`; therfore, we conclude that OLS estimates are unbiased. This result involves two assumptions: (i) that `X` is full rank and therfore `X'X` can be inverted and (ii) that the expected value of the error terms are zero. However, other assumptions that are sometimes made for inferential purposues, e.g., that the errors to be independen and/or normally distributed or that they have equal variance (homoskedasticity) are not required for the OLS estimates to be un-biased. Only (i) and (ii) are needed.
 
-Note that the assumptions made above are: (i) that X is full rank and therfore `X'X` can be inverted and (ii) that the expected value of the error terms are zero for any value of X. We do not need the errors to be independent, or normally distributed or have equal variance. None of these other assumptions are needed to show that OLS estimates under conditions (i) and (ii) are unbiased.
+*Case 2:* Even if the model is non linear, the error terms from projection of `y` on `X` are, by construction, orthognal to `X`. So, even if the model is non-linear we have E[X'e]=0 and this makes OLS unbiased estimates of the projection of `y` on `X`, provided that `X` is full rank.
 
-*Case 2:* Even if the model is non linear, the error terms from projection of y on X are, by construction, orthognal to X. So, even if the model is non-linear we have E[X'e]=0 and this makes OLS unbiased estimates of the projection of y on X, provided that X is full rank.
+*Rank deficient case* If `X` is rank deficient, then we need to use a generalized-inverse, in this case, `Ginv(X'X)X'X` is not equal to an identity matrix and therfore, the expected value of the OLS estimate is not equal to the true value of the regression. However, even in this case we can still get un-biased estimates of 'estimable functions' for instance, contrasts between treatments.
 
 **Variance** The conditional varinace of the OLS estimates is given by:  
 
-`Var(bHat|X)=Var(Inv(X'X)X'y|X)=Inv(X'X)X'Var(y)XInv(X'X)=Inv(X'X)X'VXInv(X'X)`
+`Var(bHat|X)=Var(Inv(X'X)X'y|X)=Inv(X'X)X'Var(y)XInv(X'X)=Inv(X'X)X'GXInv(X'X)`
 
-where 'V' is the variance-covariance matrix of the error terms. If the errors are indpeendent and homoskedastic, then we have `Var(e)=I*vE`, and therefore,
+where 'g' is the variance-covariance matrix of the error terms. If the errors are indpeendent and homoskedastic, then we have `Var(e)=I*vE`, and therefore,
 
 
-`Var(bHat|X)=Inv(X'X)X'VXInv(X'X)=Inv(X'X)X'X(X'X)*vE=Inv(X'X)*vE`
+`Var(bHat|X)=Inv(X'X)X'GXInv(X'X)=Inv(X'X)X'X(X'X)*vE=Inv(X'X)*vE`
 
 Therofore, under (iii) independence and (iv) homoskedasticity of the error terms, the variance covaraince matrix of the OLS estimates is the product of the inverse of the coefficient matrix, `Inv(X'X)` times the error variance.
 
