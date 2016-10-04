@@ -485,7 +485,9 @@ ___
    
 Consider a linear regession of the form  `y=Xb+e`, if `X` is a full-rank matrix, the OLS estimate of b is given by 
    
-       `bHat=Inv(X'X)X'y`. The expected value of this estimator, for fixed X is
+       `bHat=Inv(X'X)X'y` 
+       
+The expected value of this estimator, for fixed X is
    
    `E[bHat|X]=E[Inv(X'X)X'y|X]=Inv(X'X)X'E[y|X]`
    
