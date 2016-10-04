@@ -16,14 +16,18 @@
       
 **Simulation**
 
+This simulation illustrates how to simulate your data in the function for the 2nd task. To illustrate we are simulating an X matrix, but in your function both X, b and R2 should be parameters.
 ```R
- X1=sample(1:3,size=N,replace=T)
- X2=sample(1:2,size=N,replace=T)
- b1=c(100,80,120)
- b2=c(10,20)
- signal=b1[X1]+b2[X2]
- error=rnorm(N,sd=sd(signal)*sqrt(1-R2))
- y=error+signal
+ ## Simulating inputs as an example
+  n=100;p=10 # your code needs to work for any n and p
+  X=matrix(nrow=n,ncol=p,rnorm(p*n))
+  b=rgamma(p,rate=1,shape=1)
+  signal=X%*%b
+  
+ ## Simulating data, this is part of your MC evaluation
+  error=rnorm(n,sd=sd(signal)*sqrt((1-R2)/R2))
+  y=error+signal
+  var(signal)/var(y)
 ```
 
 **Tests**
