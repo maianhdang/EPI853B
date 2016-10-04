@@ -480,9 +480,49 @@ ___
 <div id="OLS-II" />
 ## (4) Inference in the OLS regression [Chapters 3 and 5, plus materials provided below]
 
-   * Bias and variance of OLS estimates   
-   * Omitted variable bias
-   * Evaluation of Bias and Variance Using Monte Carlo Methods
+   
+**Bias** Ordinary least square estimates are unbiased, meaning that on average, if we take the expected value of the estimator over conceptual repeated sampling, the average of the estimators equal the true value of the parameter. What are the conditions that are needed for the OLS estimates to be unbiased? How do we show that OLS are unbiased? What conditions can lead to systematic bias? 
+   
+Consider a linear regession of the form  `y=Xb+e`, if `X` is a full-rank matrix, the OLS estimate of b is given by 
+   
+       `bHat=Inv(X'X)X'y`. The expected value of this estimator, for fixed X is
+   
+   `E[bHat|X]=E[Inv(X'X)X'y|X]=Inv(X'X)X'E[y|X]`
+   
+*Case 1:* If the linear model holds, that is if `E[y|X]=E[Xb+e|X]=Xb+E[e|X]=Xb`, then we have `E[bHat|X]==Inv(X'X)X'Xb=b`; therfore, we conclude that OLS are unbiased.
+
+Note that the assumptions made above are: (i) that X is full rank and therfore `X'X` can be inverted and (ii) that the expected value of the error terms are zero for any value of X. We do not need the errors to be independent, or normally distributed or have equal variance. None of these other assumptions are needed to show that OLS estimates under conditions (i) and (ii) are unbiased.
+
+*Case 2:* Even if the model is non linear, the error terms from projection of y on X are, by construction, orthognal to X. So, even if the model is non-linear we have E[X'e]=0 and this makes OLS unbiased estimates of the projection of y on X, provided that X is full rank.
+
+**Variance** The conditional varinace of the OLS estimates is given by:  
+
+`Var(bHat|X)=Var(Inv(X'X)X'y|X)=Inv(X'X)X'Var(y)XInv(X'X)=Inv(X'X)X'VXInv(X'X)`
+
+where 'V' is the variance-covariance matrix of the error terms. If the errors are indpeendent and homoskedastic, then we have `Var(e)=I*vE`, and therefore,
+
+
+`Var(bHat|X)=Inv(X'X)X'VXInv(X'X)=Inv(X'X)X'X(X'X)*vE=Inv(X'X)*vE`
+
+Therofore, under (iii) independence and (iv) homoskedasticity of the error terms, the variance covaraince matrix of the OLS estimates is the product of the inverse of the coefficient matrix, `Inv(X'X)` times the error variance.
+
+How do we estimate the error variance? An un-biased estimator can be obtained as: `eHat'eHat/(n-p)` where `eHat` are the OLS residuals (`eHat=y-XbHat`), `n` is sample size and `p` is the rank of X.
+
+**Standard errors and p-values**. The square-root of the diagonal elements of the variance co-variance matrix of the OLS estimates are the SE of the estimates. Using this and the estimated effects we can obtain t-statistics and the corresponding p-values (`see pt()`).
+
+
+**Omitted Variable Bias**. Suppose that the true model is given by `y=Xa+Zb+e`, and that instead we regress `y` on `X` only, are the OLS estimates still unbiased? The answer is yes, the OLS estimates from the regression of `y` on `X` are unbiased estimates of the projection of `y` on `X`, however, these are not un-biased estimates of `a`. To see this is useful to consider two models:
+
+
+Full Model, or long regression:  `y=Xa+Zb+e`
+Short regression:                 `y=Xc+d`
+
+The OLS estimate of `c` is `Inv(X'X)X'y`. The expected value of this estimator is 
+
+`E[cHat]=Inv(X'X)X'E[y]=Xa+Zb=a+Inv(X'X)X'Zb=a+Tb`
+
+where `T` is a matrix contianing the regressions of the columns of Z on X. Therfore, the OLS estimates of the regression coefficients in the short regression can be bias with respect to the 'true' effects of X (`a`), however, they are still un-biased with respect to `c`, the projection of y on X.
+
    
 ## (5) Assesment of statitical properties using bootstrap and permutation tests
    * The Bootstrap method [Chapter 5, Section 5.2]  [Efron & Gong, Am. Stat., 2012](http://www.tandfonline.com/doi/pdf/10.1080/00031305.1983.10483087?needAccess=true)
