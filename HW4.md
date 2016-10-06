@@ -19,10 +19,10 @@
 This simulation illustrates how to simulate your data in the function for the 2nd task. To illustrate we are simulating an X matrix, but in your function both X, b and R2 should be parameters.
 ```R
  ## Simulating inputs as an example
-  n=100;p=10 # your code needs to work for any n and p
-  X=matrix(nrow=n,ncol=p,rnorm(p*n))
-  b=rgamma(p,rate=1,shape=1)
-  signal=X%*%b
+  n=100 # your code needs to work for any n and p
+  X=cbind(1,rbinom(p=.5,n=n,size=1),rbinom(p=.1,n=n,size=1))
+  beta=c(100,2,2)
+  signal=X%*%beta
   
  ## Simulating data, this is part of your MC evaluation
   error=rnorm(n,sd=sd(signal)*sqrt((1-R2)/R2))
@@ -36,5 +36,23 @@ This simulation illustrates how to simulate your data in the function for the 2n
  all(round(summary(lm(y~X-1))$coef,5)==round(getOLS(y,X),5))
  
 #Test 2
- all(round(ourFunctionForMCSimulations(X,beta,nRep,R2),5)==round(MC.OLS(X,beta,nRep,R2),5))
+
+  test_2=function(X,beta,R2){
+  	signal=X%*%beta
+  	vSignal=var(signal)
+  	vError=as.numeric((vSignal/R2)*(1-R2))
+  	OUT=matrix(ncol=ncol(X),nrow=3)
+  	colnames(OUT)=colnames(X)
+  	rownames(OUT)=c('Bias','Variance','MSE')
+  	OUT[1,]=0  #OLS estimates are unbiased!
+  	
+  	varCovBeta<-solve(crossprod(X))*vError
+  	
+  	OUT[2,]<-diag(varCovBeta)
+  	OUT[3,]<-OUT[2,]+OUT[1,]^2 # MSE= VARIANCE + BIAS^2
+  
+    return(OUT)
+  }
+
+ all(round(test_2(X,beta,R2),3)==round(MC.OLS(X,beta,nRep,R2),3))
 ```
