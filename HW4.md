@@ -12,7 +12,7 @@
   
   -2- Using the code provided below carry out 5000 MC simulations and estimate the bias, variance and MSE of OLS estimates using MC methods.
       Embed your code in a function `MC.OLS(X,beta,nRep,R2)` should take as arguments a design matrix, 'true effects', the # of mC replicates and the model
-      R2. Your function must return a table with colums corresponding to the columsn of X and in rows the estimated bias, variance and MSE of OLS estimates.
+      R2. Your function must return a table with columns corresponding to the columns of X and in rows the estimated bias, variance and MSE of OLS estimates.
       
 **Simulation**
 
