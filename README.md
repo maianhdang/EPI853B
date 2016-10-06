@@ -526,22 +526,41 @@ The OLS estimate of `c` is `Inv(X'X)X'y`. The expected value of this estimator i
 
 where `T` is a matrix contianing the regressions of the columns of Z on X. Therfore, the OLS estimates of the regression coefficients in the short regression can be bias with respect to the 'true' effects of X (`a`), however, they are still un-biased with respect to `c`, the projection of y on X.
 
+## (5) Monte Carlo Methods
+   * Introduction
+   * Computing mean, variance and bias of estimates using MC methods
+   * Monte Carlo Error
    
-## (5) Assesment of statitical properties using bootstrap and permutation tests
-   * The Bootstrap method [Chapter 5, Section 5.2]  [Efron & Gong, Am. Stat., 2012](http://www.tandfonline.com/doi/pdf/10.1080/00031305.1983.10483087?needAccess=true)
-   * Permutation tests
+<div id="splines" />
+## (7) Non-linear regression using splines [Chapter 7]	
+
+   * Basis functions
+   * Non-linear regression using splines
+
+[Back to Outline](#Outline)
+
+## (8) Bootstrap
+   * Chapter 5, Section 5.2 
+   * The Bootstrap method  [Efron & Gong, Am. Stat., 2012](http://www.tandfonline.com/doi/pdf/10.1080/00031305.1983.10483087?needAccess=true)
+[Back to Outline](#Outline)
+   
+
    
 <div id="parallel" />
-## (5) Parallel computing in R (Alexander Grueneberg) 
+## (9) Parallel computing in R (Alexander Grueneberg) 
 
    * Introduction to multi-core computing
    * The [parallel](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf) package
+   * Apply-type operations in parallel
+   * Matrix computations in parallel
+   * Monte Carlo Simulations using parallele computing
+   * Bootstrap in parallel
    
 [Back to Outline](#Outline)
 ___
 
 <div id="ML" />
-## (6) Maximum Likelihood estimation [Chapter 4, sections 4.1-4.3]
+## (10) Maximum Likelihood estimation [Chapter 4, sections 4.1-4.3]
 
    * The likelihood function
    * Analytical solution in the Gaussian and Bernoulli models
@@ -552,14 +571,7 @@ ___
 [Back to Outline](#Outline)
 ___
 
-<div id="splines" />
-## (7) Non-linear regression using splines [Chapter 7]	
 
-   * Basis functions
-   * Non-linear regression using splines
-
-[Back to Outline](#Outline)
-___
 
 
 <div id="RV" />
