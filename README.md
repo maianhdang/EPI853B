@@ -534,8 +534,33 @@ where `T` is a matrix contianing the regressions of the columns of Z on X. Therf
 <div id="splines" />
 ## (7) Non-linear regression using splines [Chapter 7]	
 
-   * Basis functions
-   * Non-linear regression using splines
+**Approximating a conditional expectation function using bins**
+
+```R
+ winOLS=function(y,x,nW){
+   thresholds=quantile(x,prob= seq(from=1/nW,to=1-1/nW,by=1/nW))
+
+   X=matrix(nrow=length(y),ncol=length(thresholds)+1)
+   X[,1]=x<=thresholds[1]
+   for(i in 2:(length(thresholds))){
+      X[,i]=as.integer(x>thresholds[i-1] & x<=thresholds[i] )
+   }
+   X[,ncol(X)]<-x>max(thresholds)
+   fm=lm(y~X-1)
+   return(predict(fm))
+ }
+```
+
+```R
+ n=100
+ x=seq(from=0,to=4*pi,length=n)
+ signal=sin(x)+sin(x/2)
+ error=rnorm(n)
+ y=signal+error
+ plot(y~x,col=4)
+ lines(x=x,y=signal,col=2,lwd=2)
+ lines(x=x,winOLS(y,x,20),col=4,lty=2,lwd=2)
+```
 
 [Back to Outline](#Outline)
 
