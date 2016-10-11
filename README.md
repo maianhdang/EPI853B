@@ -573,12 +573,13 @@ While the step function is very flexible, it does not render a 'smooth' approxim
    z=x-tau	
    ifelse(z>0,z^degree,0)
  }
- DF=10
+ DF=5
  thresholds=quantile(x,prob= seq(from=1/DF,to=1-1/DF,by=1/DF))
- Z=matrix(ncol=DF,nrow=length(x),NA)
+ Z=matrix(ncol=DF+1,nrow=length(x),NA)
  Z[,1]=1
- for(i in 2:ncol(Z)){
-   Z[,i]=bf(x,thresholds[i-1],1)
+ Z[,2]=x
+ for(i in 3:ncol(Z)){
+   Z[,i]=bf(x,thresholds[i-2],1)
  }
  
   fm=lm(y~Z-1)
@@ -587,6 +588,9 @@ While the step function is very flexible, it does not render a 'smooth' approxim
   lines(x=x,y=predict(fm),col=4)
 
 ```
+
+The same approach can be used with higher order polynomials.
+
 
 There are many different ways of creating basis functions for a spline. The `spline` package offeres functions for the so-called B-Splines (`bs`) and the Natural Spline (`ns`) which is a cubic spline with interior and boundary knots.
 
