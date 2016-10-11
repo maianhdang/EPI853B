@@ -15,3 +15,15 @@
   prediction MSE versus number of knots. Indicate the optimal number of knots.
 
 Hint: you can get the basis functions for a natural spline using `ns()` from the `splines` library.
+
+
+```R
+ n=100
+ x=seq(from=0,to=4*pi,length=n)
+ signal=sin(x)+sin(x/2)
+ error=rnorm(n)
+ y=signal+error
+ plot(y~x,col=4)
+ lines(x=x,y=signal,col=2,lwd=2)
+ lines(x=x,stepFunction(y,x,20),col=4,lty=2,lwd=2)
+```
