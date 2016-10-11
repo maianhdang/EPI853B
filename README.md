@@ -537,7 +537,8 @@ where `T` is a matrix contianing the regressions of the columns of Z on X. Therf
 **Approximating a conditional expectation function using bins**
 
 ```R
- winOLS=function(y,x,nW){
+stepFunction=function(y,x,nW){
+   if(nW<3){stop("The minimum # of windows is 3") }
    thresholds=quantile(x,prob= seq(from=1/nW,to=1-1/nW,by=1/nW))
 
    X=matrix(nrow=length(y),ncol=length(thresholds)+1)
@@ -559,9 +560,39 @@ where `T` is a matrix contianing the regressions of the columns of Z on X. Therf
  y=signal+error
  plot(y~x,col=4)
  lines(x=x,y=signal,col=2,lwd=2)
- lines(x=x,winOLS(y,x,20),col=4,lty=2,lwd=2)
+ lines(x=x,stepFunction(y,x,20),col=4,lty=2,lwd=2)
 ```
 
+As we increase the number of windows, the bias of the estimator is reduced (we can approximate the true conditional expectation function better) but the variance increases.  How could we chose an optimal number of windows? One possiblity is to use cross-validation (see HW5).
+
+While the step function is very flexible, it does not render a 'smooth' approximation; for instnace, the function is not continous. 
+
+
+```R
+ bf=function(x,tau,degree){ 
+   z=x-tau	
+   ifelse(z>0,z^degree,0)
+ }
+ DF=10
+ thresholds=quantile(x,prob= seq(from=1/DF,to=1-1/DF,by=1/DF))
+ Z=matrix(ncol=DF,nrow=length(x),NA)
+ Z[,1]=1
+ for(i in 2:ncol(Z)){
+   Z[,i]=bf(x,thresholds[i-1],1)
+ }
+ 
+  fm=lm(y~Z-1)
+  plot(y~x)
+  lines(x=x,y=signal,col=2,lwd=2)
+  lines(x=x,y=predict(fm),col=4)
+
+```
+
+There are many different ways of creating basis functions for a spline. The `spline` package offeres functions for the so-called B-Splines (`bs`) and the Natural Spline (`ns`) which is a cubic spline with interior and boundary knots.
+
+```R
+ library(splines)
+```
 [Back to Outline](#Outline)
 
 ## (8) Bootstrap
