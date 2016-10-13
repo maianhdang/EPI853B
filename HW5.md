@@ -2,20 +2,9 @@
 
  (due Monday 10/17/2016, submit via e-mail to gustavoc@msu.edu )
 
-**Tasks**: 
+**Problem 1**: Variance, Bias and MSE of spline and of cuadratic polynomials
 
-  -1- Evaluate, using MC simulations (at least 1000 replicates) the bias, variance and MSE for a cubic natural spline 
-  as a function of the number of knots used. Evaluate, variance, bias and MSE at `x=c(2,5,11)` for 2,3,5,20,20,50 knots. 
-  Report also the MSE, variance and bias at the same points for a quadratic polynomial. Report one plot per value of x (2,5,11)
-  with the variance, bias and MSE versus # knots. Add in the same plot with a horizontal line the estimated variance, bias and MSE
-  of the quadratic polynomial.
-  
-  -2- Use cross-validation methods (100 training-testing partitions with 30 points in testing and 70 in training) to choose the optimal number of knots of a natural spline as a function of sample size.
-  For this, use `n=c(10,20,50,100)`, `knots=seq(from=2,to=30)`; for each sample size estimate the prediction MSE and plot
-  prediction MSE versus number of knots. Indicate the optimal number of knots.
-
-Hint: you can get the basis functions for a natural spline using `ns()` from the `splines` library.
-
+Using the following data generating process
 
 ```R
  n=100
@@ -25,5 +14,14 @@ Hint: you can get the basis functions for a natural spline using `ns()` from the
  y=signal+error
  plot(y~x,col=4)
  lines(x=x,y=signal,col=2,lwd=2)
- lines(x=x,stepFunction(y,x,20),col=4,lty=2,lwd=2)
 ```
+
+Generate 5000 MC samples and estimate the Variance, Bias and MSE of predictions at `x=5` for a quadratic spline with 2,3,5,10,20 knots. Do the same for a regular quadratic polynomial. **Report** a plot per quantity of interest (variance, bias and MSE) with # of knots in the horizontal axis and the estimated quantity (either variance, bias or MSE) in the vertical axis for the spline. Add, with a horizontal line the same quantity for the quadratic polynomial.
+
+Summarize your conclusions.
+
+
+**Problem 2** (Bootstrap)
+
+Using [Galton’s height data]( http://www.math.uah.edu/stat/data/Galton.html), regress height on the average height of the two parents using a natural spline with 5 DF `ns(x=x,df=5`). Using 10,000 Bootstrap samples estimate a 95% confidence band. **Report** a plot with average parental height in the horizontal axis and height of the offspring in the vertical axis. Add as lines your estimated regression function and 95% confidence bands.
+
