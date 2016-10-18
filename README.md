@@ -588,7 +588,6 @@ While the step function is very flexible, it does not render a 'smooth' approxim
  for(i in 1:degree){ Z[,i+1]=x^i }
  
  # Now the local basis functions
- 
  for(i in 1:nKnots){
    Z[,i+degree+1]=bf(x,tau=knots[i],degree=degree)
  }
@@ -599,8 +598,9 @@ While the step function is very flexible, it does not render a 'smooth' approxim
   lines(x=x,y=predict(fm),col=4)
   
 # Lets' compare with bs()
-  W=bs(x,knots=knots,degree=degree)
-  lines(x=x,y=predict(lm(y~W)),col='green')
+  W=bs(x,knots=knots,degree=degree) # note: by default bs does not include an intercept
+  fm2=lm(y~W)
+  points(x=x,y=predict(lm(y~W)),col='red',cex=.5)
   
 ```
 
