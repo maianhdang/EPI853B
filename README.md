@@ -630,8 +630,96 @@ There are many different ways of creating basis functions for a spline. The `spl
    * Apply-type operations in parallel
    * Matrix computations in parallel
    * Monte Carlo Simulations using parallele computing
-   * Bootstrap in parallel
-   
+
+### Example: Bootstrap in parallel
+
+Task: Compute 90% bootstrap confidence interval of the bootstrap distribution of the sample mean for a small sample.
+
+Serial as a `for` loop:
+
+```R
+start <- proc.time()
+x <- c(8, 3, 2, 5, 6, -1, 2, 3, 5, 6, 3, 9)
+nRep <- 1000000
+means <- numeric(nRep)
+seed <- 1000
+for (i in 1:nRep) {
+  set.seed(seed + i)
+  z <- sample(x, replace = T, size = length(x))
+  means[i] <- mean(z)
+}
+quantile(means, c(0.05, 0.95))
+proc.time() - start
+```
+
+Serial using `apply`:
+
+```R
+start <- proc.time()
+x <- c(8, 3, 2, 5, 6, -1, 2, 3, 5, 6, 3, 9)
+nRep <- 1000000
+seed <- 1000
+meanFunction <- function(i) {
+  set.seed(seed + i)
+  z <- sample(x, replace = T, size = length(x))
+  return(mean(z))
+}
+means <- sapply(1:nRep, meanFunction) # or lapply followed by unlist
+quantile(means, c(0.05, 0.95))
+proc.time() - start
+```
+
+In parallel using `mclapply` (this will be serial on Windows):
+
+```R
+start <- proc.time()
+library(parallel)
+x <- c(8, 3, 2, 5, 6, -1, 2, 3, 5, 6, 3, 9)
+nRep <- 1000000
+seed <- 1000
+meanFunction <- function(i) {
+  set.seed(seed + i)
+  z <- sample(x, replace = T, size = length(x))
+  return(mean(z))
+}
+means <- mclapply(1:nRep, meanFunction, mc.cores = detectCores())
+means <- unlist(means)
+quantile(means, c(0.05, 0.95))
+proc.time() - start
+```
+
+In parallel using `parLapply` (this should work with all operating systems):
+
+```R
+start <- proc.time()
+library(parallel)
+x <- c(8, 3, 2, 5, 6, -1, 2, 3, 5, 6, 3, 9)
+nRep <- 1000000
+seed <- 1000
+meanFunction <- function(i) {
+  set.seed(seed + i)
+  z <- sample(x, replace = T, size = length(x))
+  return(mean(z))
+}
+cluster <- makeCluster(detectCores())
+clusterExport(cluster, c("x", "seed"))
+means <- parLapply(cluster, 1:nRep, meanFunction)
+means <- unlist(means)
+quantile(means, c(0.05, 0.95))
+stopCluster(cluster)
+proc.time() - start
+```
+
+Benchmarks on *my* machine (Core i5, 4 cores);
+
+```
+		      min        lq      mean    median        uq       max neval
+for		12.662996 12.747717 13.041865 12.845498 13.070518 13.882597     5
+apply		14.074011 14.250181 14.840325 14.264057 14.683107 16.930270     5
+mclapply	 6.591227  6.643596  7.054739  6.790404  6.893870  8.354599     5
+parLapply	 8.253781  8.363489  8.408053  8.389866  8.413008  8.620121     5
+```
+
 [Back to Outline](#Outline)
 ___
 
