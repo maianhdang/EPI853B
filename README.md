@@ -570,24 +570,38 @@ While the step function is very flexible, it does not render a 'smooth' approxim
 
 
 ```R
+ # This function evaluates (x-tau)+^degree for parametes x, tau and degree
  bf=function(x,tau,degree){ 
    z=x-tau	
    ifelse(z>0,z^degree,0)
  }
- DF=5
- thresholds=quantile(x,prob= seq(from=1/DF,to=1-1/DF,by=1/DF))
- Z=matrix(ncol=DF+1,nrow=length(x),NA)
+ 
+
+ nKnots=5
+ degree=3
+ 
+ knots=quantile(x,prob= seq(from=1/nKnots,length=nKnots,by=1/nKnots))
+ Z=matrix(ncol=degree+1+length(knots),nrow=length(x),NA)
+ 
+ # First let's through in our incidence matrix the polynomials
  Z[,1]=1
- Z[,2]=x
- for(i in 3:ncol(Z)){
-   Z[,i]=bf(x,thresholds[i-2],1)
+ for(i in 1:degree){ Z[,i+1]=x^i }
+ 
+ # Now the local basis functions
+ 
+ for(i in 1:nKnots){
+   Z[,i+degree+1]=bf(x,tau=knots[i],degree=degree)
  }
  
   fm=lm(y~Z-1)
   plot(y~x)
   lines(x=x,y=signal,col=2,lwd=2)
   lines(x=x,y=predict(fm),col=4)
-
+  
+# Lets' compare with bs()
+  W=bs(x,knots=knots,degree=degree)
+  lines(x=x,y=predict(lm(y~W)),col='green')
+  
 ```
 
 The same approach can be used with higher order polynomials.
