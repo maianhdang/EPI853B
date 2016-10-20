@@ -631,6 +631,19 @@ There are many different ways of creating basis functions for a spline. The `spl
    * Matrix computations in parallel
    * Monte Carlo Simulations using parallele computing
 
+### Introduction
+
+The [parallel](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf) package has been included in R since version 2.14.0. It combines the work of the two packages `snow` and `multicore` that both pursued different approaches in bringing parallel computing capabilities to R (as it lacks those features by design). The easiest way to use the approach of the `snow` package is by using the `parLapply` function. For the approach of the `multicore` package it is the `mclapply` function.
+
+Both functions have important caveats: among those, `mclapply` will only work with UNIX-like operating systems (R, macOS) while `parLapply` will work with all operating systems but takes several manual steps to use. Both functions act similarly to the `lapply` function that comes with R that runs a function on each element of a list, returning the results of those functions calls as a list of the same length as `X`:
+
+* `lapply(X, FUN)`
+* `mclapply(X, FUN, mc.cores = detectCores())`
+* `parLapply(cluster, X, FUN)`
+
+The `mc.cores` argument of `mclapply` defines how many CPUs/cores should be used. `parLapply` takes a `cluster` argument that needs to be defined using `cluster <- makeCluster(detectCores())`.
+
+
 ### Example: Bootstrap in parallel
 
 Task: Compute 90% bootstrap confidence interval of the bootstrap distribution of the sample mean for a small sample.
