@@ -742,7 +742,41 @@ ___
    * The likelihood function
    * Analytical solution in the Gaussian and Bernoulli models
    * Numerical optimisation (application to GLM)
-   * The Newton-Rapson Method
+ ```R
+ 
+trueLambda=10
+
+myGrid=seq(from=.01,to=100,length=10000)
+
+myCS_MLE1<-function(yBar,n,myGrid){
+    tmp=logLikPois(yBar=yBar,n=n,lambda=myGrid)
+    out=myGrid[which.max(tmp)]
+    return(out)
+}
+
+B=1000 # number of MC replicates
+n=100 # size of each MC replicates
+X=matrix(nrow=length(myGrid),ncol=B)
+
+y=rpois(lambda=trueLambda,n=1e7)
+
+
+logLikPois=function(yBar,n,lambda){
+       logLik=log(lambda)*n*yBar-n*lambda
+       return(logLik)
+}
+
+for(i in 1:B){
+  x=sample(y,replace=F,size=n)
+  xBar=mean(x)
+  X[,i]=logLikPois(yBar=xBar,n=n,lambda=myGrid)
+ print(i)
+}
+
+ ```
+ 
+ 
+ * The Newton-Rapson Method
    * Data Augmentation and the EM-algoritm
 
 [Back to Outline](#Outline)
