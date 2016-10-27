@@ -776,6 +776,32 @@ for(i in 1:B){
  ```
  
  
+ **Maximum Likelihood Estimation in Logistic Regression**
+```R 
+ x=rnorm(1000)
+b=2
+
+eta=.5+x*b
+theta=exp(eta)/(1+exp(eta))
+y=rbinom(prob=theta,size=1,n=length(theta))
+
+fm=glm(y~x,family='binomial')
+summary(fm)
+
+
+negLogLikLogistic=function(X,b,y){
+
+    eta=X%*%b
+    theta=exp(eta)/(1+exp(eta))
+    logLik=ifelse(y==1,log(theta),log(1-theta))
+    out=-sum(logLik)
+    return(out)
+}
+
+
+tmp=optim(fn=negLogLikLogistic,X=cbind(1,x),y=y,par=c(1,0))
+```
+ 
  * The Newton-Rapson Method
    * Data Augmentation and the EM-algoritm
 
