@@ -739,6 +739,16 @@ ___
 <div id="ML" />
 ## (10) Maximum Likelihood estimation [Chapter 4, sections 4.1-4.3]
 
+For a paper describing the origins of the principle of Maximum Lilkelihood see [Aldrich, 1997](https://projecteuclid.org/download/pdf_1/euclid.ss/1030037906)
+
+The liklelihood function is the probability of the data given the parameters viewed as a function of the parameters with data fixed.
+
+Maximum likelihood Estimates (MLEs) are the values of the parameters that maximize the likelihood function.
+
+In principle, to obtain MLEs we need to:
+  - Implement a function that takes as arguments the data and parameter values and retunrs an evaluation of the (typically logarithm of the) likelihood.
+  - Use an optimization procedure to find the value of the parameters that maximizes the likelihood.
+  - A standard procedure for maximization consist of: (i) taking derivatives of the objective function (the log-likelihood in our case) with resepct to each of the parameters, (ii) set these derivatives equal to zero (frist order conditions, FOC), this renders as many equations as parameters, (iii) sovle the equations simultaneously
    * The likelihood function
    * Analytical solution in the Gaussian and Bernoulli models
    * Numerical optimisation (application to GLM)
