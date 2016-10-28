@@ -16,7 +16,6 @@ Let Y={y1,..,yn} be a random sample of n IID Bernoulli random variables with suc
 **1.3**. Using the Gout data set and Y$Gout as data compute and report the ML estimate of the probability of developing Gout and an approximate 
 95% CI.
 
-
 Note: to derive a 95% CI you can use the fact that ML estimates follows, asymptotically, a normal distribution with mean equal to the true parameter
 value. 
 
@@ -26,4 +25,7 @@ Consider a logistic regression of Gout on Sex, Age, Ethnicity and Serum Urate.
    
 **2.1**. Write the likelihood function
 **2.2**. Create an R-function that evaluates the likleihood function
-**2.3**. Estimate parameters using optim
+**2.3**. Estimate parameters using `optim()`
+**2.4**. Report a plot of the ris of develpintg gout by values od serum urate for a white male do 45 years of age.
+
+
