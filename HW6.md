@@ -7,7 +7,7 @@
 
 In this HW we will use the [Gout](https://github.com/gdlc/EPI853B/blob/master/gout.md) dataset.
 
-**1**. Bernoulli model with homogeneous success probability.
+**1. Bernoulli model with homogeneous success probability**.
 
 Let Y={y1,..,yn} be a random sample of n IID Bernoulli random variables with success probability theta.
 
@@ -20,7 +20,7 @@ Let Y={y1,..,yn} be a random sample of n IID Bernoulli random variables with suc
 Note: to derive a 95% CI you can use the fact that ML estimates follows, asymptotically, a normal distribution with mean equal to the true parameter
 value. 
 
-**2**. Logistic Regression
+**2. Logistic Regression**
 
 Consider a logistic regression of Gout on Sex, Age, Ethnicity and Serum Urate.
    
