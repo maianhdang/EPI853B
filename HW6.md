@@ -5,7 +5,7 @@
 
 
 
-In this HW we will use the [Gout](https://github.com/gdlc/EPI853B/blob/master/gout.md) dataset.
+In this HW we will use the [Gout](https://github.com/gdlc/EPI853B/blob/master/gout.txt) dataset.
 
 **1. Bernoulli model with homogeneous success probability**.
 
