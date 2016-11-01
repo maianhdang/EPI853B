@@ -24,9 +24,9 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * [Matrix Algebra in R](#Matrix)   
   * [Ordinary Least Squares I: Estimation](#OLS-I)
   * [Ordinary Least Squares II: Inference](#OLS-II)
-  * [Maximum Likelihood](#ML)
   * [Non-linear regression using Splines](#splines)
   * [Multi-core computing in R](#parallel)
+  * [Maximum Likelihood](#ML)
   * [Simulation of random variables](#RV)
   * [Monte Carlo Markov Chain Methods](#MCMC)
   * [Cross-Validation](#CV)
@@ -740,6 +740,7 @@ ___
 
 For a paper describing the origins of the principle of Maximum Lilkelihood see [Aldrich, 1997](https://projecteuclid.org/download/pdf_1/euclid.ss/1030037906)
 
+** 1. Closed Form Solutions**
 The liklelihood function is the probability of the data given the parameters viewed as a function of the parameters with data fixed.
 Maximum likelihood Estimates (MLEs) are the values of the parameters that maximize the likelihood function. 
 
@@ -751,7 +752,8 @@ In simple models (e.g., Poisson, Bernoully, multiple-linear regression with Gaus
   - Check, based on the sign of the 2nd derivatives that the function is concave.
   
   
-However, in the vast majority of the cases we cannot find a closed-form for the ML estimates. In these cases we use numerical methods. We will consider three methods:
+However, in the vast majority of the cases we cannot find a closed-form for the ML estimates. In these cases we use numerical methods. There are many numerical methdos for optimizing a function, we will briefly consider three approaches: grid search, Newton-Rapson and general purpouse optimization algorithm (functions `optim` and `optimize` in R).
+
 
 **1. Grid search**
 
@@ -759,7 +761,7 @@ In it's simplest form a grid search requires:
  - Implementing a function for evaluating the log-likelihood
  - Defining a grid of values for the parameters
  - Evaluating the log-likelihood for every value in the grid
- - Finding the value that y
+ - Finding the value within the grid that yields the largest value of the likelihood
 
 The following R-code illustrates this for the case of Poisson data
 
@@ -793,11 +795,46 @@ If we have a parameter vector instead of a single parameter our grid will be mul
 
 Grid Search is computationally intensive, most of the values of the grid could be ruled out y looking at the derivatives of the function.
 
+The above approach very crude. If we know that our function is concave, the we can set a very sparse grid, then find three points where the interior point gives higher likelihood than the flanking points. This interval must contain the maximum. We can then refine our grid by making a denser grid within that interval, and interate in this fashion untlil our estimate does not change more than a pre-established precision.
+
 
 **2 Newton Rapson (NR) Method**
 
 This method can be used to find a stationary point (either a minima or maxima) of a twice differentiable function. Starting from an intial guess `theta_0`, the NR method moves from `theta_0` to `tehta_1=theta_0+delta_0` where `delta_0` is the negative of the ratio of the first and seconde derivatives of the objective function both evaluated at `theta_0`. The method can be motivated using a 2nd order Taylor expansion to the objective function. We will discuss this further in class.
 
+The following example illustrates the aplictaion of the NR methods for estimating the parameter of a Poisson distribution.
+
+```R
+## Data
+ ## Simulating data
+  trueLambda=10
+  y=rpois(lambda=trueLambda,n=100)
+
+
+ ## Derivatives
+  firstD=function(lambda,y){  
+     sum(y)/lambda -length(y)
+  }
+  
+  secondD=function(lambda,y){
+     -sum(y)/(lambda^2)
+  }
+  
+  
+  theta=3
+  tol=1e-5
+  ready=FALSE
+  counter=0
+  while(!ready){
+  	print(theta)
+  	delta=- firstD(theta,y)/secondD(theta,y)
+	new_theta=theta+delta
+	ready=(abs(theta-new_theta)<tol)
+	counter=counter+1
+	print(paste0(counter,'  ', new_theta))
+	theta=new_theta
+  }
+```
 
 
 **3 General Purpose Optimization Functions**
