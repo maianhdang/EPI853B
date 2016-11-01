@@ -741,8 +741,68 @@ ___
 For a paper describing the origins of the principle of Maximum Lilkelihood see [Aldrich, 1997](https://projecteuclid.org/download/pdf_1/euclid.ss/1030037906)
 
 The liklelihood function is the probability of the data given the parameters viewed as a function of the parameters with data fixed.
+Maximum likelihood Estimates (MLEs) are the values of the parameters that maximize the likelihood function. 
 
-Maximum likelihood Estimates (MLEs) are the values of the parameters that maximize the likelihood function.
+In simple models (e.g., Poisson, Bernoully, multiple-linear regression with Gaussian IID error terms) we can find a closed-form for the ML estimates. In these cases MLEs are obtained by:
+
+  - Taking the 1st derivative of the log-likelihood with respect to each of the parameters
+  - (First Order Conditions, FOC) Set all the derivatives equal to zero, this gives a stationary point and renders a system with as many equations as parameters.
+  - Solve for the parameter values that satisfy the FOC.
+  - Check, based on the sign of the 2nd derivatives that the function is concave.
+  
+  
+However, in the vast majority of the cases we cannot find a closed-form for the ML estimates. In these cases we use numerical methods. We will consider three methods:
+
+**1. Grid search**
+
+In it's simplest form a grid search requires:
+ - Implementing a function for evaluating the log-likelihood
+ - Defining a grid of values for the parameters
+ - Evaluating the log-likelihood for every value in the grid
+ - Finding the value that y
+
+The following R-code illustrates this for the case of Poisson data
+
+NOTE: In this case the MLE has a closed form (it is simply the sample mean)
+
+ ```R
+ ## Simulating data
+  trueLambda=10
+  y=rpois(lambda=trueLambda,n=100)
+
+ ## A function to evaluate the Poisson log-likelihood
+  logLikPois=function(y,lambda){     
+       logLik=log(lambda)*sum(y)-length(y)*lambda
+       return(logLik)
+  }
+
+## A grid
+ myGrid=seq(from=.01,to=100,length=10000)
+
+ ## Search
+ logLik=rep(NA,length(myGrid))
+ for(i in 1:length(myGrid)){
+  logLik[i]=logLikPois(y=y,lambda=myGrid[i])
+  print(i)
+ }
+ plot(logLik~myGrid,type='l',col=4)
+ abline(v=mean(y),lty=2,col=2)
+```
+
+If we have a parameter vector instead of a single parameter our grid will be multi-dimensional (as many dimensions as parameters) but the princple of the grid search is the same.
+
+Grid Search is computationally intensive, most of the values of the grid could be ruled out y looking at the derivatives of the function.
+
+
+**2 Newton Rapson (NR) Method**
+
+This method can be used to find a stationary point (either a minima or maxima) of a twice differentiable function. Starting from an intial guess `theta_0`, the NR method moves from `theta_0` to `tehta_1=theta_0+delta_0` where `delta_0` is the negative of the ratio of the first and seconde derivatives of the objective function both evaluated at `theta_0`. The method can be motivated using a 2nd order Taylor expansion to the objective function. We will discuss this further in class.
+
+
+
+**3 General Purpose Optimization Functions**
+
+
 
 In principle, to obtain MLEs we need to:
   - Implement a function that takes as arguments the data and parameter values and retunrs an evaluation of the (typically logarithm of the) likelihood.
@@ -751,38 +811,7 @@ In principle, to obtain MLEs we need to:
    * The likelihood function
    * Analytical solution in the Gaussian and Bernoulli models
    * Numerical optimisation (application to GLM)
- ```R
- 
-trueLambda=10
 
-myGrid=seq(from=.01,to=100,length=10000)
-
-myCS_MLE1<-function(yBar,n,myGrid){
-    tmp=logLikPois(yBar=yBar,n=n,lambda=myGrid)
-    out=myGrid[which.max(tmp)]
-    return(out)
-}
-
-B=1000 # number of MC replicates
-n=100 # size of each MC replicates
-X=matrix(nrow=length(myGrid),ncol=B)
-
-y=rpois(lambda=trueLambda,n=1e7)
-
-
-logLikPois=function(yBar,n,lambda){
-       logLik=log(lambda)*n*yBar-n*lambda
-       return(logLik)
-}
-
-for(i in 1:B){
-  x=sample(y,replace=F,size=n)
-  xBar=mean(x)
-  X[,i]=logLikPois(yBar=xBar,n=n,lambda=myGrid)
- print(i)
-}
-
- ```
  
  
  
