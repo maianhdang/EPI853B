@@ -32,6 +32,8 @@ Using [Galton’s height data]( http://www.math.uah.edu/stat/data/Galton.html), 
 **Problem 1**
 
 ```R
+library(splines)
+
  MC.REP=5000
  n=100
  x=seq(from=0,to=4*pi,length=n)
