@@ -45,12 +45,12 @@ library(splines)
  x0=5 
  
 
- YHat=matrix(nrow=MC.REP,ncol=length(DF))
+ YHat=matrix(nrow=MC.REP,ncol=length(nKnots))
  
  for(i in 1:MC.REP){
  		error=rnorm(n)
  		y=signal+error
- 		for(j in 1:length(DF)){
+ 		for(j in 1:length(nKnots)){
  		  Z=bs(x=x,df=nKnots[j]+2,degree=2)
  		  bHat=coef(lm(y~Z))
  		  W=bs(x=x0,degree=attr(Z, "degree"), 
