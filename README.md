@@ -840,16 +840,73 @@ The following example illustrates the aplictaion of the NR methods for estimatin
 
 **3 General Purpose Optimization Functions**
 
+In this section we illustrate how to obtain MLEs using `optim()`, this is a general purpose optimizaton function that can be used to minimize an objective function with respect to a set of parameters. The inputs for `optim` are: (i) the function to be minimized (e.g., negative-log-likelihood), (ii) a parameter vector (all the parameters to be estimated must be provided in a single vector), and (iii) additional arguments to the function that are to be kept fixed during the optimization procedure (e.g., data, covariates, etc.). We illustrate the use `optim` in the context of logistic regression and censored regression.
 
-In principle, to obtain MLEs we need to:
-  - Implement a function that takes as arguments the data and parameter values and retunrs an evaluation of the (typically logarithm of the) likelihood.
-  - Use an optimization procedure to find the value of the parameters that maximizes the likelihood.
-  - A standard procedure for maximization consist of: (i) taking derivatives of the objective function (the log-likelihood in our case) with resepct to each of the parameters, (ii) set these derivatives equal to zero (frist order conditions, FOC), this renders as many equations as parameters, (iii) sovle the equations simultaneously
-   * The likelihood function
-   * Analytical solution in the Gaussian and Bernoulli models
-   * Numerical optimisation (application to GLM)
 
+**3.1. Logistic Regression**
+
+
+
+**3.2. Censored Regression**
+
+
+**Suppose we have gamma data**
+
+```R
+  x=rgamma(shape=8,rate=.5,n=100)
+```
+
+
+**ML estimation with the complete data**
+
+```R
+ negLogLikGamma=function(x,theta){
+	logLik=dgamma(x=x,shape=exp(theta[1]),rate=exp(theta[2]),log=TRUE)
+	return(-sum(logLik))
+ }
+
+ fm=optim(fn=negLogLikGamma,x=x,par=log(c(2,2)))
+ exp(fm$par)
  
+```
+
+
+**Suppose now that a proportion of the data are right-censored**
+
+```R
+ event=runif(length(x))<.7
+ y=x
+ y[!event]=x[!event]-runif(n=sum(!event),min=1,max=3)
+```
+
+
+
+**Log-likelihood function for right-censored data**
+
+```R
+ negLogLikGammaRightCen=function(time,theta){
+ 	logLik=pgamma(q=time, shape=exp(theta[1]), rate = exp(theta[2]), lower.tail = FALSE, log.p = TRUE)
+ 	 return(-sum(logLik))
+ }
+
+ logLikGammaCen=function(time,event,theta){
+ 	
+ 		time_observed=time[event]
+ 		time_right_cen=time[!event]
+ 		
+ 		negLogLik_1=negLogLikGamma(x=time_observed,theta)
+ 		negLogLik_2=negLogLikGammaRightCen(time=time_right_cen,theta=theta)
+ 		return((negLogLik_1+negLogLik_2))
+ }
+ 
+ fm2=optim(fn=logLikGammaCen,time=x,event=event==T,par=log(c(2,2)))
+ 
+  exp(fm2$par)
+```
+
+
+
+
 [Back to Outline](#Outline)
 ___
 
