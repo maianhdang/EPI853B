@@ -846,18 +846,41 @@ In this section we illustrate how to obtain MLEs using `optim()`, this is a gene
 **3.1. Logistic Regression**
 
 
+*Toy simulation*
+
+```R 
+ x=rnorm(1000)
+ risk=2+x*2
+ prob=exp(risk)/(1+exp(risk))
+ y=rbinom(prob=prob,n=length(x),size=1)
+```
+
+*Logistic Regression using GLM*
+```R
+ fm0=glm(y~x,family=binomial)
+ fm0$coef
+```
+*Logistic regression using optim*
+
+```R
+ fm1=optim(fn=negLogLikLogistic,y=y,X=cbind(1,x),par=c(log(mean(y)/(1-mean(y))),0))
+ fm1$par
+```
+
+
+
 
 **3.2. Censored Regression**
 
 
-**Suppose we have gamma data**
+*Suppose we have gamma data*
 
 ```R
   x=rgamma(shape=8,rate=.5,n=100)
 ```
 
 
-**ML estimation with the complete data**
+*ML estimation with the complete data*
 
 ```R
  negLogLikGamma=function(x,theta){
@@ -871,7 +894,7 @@ In this section we illustrate how to obtain MLEs using `optim()`, this is a gene
 ```
 
 
-**Suppose now that a proportion of the data are right-censored**
+*Suppose now that a proportion of the data are right-censored*
 
 ```R
  event=runif(length(x))<.7
@@ -881,7 +904,7 @@ In this section we illustrate how to obtain MLEs using `optim()`, this is a gene
 
 
 
-**Log-likelihood function for right-censored data**
+*Log-likelihood function for right-censored data*
 
 ```R
  negLogLikGammaRightCen=function(time,theta){
