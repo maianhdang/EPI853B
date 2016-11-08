@@ -227,7 +227,187 @@ The steps to find the analythical solution arre:
  
  ```
       
+ If X is full-column rank, then we have
+
+
+ ```R    
+ bHat=solve(X'X)%*%X'y 
  
+ ```
+     
+**Notation**: We usually call `C=X'X` the matrix of coefficients of the system of equations, `rhs=X'y`, the *right-and-side* of the sytem and `sol=bHat.` The short notation for the OLS system is
+
+   ```R 
+   C%*%sol=rhs 
+   ```
+    
+## Computing OLS esitmates
+
+In this examples we show alternative ways of computing OLS estimates. We begin with R functions `lm` and `lsfit` and then include
+alternative ways of computing estimates using matrix operations, factorizations and with iterative procedures.
+
+**A simple simulated data set**
+
+```R
+ p=100
+ n=5000
+ b=rnorm(p)
+ X=matrix(nrow=n,ncol=p,data=runif(n*p))
+ signal=150+X%*%b
+ error=rnorm(sd=sd(signal),n=n)
+ y=signal+error
+
+```
+
+**The `lm` function**
+```R
+ fm<-lm(y~X)
+ bHat=coef(fm)
+ summary(fm)
+```
+**The `lsfit` function**
+```R
+
+ fm2<-lsfit(y=y,x=X)
+ bHat=coef(fm)
+ ls.print(fm2) # the summary method is not very useful with lsfit
+```
+**Our own lm using matrix operations**
+
+This method will work only if X has a rank equal to the number of columsn of X.
+
+```R
+myLS.solve=function(y,X,int=TRUE){
+  if(int){
+         X=cbind(1,X)
+  }
+  C=crossprod(X)
+  rhs=crossprod(X,y)
+  CInv=solve(C)  
+  sol=crossprod(CInv,rhs)
+  return(sol)
+}
+```
+**Inversion using cholesky decomposition**
+
+This method will work only if X has a rank equal to the number of columsn of X. This guarantees that `X'X` can be factorized using the [Cholesky decomposition](https://en.wikipedia.org/wiki/Cholesky_decomposition). Sinche the cholesky factor is triangular (upper-triangular for R, we have `X'X=U'U`, where `U` is the upper-triangular Cholesky), we can easily compute the inverse of `X'X` from its Cholesky. 
+
+Let's check that the inverse obtained via Cholesky is equivalent than the one computed using `solve`
+ ```R
+  Z=matrix(nrow=10000,ncol=1000,rnorm(1000*10000))
+  C=crossprod(cbind(Z))
+  system.time(CInv.solve<-solve(C))
+  system.time(CInv.chol<-chol2inv(chol(C)))
+  all(round(CInv.solve,8)==round(CInv.chol,8))
+
+ ```
+
+**OLS via Cholesky**
+
+```R
+myLS.chol=function(y,X,int=TRUE){
+  if(int){
+         X=cbind(1,X)
+  }
+  C=crossprod(X)
+  rhs=crossprod(X,y)
+  CInv=chol2inv(chol(C))  
+  sol=crossprod(CInv,rhs)
+  return(sol)
+}
+```
+**OLS using the QR-decomposition**
+
+```R
+myLS.qr=function(y,X,int=TRUE){
+  if(int){
+      X=cbind(1,X)
+  }
+  QR=qr(X)
+  Q=qr.Q(QR)
+  R=qr.R(QR)
+  gHat=crossprod(Q,y)
+  sol=backsolve(R,gHat)
+  return(sol)
+}
+#or
+
+myLS.qr=function(y,X,int=TRUE){
+  if(int){
+      X=cbind(1,X)
+  }
+  QR=qr(X)
+  sol=qr.coef(QR,y)
+  return(sol)
+}
+```
+
+**OLS using the singular-value decomposition**
+
+```R
+myLS.svd=function(y,X,int=TRUE){
+  if(int){
+      X=cbind(1,X)
+  }
+  p=min(dim(X))
+  SVD=svd(X,nu=p,nv=p)
+  gHat=crossprod(SVD$u,y)
+  sol=tcrossprod(SVD$v,t(gHat/SVD$d))
+  return(sol)
+}
+```
+
+**Computing OLS estimates iterative procedures (Gauss-Seidel method)**
+
+We can also find OLS estimates using iterative procedures. The following function implements the Gauss-Seidel method.
+This method is equivalent to the back-fitting algorithm and it is also a coordinate descent gradient algorithm.
+
+```R
+ GS.solver=function(X,y,tol=1e-5,int=TRUE,center=TRUE){
+  if(center){
+       X=scale(X,center=TRUE,scale=FALSE) 
+  }
+  if(int){
+   X=cbind(1,X)
+  }
+  C=crossprod(X)
+  rhs=crossprod(X,y)
+  p=ncol(X)
+  b=rep(0,p)
+  if(center&int){ b[1]=mean(y) }
+  ready=FALSE
+  iter=0
+   while(!ready){
+     iter=iter+1
+     b0=b
+     for(j in 1:p){
+      tmp=sum(C[j,-j]*b[-j])
+      b[j]=(rhs[j]- tmp )/C[j,j]
+     }
+     tmp=abs(b-b0)
+     ready= all(tmp<tol)
+     print(paste0('Iter=',iter, ' Max abs dif=',(max(tmp))))
+   }
+   return(b)
+ }
+```
+
+Let's test it with a simple simulation.
+
+```R
+ n=5000
+ p=100
+ X=matrix(nrow=n,ncol=p,data=rnorm(n*p))
+ bTRUE=c(runif(p))
+ signal=X%*%bTRUE+100
+ error=rnorm(n=length(signal),mean=0,sd=sd(signal)/2)
+ y=signal+error
+
+ system.time(bOLS<-coef(lm(y~X)))
+ system.time(bOLS.GS<-GS.solver(y=y,X=X,center=TRUE,int=TRUE))
+
+ max(abs(bOLS[-1]-bOLS.GS[-1])) # note: since we are centering for GS, the est. intercepts are different
+```
   
 
 ## Regression with categorical predictors (`model.matrix`)
