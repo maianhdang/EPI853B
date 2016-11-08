@@ -867,12 +867,27 @@ In this section we illustrate how to obtain MLEs using `optim()`, this is a gene
  fm1$par
 ```
 
+**Inference**
 
+Under [regularity conditons](http://www.stat.yale.edu/~pollard/Books/Asymptopia/Classical.pdf), the large-sample distribution of  ML estimates is Multivariate Normal with mean equal to the true parmeter values (i.e., MLs are asymptotically un-biased) and (co)variance matrix equal to the inverse of [Fisher's Information matrix](https://en.wikipedia.org/wiki/Fisher_information) which is the expected value of the matrix of second derivatieves of the log-likelihood function with respect to the parameters. This matrix often depends on the true parameter values which are uknown. Thus, in practice, Expected Information is replaced with the *Observed Information* which is the inverse of the matrix of the second derivatives of the log-likelihood evaluated at the ML estimates. We can obtain this matrix from `optim()` by setting `hessian=TRUE`. The followin example illsutrates this.
 
+```R
+ fm1=optim(fn=negLogLikLogistic,y=y,X=cbind(1,x),par=c(log(mean(y)/(1-mean(y))),0),hessian=T)
+ OI=solve(fm1$hessian)
+ cbind(fm1$par,sqrt(diag(OI)))
+ summary(fm0)$coef# GLM
+```
 
 **3.2. Censored Regression**
 
-
+Biomedical and engeneering data is usually censored. Censored means that for some subjects we do not know the actual value of the response but we have information (bounds) about it. There are three types of censoring:
+ - Right censored, we know that y is greater than some constant, `y>c`.
+ - Left censored, we know that y is smaler than some constant, `y<c`.
+ - Interval censored, means that we know that y lies in an interval, `c1<y<c2`.
+ 
+ As always, the likelihood function is the probability of the data given the parameters viewed as a function of the parameters with data fixed. For un-censored data points this is just the density function. For right-censored data point the likelihood is the Survival function (i.e., `S(c)=p(y>c)=1-CDF(c)`). For left-censored data points the likelihood is the CDF, `p(y<c)=CDF(c)`, and for interval censored the likelihood is the difference in the CDF function evaluated at the right and left-bounds of the interval, `p(c1<y<c2)=CDF(c2)-CDF(c1)`.  The following example illustrates how to compute ML estimates with censored data assuming that data follows a Gamma distribution.
+ 
+ 
 *Suppose we have gamma data*
 
 ```R
@@ -893,7 +908,6 @@ In this section we illustrate how to obtain MLEs using `optim()`, this is a gene
  
 ```
 
-
 *Suppose now that a proportion of the data are right-censored*
 
 ```R
@@ -901,7 +915,6 @@ In this section we illustrate how to obtain MLEs using `optim()`, this is a gene
  y=x
  y[!event]=x[!event]-runif(n=sum(!event),min=1,max=3)
 ```
-
 
 
 *Log-likelihood function for right-censored data*
@@ -927,6 +940,7 @@ In this section we illustrate how to obtain MLEs using `optim()`, this is a gene
   exp(fm2$par)
 ```
 
+**The `survaival` R-package**
 
 
 
