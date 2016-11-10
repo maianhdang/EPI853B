@@ -1,5 +1,6 @@
 ## Midterm, outline of solutions
 
+```R
 ## 1.1.
  load('~/Desktop/gout.RData')
  fm=lm(SBP~Sex+Race+Age,data=Y)
@@ -99,4 +100,4 @@ round(cbind(summary(fm)$coef[,2] ,SE),4)
  
  text(x=rep(4,4),y=c(.9,.85,.8,.75),col=1:4,label=colnames(ETA))
  
- 
+ ```
