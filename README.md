@@ -942,6 +942,28 @@ Biomedical and engeneering data is usually censored. Censored means that for som
 
 **The `survaival` R-package**
 
+```R
+negLogLikRightCenNormal=function(y,d,theta){
+   mu=theta[1]
+   V=exp(theta[2])
+   yObserved=y[d==1]
+   yCensored=y[d==0]
+
+   logLik_observed=sum(dnorm(x=yObserved,mean=mu,sd=sqrt(V),log=TRUE))
+   logLik_censored=sum(pnorm(q=yCensored,mean=mu,sd=sqrt(V),lower.tail=FALSE,log=TRUE))
+   return(-(logLik_observed+logLik_censored))
+}
+
+
+y=rnorm(n=1000,sd=2,mean=10)
+
+d=ifelse(y>11,0,1)
+time=y
+
+time[d==0]=11
+
+fm=optim(fn=negLogLikRightCenNormal,y=time,d=d,par=c(mean(time),log(var(time))))
+```
 
 
 [Back to Outline](#Outline)
