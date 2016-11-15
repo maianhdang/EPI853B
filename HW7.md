@@ -3,11 +3,11 @@
 Due Tuesday Nov. 22nd in class (bring your printed report to class).
 
 
-1. For each of the following problem estimate the mean and variance using maximum likelihood using: (a) the `survreg()` function, and
+**1.** For each of the following problem estimate the mean and variance using maximum likelihood using: (a) the `survreg()` function, and
 (b) `optim()`. For survreg present your code and the results of `summary(fm)`. For (b) reproduce the results of `survreg()` using `optim()`.
 
 
-**1.1. Right censored data**
+*1.1. Right censored data*
 
 Use only the data in `Y` to fit your models.
 
@@ -22,7 +22,7 @@ Use only the data in `Y` to fit your models.
  Y=data.frame(d=d,time=time)
 ```
 
-**1.2. Left censored data**
+*1.2. Left censored data*
 
 Use only the data in `Y` to fit your models.
 
@@ -37,7 +37,7 @@ Use only the data in `Y` to fit your models.
  Y=data.frame(d=d,time=time)
 ```
 
-2. Estimating the bias induced by ignoring censoring
+**2. Estimating the bias induced by ignoring censoring**
 
 Using the code in 1.1 estimate, using 5000 MC replicates, the bias of  the estimate of the intercept and of the variance  of each of these methods:
   - Maximum Likelihood accounting for censoring (user `survreg()` for that),
