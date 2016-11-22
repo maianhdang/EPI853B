@@ -967,8 +967,10 @@ fm=optim(fn=negLogLikRightCenNormal,y=time,d=d,par=c(mean(time),log(var(time))))
 
 
 [Back to Outline](#Outline)
-___
 
+<div id="pValues" />
+
+P-values play a central role in hypothesis testing; once a significance level is established (e.g., 0.05) a null hypothesis is rejected if the corresponding p-value is smaller than the significance level. A p-value quantifies the probability of rejecting the null hypothesis given than the null is true. The significance level you establish also affects the power of your experiment. The following table describes the four scenarios you may face, in rows we have the state of nature and in columns your decision. The cells in the diagonal are in some sense "correct": you do not reject the null when the null is true and you reject it when the alternative is trye. The upper-right square is the so-called Type-I error which occurs when you reject the null when the null is true, and the lower left cell represent the Type-II error (you fail to reject when the alternative is true).
 
 
 
