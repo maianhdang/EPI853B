@@ -38,7 +38,9 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * [HW3](https://github.com/gdlc/EPI853B/blob/master/HW3.md)
   * [HW4](https://github.com/gdlc/EPI853B/blob/master/HW4.md)
   * [HW5](https://github.com/gdlc/EPI853B/blob/master/HW5.md)
-
+  * [HW6](https://github.com/gdlc/EPI853B/blob/master/HW6.md)
+  * [HW7](https://github.com/gdlc/EPI853B/blob/master/HW7.md)
+  * [HW8](https://github.com/gdlc/EPI853B/blob/master/HW8.md)
 <div id="intro" />
 ## Introduction 
 
