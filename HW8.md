@@ -52,3 +52,5 @@ of 0.8 you can use the following code
 0.05.
 
 Report your code and the estimated alpha.
+
+**6** For the settings of problems **1** and **4** designa a permutation analyses to estimate the alpha-level you need to choose to achieve a family-wise error rate of 0.05. Use a very large # of permutations (e.g. 100,000) to be sure your MC error is low.
