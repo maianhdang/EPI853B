@@ -44,7 +44,7 @@ of 0.8 you can use the following code
 ```R
  Z=matrix( nrow=N,ncol=2,rnorm(2*N)) # 2 iid normal random variables  
  COV=matrix(nrow=ncol(Z),ncol=ncol(Z),.9)
- diag(COV)  
+ diag(COV)=1
  X=Z%*%chol(COV)
 ```
 
