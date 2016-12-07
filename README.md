@@ -985,54 +985,8 @@ Suggested references:
   - [Using R to conducte permutation test](http://ww2.amstat.org/publications/jse/v18n1/eudey.pdf)
   - [Permutation tests in GWAS](http://www.nature.com/nrg/journal/v15/n5/full/nrg3706.html)
 
-
-<div id="RV" />
-## (8) Simulation of Random Variables
-
-   * Random numbers
-   * Transformations of RV
-   * Generating dras from Multivariate Normal
-   * Inverse CDF
-
-[Back to Outline](#Outline)
-___
-
-<div id="MCMC" />
-## (9) Monte Carlo Markov Chain Methods [References provided below]
-
-   * Introduction
-   * The Monte-Carlo Error
-   * Basic sampling methods
-   	* Rejection Sampling
-   	* Gibbs Sampler
-   	* Metropolis Hastings
-
-[Back to Outline](#Outline)
-___
-
-<div id="CV" />
-## (10) Cross-validation Methods [Chapter 5]
-
-   * Why we need it?
-   * Different types of prediction errors
-   * Validation methods
-   	* Training-testing
-   	* Replicated training-testint
-   	* q-fold CV
-   * Leave-one-out CV in OLS
-   * Choosing the optimal number of knots in a spline using CV.
-
-[Back to Outline](#Outline)
-___
-
-<div id="penalised" />
-
-## (11) Penalised Regressions [Chapter 6]
-
-   * Why are penalized regressions needed? The variance-bias trade off
-   * Penalized RSS 
-   * Standard penalty functions and the solutions they induce
-   * Ridge Regression
-	* Lasso
-	* Bridge Regression
-	* The coordinate descent gradient algorithm 
+**Mulitple testing**
+  - Family-wise error type-I error rate
+  	- With independent tests (Bonferroni)
+	- With 'correlated' tests.
+   - False Discovery Rate
