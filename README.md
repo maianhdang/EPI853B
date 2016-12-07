@@ -989,4 +989,4 @@ Suggested references:
   - Family-wise error type-I error rate
   	- With independent tests (Bonferroni)
 	- With 'correlated' tests.
-   - False Discovery Rate
+  - False Discovery Rate
