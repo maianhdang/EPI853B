@@ -13,24 +13,23 @@ In this course we will cover computational methods commonly used in statistics, 
 **Instructor**: Gustavo de los Campos (gustavoc@msu.edu)
 <div id="Outline" />
 
-[**Syllabus**](https://github.com/gdlc/EPI853B/blob/master/EPI853B_Syllabus.docx) 
+[**Syllabus**](https://github.com/gdlc/EPI853B/blob/master/EPI853B_Syllabus.docx)
 
 ## Course Content
 
 Note: this is a tentative list of topics, if time permits we will try to cover all of them; however, the list of topics is ambitious and we may not cover all the topics listed.
 
-  * [Introduction](#intro)
-  * [The R-software](#R)
-  * [Matrix Algebra in R](#Matrix)   
-  * [Ordinary Least Squares I: Estimation](#OLS-I)
-  * [Ordinary Least Squares II: Inference](#OLS-II)
-  * [Non-linear regression using Splines](#splines)
-  * [Multi-core computing in R](#parallel)
-  * [Maximum Likelihood](#ML)
-  * [Simulation of random variables](#RV)
-  * [Monte Carlo Markov Chain Methods](#MCMC)
-  * [Cross-Validation](#CV)
-  * [Penalised Regressions](#penalised)
+  * [The R-software](https://github.com/quantgen/RIntro)
+  * Matrix Algebra in R
+  * Ordinary Least Squares I: Estimation
+  * Ordinary Least Squares II: Inference
+  * Non-linear regression using Splines
+  * Multi-core computing in R
+  * Maximum Likelihood
+  * Simulation of random variables
+  * Monte Carlo Markov Chain Methods
+  * Cross-Validation
+  * Penalised Regressions
 
 ## Homework
   * [HW1](https://github.com/gdlc/EPI853B/blob/master/HW1.md)
@@ -38,6 +37,13 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * [HW3](https://github.com/gdlc/EPI853B/blob/master/HW3.md)
   * [HW4](https://github.com/gdlc/EPI853B/blob/master/HW4.md)
   * [HW5](https://github.com/gdlc/EPI853B/blob/master/HW5.md)
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> Stashed changes
   * [HW6](https://github.com/gdlc/EPI853B/blob/master/HW6.md)
   * [HW7](https://github.com/gdlc/EPI853B/blob/master/HW7.md)
   * [HW8](https://github.com/gdlc/EPI853B/blob/master/HW8.md)
@@ -990,3 +996,7 @@ Suggested references:
   	- With independent tests (Bonferroni)
 	- With 'correlated' tests.
   - False Discovery Rate
+<<<<<<< Updated upstream
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
