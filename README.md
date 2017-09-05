@@ -35,7 +35,6 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 
 ## Homework
 
-<<<<<<< HEAD
 <div id="intro" />
 ## Introduction 
 
@@ -47,30 +46,9 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 [Back to Outline](#Outline)
 ___
 
-<div id="R" />
+<div id="R-intro" />
 ## (1) The [R](https://www.r-project.org/)-software 
 
-**Topics you should be familiar with**
-   * Installation [CRAN](https://cran.r-project.org/mirrors.html)
-   * Types (boolean, integer, numeric, character, factors)
-   * Variables and simple operations
-   * Arrays 
-   	* Vectors
-   	* Matrices
-   	* Multi-dimensional arrays
-	* Lists
-	* Data Frames	
-   * Conditional statements
-   * For and while loops
-   * I/O
-	* `read.table`  and `write.table`
-	* `load` and `save`
-	* `dput` and `dget`
-	* `scan` and `wirte`
-	* `readBin` and `writeBin`
-   * Functions 
-
-**Materials**
    * [R-Intro](https://github.com/quantgen/RIntro)   
    * [R website](https://www.r-project.org/) (see entry for manuals)
    * [R for Data Science](http://r4ds.had.co.nz/)
