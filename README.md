@@ -35,8 +35,9 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 
 ## Homework
 
+
 <div id="intro" />
-## Introduction 
+##Introduction 
 
    * Goals
    * Rules
@@ -44,18 +45,20 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
    * Evaluation and grading
 
 [Back to Outline](#Outline)
-___
 
-<div id="R-intro" />
-## (1) The [R](https://www.r-project.org/)-software 
+<div id="R" />
+##(1) The [R](https://www.r-project.org/)-software 
 
    * [R-Intro](https://github.com/quantgen/RIntro)   
    * [R website](https://www.r-project.org/) (see entry for manuals)
    * [R for Data Science](http://r4ds.had.co.nz/)
 
 [Back to Outline](#Outline)
-___
 
-<div id="Matrix" />
-## (2) Matrix Algebra (definitions and computational methods)
+
+<div id="matrix" />
+##(2) Matrix Algebra (definitions and computational methods)
+
+
+[Back to Outline](#Outline)
 
