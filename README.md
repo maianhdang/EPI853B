@@ -65,47 +65,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 
 ## (2) Matrix Algebra (definitions and computational methods)
 
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+**Topics to be covered**: definition, internal structure of matrices in R, attributes, subsetting and replacement, transpose, matrix addition/substraction, matrix product, diagonal, trace, haddamard product.
+
 [Back to Outline](#Outline)
 
