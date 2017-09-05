@@ -13,16 +13,19 @@ In this course we will cover computational methods commonly used in statistics, 
 **Textbook**: [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/index.html). This book covers many of the topics we will discuss. For topics not covered in the book we will provide aditional materials.
 
 **Instructor**: Gustavo de los Campos (gustavoc@msu.edu)
-<div id="Outline" />
+
 
 [**Syllabus**](https://github.com/gdlc/EPI853B/blob/master/EPI_863B_Syllabus.pdf)
+
+
+<div id="Outline" />
 
 ## Course Content
 
 Note: this is a tentative list of topics, if time permits we will try to cover all of them; however, the list of topics is ambitious and we may not cover all the topics listed.
 
-  * The R-software
-  * Matrix Algebra in R
+  * [The R-software](#R)
+  * [Matrix Algebra in R](#matrix)
   * Ordinary Least Squares I: Estimation
   * Ordinary Least Squares II: Inference
   * Non-linear regression using Splines
@@ -37,7 +40,8 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 
 
 <div id="intro" />
-##Introduction 
+
+## Introduction 
 
    * Goals
    * Rules
@@ -47,7 +51,8 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 [Back to Outline](#Outline)
 
 <div id="R" />
-##(1) The [R](https://www.r-project.org/)-software 
+
+## (1) The [R](https://www.r-project.org/)-software 
 
    * [R-Intro](https://github.com/quantgen/RIntro)   
    * [R website](https://www.r-project.org/) (see entry for manuals)
@@ -57,7 +62,8 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 
 
 <div id="matrix" />
-##(2) Matrix Algebra (definitions and computational methods)
+
+## (2) Matrix Algebra (definitions and computational methods)
 
 
 [Back to Outline](#Outline)
