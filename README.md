@@ -65,6 +65,47 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 
 ## (2) Matrix Algebra (definitions and computational methods)
 
-
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
 [Back to Outline](#Outline)
 
