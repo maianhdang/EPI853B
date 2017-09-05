@@ -1,3 +1,5 @@
+
+
 # Statistical Computing  (EPI-853B)
 
 In this course we will cover computational methods commonly used in statistics, including algorithms used for fitting and non-linear regressions, maximum likelihood estimation, simulation of random variables, bootstrap, cross-validation and algorithms for implementing high dimensional regressions.
@@ -13,24 +15,23 @@ In this course we will cover computational methods commonly used in statistics, 
 **Instructor**: Gustavo de los Campos (gustavoc@msu.edu)
 <div id="Outline" />
 
-[**Syllabus**](https://github.com/gdlc/EPI853B/blob/master/EPI853B_Syllabus.docx) 
+[**Syllabus**](https://github.com/gdlc/EPI853B/blob/master/EPI853B_Syllabus.docx)
 
 ## Course Content
 
 Note: this is a tentative list of topics, if time permits we will try to cover all of them; however, the list of topics is ambitious and we may not cover all the topics listed.
 
-  * [Introduction](#intro)
-  * [The R-software](#R)
-  * [Matrix Algebra in R](#Matrix)   
-  * [Ordinary Least Squares I: Estimation](#OLS-I)
-  * [Ordinary Least Squares II: Inference](#OLS-II)
-  * [Non-linear regression using Splines](#splines)
-  * [Multi-core computing in R](#parallel)
-  * [Maximum Likelihood](#ML)
-  * [Simulation of random variables](#RV)
-  * [Monte Carlo Markov Chain Methods](#MCMC)
-  * [Cross-Validation](#CV)
-  * [Penalised Regressions](#penalised)
+  * The R-software
+  * Matrix Algebra in R
+  * Ordinary Least Squares I: Estimation
+  * Ordinary Least Squares II: Inference
+  * Non-linear regression using Splines
+  * Multi-core computing in R
+  * Maximum Likelihood
+  * Simulation of random variables
+  * Monte Carlo Markov Chain Methods
+  * Cross-Validation
+  * Penalised Regressions
 
 ## Homework
   * [HW1](https://github.com/gdlc/EPI853B/blob/master/HW1.md)
@@ -39,6 +40,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * [HW4](https://github.com/gdlc/EPI853B/blob/master/HW4.md)
   * [HW5](https://github.com/gdlc/EPI853B/blob/master/HW5.md)
 
+<<<<<<< HEAD
 <div id="intro" />
 ## Introduction 
 
@@ -991,3 +993,5 @@ ___
 	* Lasso
 	* Bridge Regression
 	* The coordinate descent gradient algorithm 
+=======
+>>>>>>> origin/master
