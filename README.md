@@ -319,17 +319,8 @@ myLS.chol=function(y,X,int=TRUE){
 **OLS using the QR-decomposition**
 
 ```R
-myLS.qr=function(y,X,int=TRUE){
-  if(int){
-      X=cbind(1,X)
-  }
-  QR=qr(X)
-  Q=qr.Q(QR)
-  R=qr.R(QR)
-  gHat=crossprod(Q,y)
-  sol=backsolve(R,gHat)
-  return(sol)
-}
+z
+
 #or
 
 myLS.qr=function(y,X,int=TRUE){
