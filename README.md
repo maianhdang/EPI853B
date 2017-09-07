@@ -140,7 +140,7 @@ If we have a vector and an index set (e.g., male/female) we can apply a function
 
 ```r
  x=rnorm(100)
- id=sample(c("M","F",size=100,replace=T)
+ id=sample(c("M","F"),size=100,replace=T)
  tapply(X=x,INDEX=id,FUN=sum)
  sum(x[id=='M'])
  sum(x[id=='F'])
