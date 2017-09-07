@@ -120,8 +120,32 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 There is a family of functions `lapply`, `tapply`, `applay`, etc. that can be used to apply operations to dimensions of an array (of different kinds). For matrices we use `apply`, this function can be used to apply functions to rows or comumns of a matrix.
 
 ```r
- X=matrix(
+n=1000;p=500
+X=matrix(nrow=n,ncol=p,runif(n*p))
+
+cSums<-apply(X=X,FUN=sum,MARGIN=2)
+rSums<-apply(X=X,FUN=sum,MARGIN=1)
+
+## passing your own function
+  sumsOfLogs=function(x){ sum(log(x)) }
+  tmp=apply(X=X,FUN=sumsOfLogs,MARGIN=2)
+
+## column and row suma are already build in
+  cSums2=colSums(X)
+  rSums2=rowSums(X)
+
 ```
 
+If we have a vector and an index set (e.g., male/female) we can apply a function to the vector for every level of the index using `tapply`.
+
+```r
+ x=rnorm(100)
+ id=sample(c("M","F",size=100,replace=T)
+ tapply(X=x,INDEX=id,FUN=sum)
+ sum(x[id=='M'])
+ sum(x[id=='F'])
+ 
+
+```
 [Back to Outline](#Outline)
 
