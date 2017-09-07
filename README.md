@@ -78,7 +78,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
 
 **Column and rownames**. We can append names to rows and columns.
 
-```
+```r
   rownames(X)=c('a','b','c')
   colnames(X)=c('c1,'c2')
   colnames(X)
