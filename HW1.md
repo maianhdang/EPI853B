@@ -29,7 +29,7 @@ each of these functions.
 
 **2.2.** Computational performance
 
-Estimate the computational time needed to obtain 1000 OLS estimates for the above simulation using each of the three functions considered above.
-Note: carry out the simulation only once and fit OLS estimates 1000 times.
+Estimate the computational time needed to obtain 10,000 times OLS estimates for the above simulation using each of the three functions considered above.
+Note: carry out the simulation only once and fit OLS estimates 10,000 times.
 
 
