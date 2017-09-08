@@ -33,5 +33,5 @@ Estimate the computational time needed to obtain 10,000 times OLS estimates for 
 Note: carry out the simulation only once and fit OLS estimates 10,000 times.
 
 
-[Home](https://github.com/gdlc/EPI853B/master/README.md)
+[Home](https://github.com/gdlc/EPI853B)
 
