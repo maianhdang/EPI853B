@@ -1,6 +1,8 @@
 ###  HW1: Ordinary least squares
 
 
+**Due: Thursday, Sept. 14, in class**.
+
 #### (1) Derivation of the OLS estimator
 
 1.a. Consider a `ray-regression` of the form y=xb+e. For this regression derive the OLS estimator analythically.
