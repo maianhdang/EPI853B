@@ -1,10 +1,11 @@
 ### Ordnary Least Squares (OLS)
 
 Consider a linear regression of the form **y**=**Xb**+**e**. The OLS estimates of the vector of regression coefficients is given by
-
+<br />
       **bHat**=argmin{  RSS(**y**,**X**,**b**) }
-      
-      
+<br />
+
+
 ####(1) Estimation
 
 **Computation of OLS estimates using `lm`, `lsfit` and with matrix operations.**
