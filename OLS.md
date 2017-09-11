@@ -18,7 +18,7 @@ The solution of the above problem can be obtained from the following systems of 
 <br />
 <br />
 
-####(1) Estimation (full-rank case)
+#### (1) Estimation (full-rank case)
 
 **Computation of OLS estimates using `lm`, `lsfit` and with matrix operations.**
 
@@ -33,7 +33,7 @@ The solution of the above problem can be obtained from the following systems of 
 
 ```
 
-####(2) OLS regression with categorical predictors.
+#### (2) OLS regression with categorical predictors.
 
 Above we assumed that our predictors were all numeric (or at least quantitative). We can introduce categorical predictors using dummy variables. 
 
