@@ -38,7 +38,6 @@ The solution of the above problem can be obtained from the following systems of 
 Above we assumed that our predictors were all numeric (or at least quantitative). We can introduce categorical predictors using dummy variables. 
 
 **Discuss in class**:
-
      * Introducing categorical predictors using dummy variables
      * Means versus dummy coding
      * Conditional expectations
@@ -50,7 +49,6 @@ Above we assumed that our predictors were all numeric (or at least quantitative)
 For this class we will use the following [dataset](https://www.dropbox.com/s/iwkmmytsulmkwjf/gout.txt?dl=0)
 
 Tasks:
-
      * Read the data set and produce univariate descriptive statistics (frecuencies for categorical variables, means, SD, etc. for quantitative variables).
      * Bivariate descriptive statistics: scatter plot serum urate versus age, boxplot of serum urate by sex and race.
      * Estimate effects uisng lm with a means model (no-intercept) and with dummy coding.
