@@ -52,7 +52,7 @@ Tasks:
   * Read the data set and produce univariate descriptive statistics (frecuencies for categorical variables, means, SD, etc. for quantitative variables).
   * Bivariate descriptive statistics: scatter plot serum urate versus age, boxplot of serum urate by sex and race.
   * Estimate effects uisng lm with a means model (no-intercept) and with dummy coding.
-  * Produce tables with the estimated expected values for each of the cases listed below from each of the parametrizations.
+  * Fill the following table using estimates from each of the two parameterizations you used.
      
      
 | Sex, Race, Age          | Means-model        | Dummy coding|
@@ -61,3 +61,10 @@ Tasks:
 | F  W  50      |      |    |
 | M  B  50  |      |     |
 | M  B  50  |      |     |
+| M  W  60     |  |  |
+| F  W  60      |      |    |
+| M  B  60  |      |     |
+| M  B  60  |      |     |
+  * Compute differences between rows and compare with your parameter estimates (e.g., the difference between row 2 and 1 should be equal to the estimated effect of the 'female' dummy variable, and the difference between row 5 and 1 should be 10 times the estimated effect of age).
+
+
