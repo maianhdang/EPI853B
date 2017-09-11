@@ -55,7 +55,9 @@ Tasks:
   * Produce tables with the estimated expected values for each of the cases listed below from each of the parametrizations.
      
      
-     
-
-
-     
+| Sex, Race, Age          | Means-model        | Dummy coding|
+| ------------- |:-------------:| -----:|
+| M  W  50     |  |  |
+| F  W  50      |      |    |
+| M  B  50  |      |     |
+| M  B  50  |      |     |
