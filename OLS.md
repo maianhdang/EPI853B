@@ -2,9 +2,10 @@
 
 Consider a linear regression of the form **y**=**Xb**+**e**. The OLS estimates of the vector of regression coefficients is given by
 
-\n
+\newline
       **bHat*=argmin{  RSS(**y**,**X**,**b**) }
-   
+ 
+\newline  
 
 ####(1) Estimation
 
