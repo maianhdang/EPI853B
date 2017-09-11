@@ -2,9 +2,21 @@
 
 Consider a linear regression of the form **y**=**Xb**+**e**. The OLS estimates of the vector of regression coefficients is given by
 <br />
+<br />
       **bHat**=argmin{  RSS(**y**,**X**,**b**) }
 <br />
+<br />
 
+Where:   RSS(**y**,**X**,**b**)=(**y**-**Xb**)'(**y**-**Xb**) is the residual sum of squares.
+<br />
+<br />
+
+The solution of the above problem can be obtained from the following systems of equatrions
+<br />
+<br />
+(**X**'**X**)**b**=**X**'**y**
+<br />
+<br />
 
 ####(1) Estimation
 
