@@ -66,5 +66,6 @@ Tasks:
 | M  B  60  |      |     |
 | M  B  60  |      |     |
   * Compute differences between rows and compare with your parameter estimates (e.g., the difference between row 2 and 1 should be equal to the estimated effect of the 'female' dummy variable, and the difference between row 5 and 1 should be 10 times the estimated effect of age).
+  * Discuss the function `perdict`.
 
 
