@@ -5,7 +5,7 @@
 
 #### (1) Derivation of the OLS estimator
 
-1.a. Consider a `ray-regression` of the form y=xb+e. For this regression derive the OLS estimator analythically.
+1.a. Consider a `ray-regression` of the form **y**=**X*b**+**e**. For this regression derive the OLS estimator analythically.
 
 1.b. Expand the model by including an intercept, that is, consider y=a+xb+e. Derive the OLS analythically.
 
