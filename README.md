@@ -27,6 +27,9 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * [The R-software](#R)
   * [Matrix Algebra in R](#matrix)
   * Ordinary Least Squares I: Estimation
+    * Closed-form solution
+    * Computation using `lm`, `lsfit`, matrix operations, and matrix-factorizations (`svd`, `chol`, and `qr`).
+    * Solving systems of equations using iterative methods.
   * Ordinary Least Squares II: Inference
   * Non-linear regression using Splines
   * Multi-core computing in R
