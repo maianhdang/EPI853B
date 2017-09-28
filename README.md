@@ -27,10 +27,10 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * [The R-software](#R)
   * [Matrix Algebra in R](#matrix)
   * Ordinary Least Squares I: Estimation & Inference
-    * Closed-form solution
-    * Computation using `lm`, `lsfit`.
-    * Computing estimates, SEs and p-values using matrix operations.
-    * Approximating the sampling distribution of estimates using Bootstrap
+    * Derivation of closed-form solution
+    * Computation using `lm`, `lsfit` [OLS](https://github.com/gdlc/EPI853B/blob/master/OLS.md)
+    * Computing estimates, SEs and p-values using matrix operations [OLS](https://github.com/gdlc/EPI853B/blob/master/OLS.md)
+    * Approximating the sampling distribution of estimates using [Bootstrap](https://github.com/gdlc/EPI853B/blob/master/Bootstrap.md)
   * Solving systems of equations using iterative methods.
   * Maximum Likelihood
     * Reiew of maximum likelihood
