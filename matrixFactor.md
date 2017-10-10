@@ -11,9 +11,12 @@ The following table described often used matrix factorisations.
 | QR | X=QR applies to any marrix  |  `qr` |
 | Cholesky| X=U'U applies to symmetric matrices  |  `chol` |
 
+
+
 ### (1) Singular-value decomposition
 
 Finds orthonormal-basis for the row (**U**) and column (**V**) linear spaces spanned by **X**.
+
 
 **1.1. Computation**
 
