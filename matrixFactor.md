@@ -4,9 +4,8 @@ Matrix factorisations are used often for (i) obtaining OLS estimates, (ii) inver
 
 The following table described often used matrix factorisations. 
 
-|-----------|-----------|----------|
 |  Name   | Description  | R-function |
 |-----------|-----------|----------|
 |            |           |          |
-|-----------|-----------|----------|
+|   |   |   |
 
