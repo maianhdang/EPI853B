@@ -29,11 +29,11 @@ Grid search simply evaluates the objective function of a grid of value of the pa
 to be estimated is small (one in the bernoulli case).
 
 
-```
+```r
 ## Simulating IID Bernulli data
  theta0=.2 # True value
  n=20
- x=rbinom(size=1,n=n,prob=theta)
+ x=rbinom(size=1,n=n,prob=theta0)
 
 ## Grid search
 
@@ -57,4 +57,21 @@ myF(x,.05)
 ## Plot
 plot(logLik~theta,col=2,type='l')
 abline(v=which(logLik==max(logLik)),col=4)
+```
+
+**Suggested excercise**: Repeat the above problem for 100 samples, each of size 20. For every sample you will get a different log-likelihood function. Plot all the log-likelihood functions and add vertical lines denoting the ML estimate for each sample. Repeat this with N=1000. Observe how the concavity of the log-likelihood (and consequently the variance of the ML estimates) increases (decreases) with sample size.
+
+
+#### Obtaining ML estimates using general-purpouses optimizers
+
+```r
+ ## Write a function to evaluate the negative of the log-likelihood
+  negLogLik=function(x,theta){
+   logLik=mean(x)*log(theta) + (1-mean(x))*log(1-theta)
+   return(-logLik)
+  }
+  
+ ## Pass it to optmize, together with the data an an interval for the search.
+   optimize(f=negLogLik,x=x,interval=c(0,1))
+
 ```
