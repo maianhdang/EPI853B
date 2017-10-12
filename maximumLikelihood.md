@@ -75,3 +75,8 @@ abline(v=theta[which(logLik==max(logLik))],col=4)
    optimize(f=negLogLik,x=x,interval=c(0,1))
 
 ```
+
+
+### Logistic Regression
+
+In a logistic regression we model the logarithm of the odds log(p/(1-p))  as a linear regression on covariates. Specifically, let *yi* be a 0/1 bernoulli random variable and **xi** a vector of covariates for the ith individual, then we model log(pi/(1-pi))=**xi'beta**, where here **beta** is a vector of regression coefficients. Solving for the success probability, this yields *pi=exp(**xi'beta**)/(1+exp(**xi'beta**))*.
