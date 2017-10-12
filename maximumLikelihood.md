@@ -56,7 +56,7 @@ myF(x,.05)
 
 ## Plot
 plot(logLik~theta,col=2,type='l')
-abline(v=which(logLik==max(logLik)),col=4)
+abline(v=theta[which(logLik==max(logLik))],col=4)
 ```
 
 **Suggested excercise**: Repeat the above problem for 100 samples, each of size 20. For every sample you will get a different log-likelihood function. Plot all the log-likelihood functions and add vertical lines denoting the ML estimate for each sample. Repeat this with N=1000. Observe how the concavity of the log-likelihood (and consequently the variance of the ML estimates) increases (decreases) with sample size.
