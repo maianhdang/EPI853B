@@ -16,7 +16,7 @@ In the IID bernoulli example the log-likelihood has a very simple form (discusse
 
 ```r
   logLik=function(x,theta){
-    logLik=mean(x)*theta + (1-mean(x))*(1-theta)
+    logLik=mean(x)*log(theta) + (1-mean(x))*log(1-theta)
     return( logLik)
   }
 ```
