@@ -12,7 +12,9 @@
 **Part 1**. Fit the logistic regression model above described using the whole data set. 
 
   1.1. Report parameter estimates, SEs and p-values.
+  
   1.2. Sumarize your conclusions.
+  
   1.3. Repot a table with the predicted risk of developing gout for a white male, age 65 and serum urate levels of 4, 6 and 9. 
 
 **Part 2**. Using the model above-described and 10,000 Bootstrap samples estimate the expected value and the SE of the estimated effect 
