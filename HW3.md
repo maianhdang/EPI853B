@@ -19,7 +19,18 @@
 
 **Part 2**. Using the model above-described and 10,000 Bootstrap samples estimate the expected value and the SE of the estimated effect 
 of age for data sets with sample size 100, 200, 300, 500 and 1000.
-
+  
+  Note: with sample size 100, and also with sample size 200, you may have bootstrap samples that lead to non-existen ML estimates (i.e., flat likelihood). In this case the algorithm will not converge. You should discard results from models that did not converge. This could be done, for instance, using a structure like the following inside the loop that you use to generate bootstrap estimates.
+  
+  ```r
+    ready=FALSE
+    while(!ready){
+      sample your data
+      fit the model
+      ready<- a check for converengence, e.g. fm$converged in glm  or $convergence if you use optim.
+    }
+  
+  ```
   2.1. Report a plot with the estimated expected value vs. sample size and a plot of the estimated SE versus sample size. 
   
   2.2. Summarize your conclusions.
