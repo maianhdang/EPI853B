@@ -35,11 +35,13 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * Maximum Likelihood
     * Reiew of maximum likelihood
     * Estimation using `optim`
-  * Simulation of random variables
-  * Monte Carlo Markov Chain Methods
-  * Cross-Validation
-  * Penalised Regressions
-
+    * Maximum likelihood estimation and inference in the logistic regression.
+    * Maximum likelihood estimation and inference in parametric survival regression.
+  * Permutations
+  * Multi-core computing in R
+  * Assesment of prediction accuracy using cross-validation methods
+  * Introduction to linux and distributed computing in High-performance Computing Clusters
+  
 ## Homework
 
   * [HW1](https://github.com/gdlc/EPI853B/blob/master/HW1.md)
