@@ -6,7 +6,7 @@ Due Tuesday, Nov 14 in class.
 
 Using the ovarian data set
 
-(1) Fit and report Kaplan-Meier estimates of survival curves for individuals under treatment and control (hint, use `survfit`).
+(1) Fit and report Kaplan-Meier estimates of survival curves for individuals under treatment and control (hint, use `survfit`, consider `summary(survit(Y~...))` and `plot(survfit(...))`).
 
 
 (2) Fit a parametric survival regression assuming a Gaussian likelihood using survreg. Include all the predictors available in the data set
