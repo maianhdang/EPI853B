@@ -22,7 +22,7 @@ d=ovarian$fustat
 # Now with optim
  negLogLikCenNormal=function(y,d,theta){
      SD=sqrt(exp(theta[1]))
-     mu=eta[2]
+     mu=theta[2]
      logLikObs =sum(dnorm(x=y[d==1], mean=mu,sd=SD, log=TRUE))
      logLikRCen=sum(pnorm(q=y[d==0], mean=mu,sd=SD, log.p=TRUE,lower.tail=F))
      logLik=(logLikObs+logLikRCen)
