@@ -1,7 +1,7 @@
 
-###EPI-853b
+### EPI-853b
 
-###HW 4
+### HW 4
 
 **Due:** Tuesday Nov. 21st, in class (hard copy)
 
