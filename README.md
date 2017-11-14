@@ -37,7 +37,10 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
     * Estimation using `optim`
     * Maximum likelihood estimation and inference in the logistic regression.
     * Maximum likelihood estimation and inference in parametric survival regression.
-  * Permutations
+  * Permutations 
+    * [A gentle introduction to permutation tests](http://www.tandfonline.com/doi/abs/10.1198/000313008X269576)
+    * [Permutation and multiple testing]()
+    * [Examples](https://github.com/gdlc/EPI853B/blob/master/permutations.md)
   * Multi-core computing in R
   * Assesment of prediction accuracy using cross-validation methods
   * Introduction to linux and distributed computing in High-performance Computing Clusters
