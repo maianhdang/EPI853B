@@ -29,3 +29,5 @@ Test your function using ovarian$futime and ovarian$fustat as your time and even
 
 
 **2.2.** Conduct a bootstrap analyses (e.g., N=10K bootstrap samples) to estimate SEs, compare results with those of 2.1.
+
+
