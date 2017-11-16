@@ -50,6 +50,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * [HW1](https://github.com/gdlc/EPI853B/blob/master/HW1.md)
   * [HW2](https://github.com/gdlc/EPI853B/blob/master/HW2.md)
   * [HW3](https://github.com/gdlc/EPI853B/blob/master/HW3.md)
+  * [HW4](https://github.com/gdlc/EPI853B/blob/master/HW4.md)
 
 <div id="intro" />
 
