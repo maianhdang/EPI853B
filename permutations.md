@@ -32,10 +32,8 @@ y=10+sex*.2+rnorm(n)
    print(i)
  }
 
- isBelow=testStat<  -summary(fm0)$coef[2,3]
- isAbove=testStat>  summary(fm0)$coef[2,3]
-
- mean(isBelow+isAbove) # compare this with summary(fm0)$coef[2,3]
-
+ mean(abs(testStat)>abs(summary(fm0)$coef[2,3]))
+ summary(fm0)$coef[2,4]
+ 
 ```
 
