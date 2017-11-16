@@ -39,7 +39,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
     * Maximum likelihood estimation and inference in parametric survival regression.
   * Permutations 
     * [A gentle introduction to permutation tests](http://www.tandfonline.com/doi/abs/10.1198/000313008X269576)
-    * [Permutation and multiple testing](https://www.nature.com/articles/nrg3706_BX3)
+    * [Multiple testing and permutations in GWAS](https://www.nature.com/articles/nrg3706)
     * [Examples](https://github.com/gdlc/EPI853B/blob/master/permutations.md)
   * Multi-core computing in R
   * Assesment of prediction accuracy using cross-validation methods
