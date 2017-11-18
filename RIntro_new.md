@@ -428,7 +428,7 @@ For discrete distribution, which have a step c.d.f an thus not invertible, the q
 qbinom(0.9,10,0.2)
 ```
 
-**Random variable**. Prefix *r*
+**Simulation of random variables**. Prefix *r*
 
 Simulates random variables having a specified distribution with given parameters.
 ```R
