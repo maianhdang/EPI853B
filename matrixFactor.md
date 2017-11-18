@@ -28,7 +28,9 @@ Finds orthonormal-basis for the row (**U**) and column (**V**) linear spaces spa
   length(SVD$d) # the singular values
   dim(SVD$v)    # righ-singular vectors
 ```
+
 **1.2. Veriffying properties **
+
 
 ```r
   # Recovering X from the factorization
