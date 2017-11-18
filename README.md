@@ -24,20 +24,20 @@ In this course we will cover computational methods commonly used in statistics, 
 
 Note: this is a tentative list of topics, if time permits we will try to cover all of them; however, the list of topics is ambitious and we may not cover all the topics listed.
 
-  * [The R-software](https://github.com/gdlc/EPI853B/blob/master/RIntro.md)
-  * [Matrix Algebra in R](https://github.com/gdlc/EPI853B/blob/master/matrixAlgebraR.md)
-  * Ordinary Least Squares I: Estimation & Inference
+  * **[Quick Introduction to R](https://github.com/gdlc/EPI853B/blob/master/RIntro.md)**
+  * **[Matrix Algebra in R](https://github.com/gdlc/EPI853B/blob/master/matrixAlgebraR.md)**
+  * **Ordinary Least Squares I: Estimation & Inference**
     * Derivation of closed-form solution
     * Computation using `lm`, `lsfit` [OLS](https://github.com/gdlc/EPI853B/blob/master/OLS.md)
     * Computing estimates, SEs and p-values using matrix operations [OLS](https://github.com/gdlc/EPI853B/blob/master/OLS.md)
     * Approximating the sampling distribution of estimates using [Bootstrap](https://github.com/gdlc/EPI853B/blob/master/Bootstrap.md)
-  * Matrix factorizations:  [singular-value decomposition](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.md), [eigen-decomposition](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.mdF), [QR-decomposition](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.md) and [Cholesky](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.md).
-  * Maximum Likelihood
+  * **Matrix factorizations**:  [singular-value decomposition](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.md), [eigen-decomposition](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.mdF), [QR-decomposition](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.md) and [Cholesky](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.md).
+  * **Maximum Likelihood**
     * Reiew of maximum likelihood
-    * Estimation using `optim`
-    * Maximum likelihood estimation and inference in the logistic regression.
-    * Maximum likelihood estimation and inference in parametric survival regression.
-  * Permutations 
+    * Estimation using `optim()`
+    * Maximum likelihood estimation and inference in the [logistic regression](https://github.com/gdlc/EPI853B/blob/master/logisticRegression.md).
+    * Maximum likelihood estimation and inference in parametric [survival regression](https://github.com/gdlc/EPI853B/blob/master/parametricSurvival.md).
+  * **Permutation tests**
     * [A gentle introduction to permutation tests](http://www.tandfonline.com/doi/abs/10.1198/000313008X269576)
     * [Multiple testing and permutations in GWAS](https://www.nature.com/articles/nrg3706)
     * [Examples](https://github.com/gdlc/EPI853B/blob/master/permutations.md)
