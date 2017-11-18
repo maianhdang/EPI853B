@@ -36,7 +36,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   
   * **Maximum Likelihood**
     * Reiew of maximum likelihood
-    * Estimation using `optim()`
+    * [Estimation using `optim()`](https://github.com/gdlc/EPI853B/blob/master/maximumLikelihood.md)
     * Maximum likelihood estimation and inference in the [logistic regression](https://github.com/gdlc/EPI853B/blob/master/logisticRegression.md).
     * Maximum likelihood estimation and inference in parametric [survival regression](https://github.com/gdlc/EPI853B/blob/master/parametricSurvival.md).
   * **[Bootstrap](https://github.com/gdlc/EPI853B/blob/master/bootstrap.md)**
