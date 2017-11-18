@@ -24,8 +24,8 @@ In this course we will cover computational methods commonly used in statistics, 
 
 Note: this is a tentative list of topics, if time permits we will try to cover all of them; however, the list of topics is ambitious and we may not cover all the topics listed.
 
-  * [The R-software](#R)
-  * [Matrix Algebra in R](#matrix)
+  * [The R-software](https://github.com/gdlc/EPI853B/blob/master/RIntro.md)
+  * [Matrix Algebra in R](https://github.com/gdlc/EPI853B/blob/master/matrixAlgebraR.md)
   * Ordinary Least Squares I: Estimation & Inference
     * Derivation of closed-form solution
     * Computation using `lm`, `lsfit` [OLS](https://github.com/gdlc/EPI853B/blob/master/OLS.md)
