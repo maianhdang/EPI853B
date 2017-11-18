@@ -31,7 +31,9 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
     * Computation using `lm`, `lsfit` [OLS](https://github.com/gdlc/EPI853B/blob/master/OLS.md)
     * Computing estimates, SEs and p-values using matrix operations [OLS](https://github.com/gdlc/EPI853B/blob/master/OLS.md)
  
-  * **Matrix factorizations**:  [singular-value decomposition](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.md), [eigen-decomposition](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.mdF), [QR-decomposition](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.md) and [Cholesky](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.md).
+  * **Matrix factorizations**:  [svd, eigen, chol, qr](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.md), [eigen-decomposition](https://github.com/gdlc/EPI853B/blob/master/matrixFactor.md)/matrixFactor.md).
+  
+  
   * **Maximum Likelihood**
     * Reiew of maximum likelihood
     * Estimation using `optim()`
