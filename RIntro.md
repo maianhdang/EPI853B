@@ -1,4 +1,6 @@
 [Developed by Marco Lopez-Cruz and G. de los Campos]
+
+
 **Useful resources**
 
    * [R website](https://www.r-project.org/) (see entry for manuals)
