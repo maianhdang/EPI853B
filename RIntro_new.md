@@ -1,5 +1,9 @@
+[Developed by Marco Lopez-Cruz and G. de los Campos]
+**Useful resources**
 
-**[Developed by Marco Lopez-Cruz and G. de los Campos]**
+   * [R website](https://www.r-project.org/) (see entry for manuals)
+   * [R for Data Science](http://r4ds.had.co.nz/)
+
 
 
 <div id="Outline" />
