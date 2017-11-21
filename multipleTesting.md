@@ -53,9 +53,11 @@ Suppse we conduct 3 tests simultaneously. The experiment-wise error rate is the 
 
 ### Bonferroni correction
 
+A commonly used approach consist of using for rejection a significance level the desired FWER (e.g., 5%) divided by the number of tests. The following example illustrates this.
+
 ```r
- n=100 # sample size
- nRep=100000
+ n=5000 # sample size
+ nRep=10000
  q=10
  
  reject<-matrix(NA,nrow=nRep,ncol=q)
