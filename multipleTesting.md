@@ -1,6 +1,6 @@
 ### Type-I error rate
 
-Suppose we have a test statistic `T(y)` and a decision rule: reject if `T(Y)>k`. 
+Suppose we have a test statistic `T(Y)` and a decision rule: reject if `T(Y)>k`. 
 
 The type-I error rate such decision rule is the probability of rejecting given that H0 holds, that is `P(T(Y)>k|H0)`. Here `T(Y)`, the test-statistic
 is a function of the data. From a Frequentist perspective data, `Y`, is random, therfore `T(Y)` is a random variable. 
