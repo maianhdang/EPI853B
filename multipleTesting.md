@@ -25,32 +25,54 @@ the corresponding test would have a 5% Type-I error rate.
  mean(reject)
 ```
 
-### Multiple testing and experiment-(or family-)wise error rate
+### Multiple testing and family-wise error rate (FWER)
 
 Suppse we conduct 3 tests simultaneously. The experiment-wise error rate is the probability of making at least 1 mistake, that is:
-`p(T1(Y)> T1(y) or T2(Y)> T1(y) or T3(Y)> T1(y) | H0)`. If we reject at each test with 0.05 significance and the tests are independent, then 
-the probability of making at least one mistke is 3x0.05=0.15. The following example illustrates this with a simulation. Because the columns of `X`
-are independent, the test are also independent.
+`p(T1(Y)> T1(y) or T2(Y)> T1(y) | H0)`. If we reject at each test with 0.05 significance the FWER is greater than 0.05.
 
 ```r
  n=100 # sample size
  nRep=10000
  
- reject<-matrix(NA,nrow=nRep,ncol=3)
- X=matrix(nrow=n,ncol=3,data=rbinom(n=3*n,size=2,p=.3))
+ reject<-matrix(NA,nrow=nRep,ncol=2)
  
  for(i in 1:nRep){
     y=rnorm(n) # simulating under the null
-    X=matrix(nrow=n,ncol=3,data=rbinom(n=3*n,size=2,p=.3))
-    pValues=ls.print(fm,print.it=F)$coef[[1]][-1,4]
+    X=matrix(nrow=n,ncol=2,data=rbinom(n=2*n,size=2,p=.3))
     fm=lsfit(y,x=X)
+    pValues=ls.print(fm,print.it=F)$coef[[1]][-1,4]
     reject[i,]= pValues <.05
     print(i)
  }
  colMeans(reject) # each test has 0.05 type-I error rate
- anyRejection= reject[,1]|reject[,2]|reject[,3]
+ anyRejection= reject[,1]|reject[,2]
  mean(anyRejection)
+
 ```
  
+
+### Bonferroni correction
+
+```r
+ n=100 # sample size
+ nRep=100000
+ q=10
+ 
+ reject<-matrix(NA,nrow=nRep,ncol=q)
+ 
+ for(i in 1:nRep){
+    y=rnorm(n) # simulating under the null
+    X=matrix(nrow=n,ncol=q,data=rbinom(n=q*n,size=2,p=.3))
+    fm=lsfit(y,x=X)
+    pValues=ls.print(fm,print.it=F)$coef[[1]][-1,4]
+    reject[i,]= pValues < (.05/q)
+    print(i)
+ }
+ colMeans(reject) # each test has 0.05 type-I error rate
+ anyRejection= rowSums(reject)>0
+ mean(anyRejection)
+
+```
+
 
 
