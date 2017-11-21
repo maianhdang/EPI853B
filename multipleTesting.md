@@ -18,7 +18,7 @@ the corresponding test would have a 5% Type-I error rate.
  x=rbinom(n=n,size=2,p=.3)
  
  for(i in 1:nRep){
-    y=rnorm(n) # simulating under the null
+    y=rexp(n) # simulating under the null
     fm=lm(y~x)
     reject[i]=summary(lm(y~x))$coef[2,4]<.05
  }
