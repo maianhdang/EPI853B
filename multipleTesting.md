@@ -45,7 +45,7 @@ Suppse we conduct 2 tests simultaneously. The experiment-wise error rate is the 
     reject[i,]= pValues <.05
     print(i)
  }
- colMeans(reject) # each test has 0.05 type-I error rate
+ colMeans(reject) # each test has 0.05/q type-I error rate
  anyRejection= reject[,1]|reject[,2]
  mean(anyRejection)
 
