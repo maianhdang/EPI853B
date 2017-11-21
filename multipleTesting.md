@@ -31,6 +31,7 @@ Suppse we conduct 3 tests simultaneously. The experiment-wise error rate is the 
 `p(T1(Y)> T1(y) or T2(Y)> T1(y) | H0)`. If we reject at each test with 0.05 significance the FWER is greater than 0.05.
 
 ```r
+
  n=100 # sample size
  nRep=10000
  
