@@ -42,8 +42,13 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * **[Bootstrap](https://github.com/gdlc/EPI853B/blob/master/bootstrap.md)**
   * **Permutation tests**
     * [A gentle introduction to permutation tests](http://www.tandfonline.com/doi/abs/10.1198/000313008X269576)
-    * [Multiple testing and permutations in GWAS](https://www.nature.com/articles/nrg3706)
     * [Examples](https://github.com/gdlc/EPI853B/blob/master/permutations.md)
+  * **Multiple testing**
+    * [A review on multiple testing and permutations in GWAS](https://www.nature.com/articles/nrg3706)
+    * [Family-wise error rate and Bonferroni correction.](https://github.com/gdlc/EPI853B/edit/master/multipleTesting.md)
+    * [False discovery rate (FDR)](https://github.com/gdlc/EPI853B/edit/master/FDR.md)
+    * [Permutations with multiple-testing](https://github.com/gdlc/EPI853B/edit/master/permutations2.md)
+    
   * Multi-core computing in R
   * Assesment of prediction accuracy using cross-validation methods
   * Introduction to linux and distributed computing in High-performance Computing Clusters
