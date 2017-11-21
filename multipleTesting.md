@@ -27,7 +27,7 @@ the corresponding test would have a 5% Type-I error rate.
 
 ### Multiple testing and family-wise error rate (FWER)
 
-Suppse we conduct 3 tests simultaneously. The experiment-wise error rate is the probability of making at least 1 mistake, that is:
+Suppse we conduct 2 tests simultaneously. The experiment-wise error rate is the probability of making at least 1 mistake, that is:
 `p(T1(Y)> T1(y) or T2(Y)> T1(y) | H0)`. If we reject at each test with 0.05 significance the FWER is greater than 0.05.
 
 ```r
