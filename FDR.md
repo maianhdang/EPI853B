@@ -33,7 +33,7 @@ We simulate under diffeerent values
   nRep=1000 # number of Monte Carlo replicates
   significance=0.01 # significance for rejection
   
-  countRejections=rep(0, length(r2)) # We count rejections for every scenario
+  countRejections=rep(0, length(R2)) # We count rejections for every scenario
   for(i in 1:nRep){
       x=rbinom(size=2,n=N,p=.2) # we assume effect=1, and scale errors to get the desired h2
       Vg=var(x)
