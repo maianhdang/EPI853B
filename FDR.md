@@ -5,13 +5,15 @@
 Considerb testing N=N1+N2+N3+N4 hypotheses. For each hypothesis H0 may hold or not (rows in the table below),
 and we may reject/fail to reject H0 (columns).
 
-+-----------+--------------------+--------------------+
+
+
+|-----------|-------------------|---------------------|
 |           | Do not reject H0  | Reject H0          |
-+===========+====================+====================+
+|-----------|-------------------|---------------------|
 | H0 holds  | True Negative (N1) | False Positive (N2)|
-+-----------+--------------------+--------------------+
+|-----------|--------------------|--------------------|
 | Ha holds  | False Negative (N3)| True positive (N4) |
-+-----------+--------------------+--------------------+
+|-----------|--------------------|--------------------|
 
 From the above table we can compute several important probabilities:
 
