@@ -8,7 +8,6 @@ and we may reject/fail to reject H0 (columns).
 |           | Do not reject H0  | Reject H0          |
 |-----------|-------------------|---------------------|
 | H0 holds  | True Negative (N1) | False Positive (N2)|
-|-----------|--------------------|--------------------|
 | Ha holds  | False Negative (N3)| True positive (N4) |
 
 
