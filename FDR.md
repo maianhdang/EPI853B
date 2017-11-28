@@ -54,3 +54,50 @@ We simulate under diffeerent values
 
 #### (2) Multiple Testing
 
+#### Distribution of p-values under H0 and under Ha
+
+
+**A toy-simulation**
+
+```r
+  N=100 
+  p=50000
+  X=matrix(nrow=N,ncol=p,data=rbinom(size=2,p=.3,N*p))
+  hasEffect=rep(F,p) 
+  hasEffect[sample(1:p,size=500)]=T
+  pValues=rep(NA,p)
+  
+  for(i in 1:p){ 
+ 	x=X[,i]
+ 	if(hasEffect[i]){ 
+ 	  b=rnorm(n=1,mean=.05,sd=1)
+  	  signal=x*b
+      error=rnorm(n=N,sd=1)
+      y=signal+error
+    }else{
+      y=rnorm(N)
+    }
+    fm=lsfit(y=y,x=x)     
+    pValues[i]=ls.print(fm,print.it = F)$coef[[1]][2,4]
+    if(i%%10000==0){print(i)}
+  }
+```
+
+**Distribution plots**
+
+```r
+  par(mfrow=c(2,2))
+
+  # p-values under the null follow a uniform distribution
+  hist(pValues[!hasEffect],100,main='H0')
+
+  # under Ha the distribution is not uniform
+  hist(pValues[hasEffect],100,main='Ha')
+  
+  # overall the distrubtion is a mixture
+  hist(pValues,100,main='Overall')
+
+
+```  
+
+
