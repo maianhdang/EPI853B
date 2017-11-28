@@ -46,5 +46,6 @@ We simulate under diffeerent values
       }
       #print(i)
   }
-  plot(y=countRejections/nRep,type='o',col=2,x=h2);abline(h=significance,col=4,lty=2,main='Power Curve',ylim=c(0,1))
+  plot(y=countRejections/nRep,type='o',col=2,x=h2)
+  abline(h=significance,col=4,lty=2,main='Power Curve',ylim=c(0,1))
 ```
