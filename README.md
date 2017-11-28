@@ -44,7 +44,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
     * A gentle introduction to permutation tests [(Herbert A David, Am. Stat, 2008.)](http://www.tandfonline.com/doi/abs/10.1198/000313008X269576)
     * [Examples](https://github.com/gdlc/EPI853B/blob/master/permutation.md)
   * **Multiple testing**
-    * [A review on multiple testing and permutations in GWAS](https://www.nature.com/articles/nrg3706)
+    * A review on multiple testing and permutations in GWAS [(Sham & Purcell, NRG, 2014)](https://www.nature.com/articles/nrg3706)
     * [Family-wise error rate and Bonferroni correction.](https://github.com/gdlc/EPI853B/edit/master/multipleTesting.md)
     * [False discovery rate (FDR)](https://github.com/gdlc/EPI853B/edit/master/FDR.md)
     * [Permutations with multiple-testing](https://github.com/gdlc/EPI853B/edit/master/permutations2.md)
