@@ -28,24 +28,29 @@ The following example shows how to estimate type-I error rate, power and FDR for
 We simulate under diffeerent values 
 
 ```r
-  R2=c(0,.001,.005,.01,.02,.05,.1)# heritability parameter
-  N=100 # sample size
-  nRep=1000 # number of Monte Carlo replicates
-  significance=0.01 # significance for rejection
-  
+  R2=c(0,.01,.03,.05,.1) # Model R-sq.
+  N=50 # sample size
+  nRep=10000 # number of Monte Carlo replicates
+  significance=0.05 # significance for rejection
+   
   countRejections=rep(0, length(R2)) # We count rejections for every scenario
   for(i in 1:nRep){
-      x=rbinom(size=2,n=N,p=.2) # we assume effect=1, and scale errors to get the desired h2
-      Vg=var(x)
-      Ve=Vg/R2*(1-R2)
+      x=rnorm(N)
       for(j in 1:length(R2)){
-        if(j==1){ y=rnorm(N) }# simulating under the null
-        if(j>1){ y=x+rnorm(sd=sqrt(Ve[j]),n=N) }
+        signal=x*sqrt(R2[j])
+        error=rnorm(sd=sqrt(1-R2[j]),n=N) 
+        y=signal+error
         fm=lsfit(y=y,x=x)     
         countRejections[j]=countRejections[j]+(ls.print(fm,print.it = F)$coef[[1]][2,4]<significance)
       }
-      #print(i)
+      if(i%%100==0){print(i)}
   }
-  plot(y=countRejections/nRep,type='o',col=2,x=h2)
+  plot(y=countRejections/nRep,type='o',col=2,x=R2,ylab='Power',xlab='R2',ylim=c(0,1))
   abline(h=significance,col=4,lty=2,main='Power Curve',ylim=c(0,1))
 ```
+
+
+**Task**: Modify the code to estimate power as a function of R-sq and sample size, for N=30, 50, 100,500. Produce a plot of power versus sample size, by R-sq (i.e., different power curves per R-sq. level).
+
+#### (2) Multiple Testing
+
