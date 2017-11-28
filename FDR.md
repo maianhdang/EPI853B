@@ -2,8 +2,8 @@
 ### Family-wise error reate, False Discovery Rate (FDR) and power 
 
 
-Considerb testing N=N1+N2+N3+N4 hypotheses. For each hypothesis H0 may hold or not (rows in the table below),
-and we may reject/fail to reject H0 (columns).
+Consider testing N (N=N1+N2+N3+N4) hypotheses. For each hypothesis H0 may hold or not (rows in the table below),
+and we may reject the null or fail to reject it (columns).
 
 |           | Do not reject H0  | Reject H0          |
 |-----------|-------------------|---------------------|
@@ -21,23 +21,24 @@ From the above table we can compute several important probabilities:
 
 #### Estimating Type-I error rate, False Discover Rate and Power using Monte Carlo Simulations
 
-##### Single-test case
+##### (1) Single-test case
 
-We can simulate data under H0 and under various Ha, apply our decision rule, and cout how many cases fall in each of the cells of the table above-described. The following example illustrates this.
+The following example shows how to estimate type-I error rate, power and FDR for a single test. 
 
+We simulate under diffeerent values 
 
 ```r
-  h2=c(0,.001,.005,.01,.02,.05,.1)# heritability parameter
+  R2=c(0,.001,.005,.01,.02,.05,.1)# heritability parameter
   N=100 # sample size
   nRep=1000 # number of Monte Carlo replicates
   significance=0.01 # significance for rejection
   
-  countRejections=rep(0, length(h2)) # We count rejections for every scenario
+  countRejections=rep(0, length(r2)) # We count rejections for every scenario
   for(i in 1:nRep){
       x=rbinom(size=2,n=N,p=.2) # we assume effect=1, and scale errors to get the desired h2
       Vg=var(x)
-      Ve=Vg/h2*(1-h2)
-      for(j in 1:length(h2)){
+      Ve=Vg/R2*(1-R2)
+      for(j in 1:length(R2)){
         if(j==1){ y=rnorm(N) }# simulating under the null
         if(j>1){ y=x+rnorm(sd=sqrt(Ve[j]),n=N) }
         fm=lsfit(y=y,x=x)     
