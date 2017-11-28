@@ -41,7 +41,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
     * Maximum likelihood estimation and inference in parametric [survival regression](https://github.com/gdlc/EPI853B/blob/master/parametricSurvival.md).
   * **[Bootstrap](https://github.com/gdlc/EPI853B/blob/master/bootstrap.md)**
   * **Permutation tests**
-    * A gentle introduction to permutation tests(Herbert A David, Am. Stat, 2008.](http://www.tandfonline.com/doi/abs/10.1198/000313008X269576)
+    * A gentle introduction to permutation tests [(Herbert A David, Am. Stat, 2008.)](http://www.tandfonline.com/doi/abs/10.1198/000313008X269576)
     * [Examples](https://github.com/gdlc/EPI853B/blob/master/permutation.md)
   * **Multiple testing**
     * [A review on multiple testing and permutations in GWAS](https://www.nature.com/articles/nrg3706)
