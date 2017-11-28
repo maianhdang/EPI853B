@@ -1,12 +1,8 @@
 ### Type-I error rate
 
-Suppose we have a test statistic `T(Y)` and a decision rule: reject if `T(Y)>k`. 
-
-The type-I error rate such decision rule is the probability of rejecting given that H0 holds, that is `P(T(Y)>k|H0)`. Here `T(Y)`, the test-statistic
+Suppose we have a test statistic `T(Y)` and a decision rule: reject if `T(Y)>k`. The type-I error rate of this decision rule is the probability of rejecting H0 given that H0 is true, that is `P(T(Y)>k|H0)`. Here `T(Y)`, the test-statistic
 is a function of the data. From a Frequentist perspective data, `Y`, is random, therfore `T(Y)` is a random variable. 
-What threshold (`k`) should we choose? The use of p-values circunvents this problem: we set `k` to be equal to the obseved value of the test statistic, 
-`k=T(y)` (small-letter `y` is used to denote the realized sample). The p-value of the test is `P(T(Y)>T(y)|H0)`.  If we reject at 0.05 we expect that 
-the corresponding test would have a 5% Type-I error rate.
+What threshold (`k`) should we choose? The use of p-values circunvents this problem: we set `k` to be equal to the obseved value of the test statistic, `k=T(y)` (small-letter `y` is used to denote the realized sample). The p-value of the test is `P(T(Y)>T(y)|H0)`.  If we reject at 0.05 we expect that the corresponding test would have a 5% Type-I error rate.
 
 **Example 1:** Estimating type-I error rate for a single test
 
