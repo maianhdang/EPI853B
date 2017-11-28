@@ -46,13 +46,12 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
   * **Multiple testing**
     * A review on multiple testing and permutations in GWAS [(Sham & Purcell, NRG, 2014)](https://www.nature.com/articles/nrg3706)
     * [Family-wise error rate and Bonferroni correction.](https://github.com/gdlc/EPI853B/edit/master/multipleTesting.md)
-    * [False discovery rate (FDR)](https://github.com/gdlc/EPI853B/edit/master/FDR.md)
+    * False discovery rate (FDR)
+        * [Benjamini & Hochberg (1995)](http://www.math.tau.ac.il/~ybenja/MyPapers/benjamini_hochberg1995.pdf)
+        * [Examples](https://github.com/gdlc/EPI853B/edit/master/FDR.md)
     * [Permutations with multiple-testing](https://github.com/gdlc/EPI853B/edit/master/permutations2.md)
-    
-  * Multi-core computing in R
-  * Assesment of prediction accuracy using cross-validation methods
-  * Introduction to linux and distributed computing in High-performance Computing Clusters
-  
+    * Multi-core computing in R
+   
 ## Homework
 
   * [HW1](https://github.com/gdlc/EPI853B/blob/master/HW1.md)
