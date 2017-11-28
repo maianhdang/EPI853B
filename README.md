@@ -48,7 +48,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
     * [Family-wise error rate and Bonferroni correction.](https://github.com/gdlc/EPI853B/blob/master/multipleTesting.md)
     * False discovery rate (FDR)
         * [Benjamini & Hochberg (1995)](http://www.math.tau.ac.il/~ybenja/MyPapers/benjamini_hochberg1995.pdf)
-        * [Examples](https://github.com/gdlc/EPI853B/edit/master/FDR.md)
+        * [Examples](https://github.com/gdlc/EPI853B/blob/master/FDR.md)
     * [Permutations with multiple-testing](https://github.com/gdlc/EPI853B/edit/master/permutations2.md)
     * Multi-core computing in R
    
