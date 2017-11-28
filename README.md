@@ -45,7 +45,7 @@ Note: this is a tentative list of topics, if time permits we will try to cover a
     * [Examples](https://github.com/gdlc/EPI853B/blob/master/permutation.md)
   * **Multiple testing**
     * A review on multiple testing and permutations in GWAS [(Sham & Purcell, NRG, 2014)](https://www.nature.com/articles/nrg3706)
-    * [Family-wise error rate and Bonferroni correction.](https://github.com/gdlc/EPI853B/edit/master/multipleTesting.md)
+    * [Family-wise error rate and Bonferroni correction.](https://github.com/gdlc/EPI853B/blob/master/multipleTesting.md)
     * False discovery rate (FDR)
         * [Benjamini & Hochberg (1995)](http://www.math.tau.ac.il/~ybenja/MyPapers/benjamini_hochberg1995.pdf)
         * [Examples](https://github.com/gdlc/EPI853B/edit/master/FDR.md)
