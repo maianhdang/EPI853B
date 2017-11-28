@@ -1,5 +1,5 @@
 
-### Family-wise error reate, False Discovery Rate (FDR) and power 
+### Family-Wise Error Reate, False Discovery Rate (FDR) and power 
 
 
 Consider testing N (N=N1+N2+N3+N4) hypotheses. For each hypothesis H0 may hold or not (rows in the table below),
