@@ -101,3 +101,67 @@ We simulate under diffeerent values
 ```  
 
 
+### Example: using Bonferroni Vs FDR in GWAS
+
+```r
+ rm(list=ls())
+ load('~/Dropbox/X_10k_10k.RData')
+ # Pruning (almost perfectly colinear SNPs)
+  p=ncol(X)
+  n=nrow(X)
+  for(i in 1:4){
+	keep=rep(T,p)
+ 	for(i in 2:p){
+ 		keep[i]<- (cor(X[,i-1],X[,i])^2 < 0.9)
+ 	}
+ 	X=X[,keep]
+ 	p=ncol(X)
+ 	print(p)
+  }
+ 
+ #
+ n=nrow(X); p=ncol(X)
+ nQTL=10  # number of loci with effects
+ QTL=round(seq(from=50,to=p-50,length=nQTL) )
+
+
+ h2=.01 # R-sq of the simulated model
+ 
+ b=rep(1,nQTL)
+ 
+ signal=X[,QTL]%*%b
+ signal=scale(signal)*sqrt(h2)
+ error=rnorm(sd=sqrt(1-h2),n=n)
+ y=signal+error
+ 
+ # A function for single marker regression
+ SMR=function(y,x){
+ 	fm=lsfit(y=y,x=x)
+ 	out=ls.print(lsfit(x=x,y=y),print.it=F)[[2]][[1]][2,]
+ 	return(out)
+ }
+ 
+# Single marker-test
+ system.time(TMP<-t(apply(FUN=SMR,X=X,MARGIN=2,y=y)))
+ pValues<-TMP[,4]
+ 
+ plot(-log10(pValues),cex=.5,col=2)
+
+ abline(h=-log10(.05/p),col=4) # Bonferroni's threshold for FWER=0.05
+
+ sortedPValues=sort(pValues)
+ isSmaller=sortedPValues<= (1:p)/p*0.1
+ FDR.cutoff<-sortedPValues[max(which(isSmaller))]
+
+ abline(h= -log10(FDR.cutoff),colk=4,lty=2)
+ 
+```
+
+### The `p.adjust` function in R
+
+```r
+  pValue_bonf=p.adjust(pValues,method='bonferroni')
+  pValue_holm=p.adjust(pValues,method='holm')
+  pValue_fdr=p.adjust(pValues,method='fdr')
+
+```
