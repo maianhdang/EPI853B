@@ -103,6 +103,8 @@ We simulate under diffeerent values
 
 ### Example: using Bonferroni Vs FDR in GWAS
 
+For the following example we will use this [dataset](https://www.dropbox.com/s/1ccoy1hy3yddc09/X_10k_10k.RData?dl=0).
+
 ```r
  rm(list=ls())
  load('~/Dropbox/X_10k_10k.RData')
