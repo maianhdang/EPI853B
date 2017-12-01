@@ -36,8 +36,9 @@ and assume that age~N(50,20). Assume that these three predictors are independent
 
 Use the following simulation to estimate the power and false discovery rate single-prediction linear regression for
 following decision rules:
-	- Reject based on Bonferroni-adjusted p-values at a target family-wise error rate of 0.05
-	- Reject based on FDR-adjusted p-values with target FDR of 5 and 10%.
+
+  - Reject based on Bonferroni-adjusted p-values at a target family-wise error rate of 0.05
+  - Reject based on FDR-adjusted p-values with target FDR of 5 and 10%.
 
 
 ```r
