@@ -17,9 +17,8 @@ of sample size and the size of the effect of race.
 
 
 **Task**: conduct a simulation study (with sufficient number of Monte Carlo replicates) to estimate
-the type-I error rate and power for  for each the scenarios that can be formed by
-combining sample size of N=50,100, 200, 300 and 500 and race effect (for the male dummy) is somewhere
-between 0 (null) to 0.8.
+the type-I error rate and power for  each of the scenarios that can be formed by
+combining sample size of N=50,100, 200, 300 and 500 and race effects 0 (null), .01,.05,.1,.2,...,.8).
 
 
 **Parameters**: In your simulation assume equal proportion of male/female, equal proportion of black/white
