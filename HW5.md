@@ -9,8 +9,8 @@
 A researcher wants to determine wether race has an effect on the likelihood of
 developing a disease after accounting for differences due to sex and age.
 
-The plan is to test this by using a logistic regression of the disease outcome on sex, age and race and
-to test for the significance of race in this model.
+The plan is to test this by using a logistic regression of the disease outcome on sex, age and race. Significance will be assessed
+based on the p-value for the race effect in this logistic regression.
 
 The researcher wants to determine the type-I error rate and power of such a study as a function
 of sample size and the size of the effect of race.
