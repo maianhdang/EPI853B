@@ -41,10 +41,11 @@ following decision rules:
   - Reject based on FDR-adjusted p-values with target FDR of 5 and 10%.
 
 
-```r
-	# For 1 Monte Carlo Replicate
+Usue the following code to generate each of your Monte Carlo replicates.
 
-     X=matrix(nrow=n,ncol=p,rbinom(n=n*p,size=2,p=.25))
+```r
+
+         X=matrix(nrow=n,ncol=p,rbinom(n=n*p,size=2,p=.25))
 	 b=rep(0,p)
 	 b[sample(1:p,size=q)]=runif(min=.1,max=.3,n=q) # q coefficients come from Ha, the rest from H0
 		
