@@ -24,8 +24,10 @@ combining sample size of N=50,100, 200, 300 and 500 and race effects 0 (null), .
 **Parameters**: In your simulation assume equal proportion of male/female, equal proportion of black/white
 and assume that age~N(50,20). Assume that these three predictors are independent.
 
-**(i) Report power curves** (in a single plot) with estimate rejection rate in the vertical axis versus sample size, by size of effect.
+**(i) Report power curves** (in a single plot) with estimated rejection rate in the vertical axis versus sample size, by size of effect.
+
 **Interpret your results**
+
 **Report your code in an appendix**
 
 
