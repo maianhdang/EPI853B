@@ -76,6 +76,33 @@ Consider the operation `XtY<-crossprod(X,Y)` for the case where `X` has a large 
   X=matrix(nrow=n,ncol=p,rnorm(n*p))
   cols=sample(1:p,10)
   
+  XtYa<-crossprod(X,Y)[cols,]
+  XtYb<-crossprod(X[,cols],Y)
+  all(XtYa==XtYb)
+```
+
+We can then compute crossproducts for subsets of columns of X in parallel and then use `rbind` to put together all the results. This idea is implemented in the following `pCrossprod` function.
+
+```r
+  # 1st we need a fucntion to complete the task for one chunk
+  crossprod.chunk<-function(W,Y,index,chunk){
+    W<-W[,index==chunk]
+    crossprod(W,Y)
+  }
+  
+  # Then we produce the wrapper
+  pCrossprod<-function(X,Y,nTasks,nCores){ 
+     index=rep(1:nTasks,each=ceiling(n/nTasks))[1:n]
+     results<- mclapply(FUN=crossprodChunks,W=X,Y=U,index=index,X=1:nTasks,mc.cores=nCores)
+     XY=matrix(nrow=ncol(X),ncol=ncol(Y))
+     lastRow<-0
+     for(i in 1:length(results)){
+        firstRow<-lastRow+1
+        lastRow<-firstRow+nrow(results[[i]])-1
+        XY[firstRow:lastRow,]<-results[[i]]
+     }
+     return(XY)
+  }
 
 ```
 
