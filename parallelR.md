@@ -50,7 +50,7 @@ of a vector into chunks, apply the sum to each chunk and then aggregate results 
 
 Generating a function that calls `mclapply` and aggregates results
 
-```
+```r
   pSum<-function(x,nTasks,ncores){
     n<-length(x)
     index=rep(1:nTasks,each=ceiling(n/nTasks))[1:n]
@@ -65,4 +65,17 @@ Generating a function that calls `mclapply` and aggregates results
 
 In the previous example the computations done with `mclapply` took more time than the serial computation. Carrying out computations in parallel has an overhead. Parallel computing is convinient when each task takes a substantial amount of time. 
 We illustrate this implementing a function that computes crossproducts in parallel.
+
+Consider the operation `XtY<-crossprod(X,Y)` for the case where `X` has a large number of columns. The dimensions of `XtY` are `dim(XtY)=c(ncol(X),ncol(Y)`. Furthermore, the ith row of `XtY`  corespond to `crossprod(X[,i],Y)`. More in general, if `cols` represent a set of columns of `X` we have that `XtY[cols,]=crossprod(X[,cols],Y)`. The following code verifies this numerically.
+
+
+```r
+  n=10000
+  p=500
+  q=10
+  X=matrix(nrow=n,ncol=p,rnorm(n*p))
+  cols=sample(1:p,10)
+  
+
+```
 
