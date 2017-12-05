@@ -19,6 +19,7 @@ The [parallel](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parall
 
 **Using `mclapply`**
 
+
 The following example (adapted from the mclapply help) illustartes how to use `mclapply`. In the example we use the function `rnorm`, the 
 only argument to `rnorm` without default value is `n`, the numbrer of samples to be collected. The example calls `rnorm(n)` with
 values of `n=C(2,3,5,4)` in parallel at 4 cores.
@@ -53,13 +54,15 @@ Generating a function that calls `mclapply` and aggregates results
   pSum<-function(x,nTasks,ncores){
     n<-length(x)
     index=rep(1:nTasks,each=ceiling(n/nTasks))[1:n]
-    sums<- mclapply(FUN=sumChunk,x=x,index=index,X=1:nTasks,mc.cors=ncores)
+    sums<- mclapply(FUN=sumChunk,x=x,index=index,X=1:nTasks,mc.cores=ncores)
     sum(unlist(sums))
   }
   
   sum(x)
-  pSum(x,nTasks=8,mc.cores=4)
+  pSum(x,nTasks=8,ncores=4)
   
 ```
 
+In the previous example the computations done with `mclapply` took more time than the serial computation. Carrying out computations in parallel has an overhead. Parallel computing is convinient when each task takes a substantial amount of time. 
+We illustrate this implementing a function that computes crossproducts in parallel.
 
