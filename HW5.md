@@ -18,11 +18,14 @@ of sample size and the size of the effect of race.
 
 **Task**: conduct a simulation study (with sufficient number of Monte Carlo replicates) to estimate
 the type-I error rate and power for  each of the scenarios that can be formed by
-combining sample size of N=50,100, 200, 300 and 500 and race effects 0 (null), .01,.05,.1,.2,...,.8).
+combining sample size of N=50,100, 200, 300 and 500 and race effects 0 (null), .01,.05,.1,.2,...,.8. 
 
-
-**Parameters**: In your simulation assume equal proportion of male/female, equal proportion of black/white
-and assume that age~N(50,20). Assume that these three predictors are independent.
+**Parameters for the simulation**: In your simulation assume:
+      - equal proportion of male/female, efect of female dummy = -0.15
+      - equal proportion of black/white, effect varies according to the grid described above, 0, 0.01, 0.05,.1,.2,...,.8.
+      - age~N(50,20) effect of age = -2
+      - Intercept =-2
+    
 
 **(i) Report power curves** (in a single plot) with estimated rejection rate in the vertical axis versus sample size, by size of effect.
 
