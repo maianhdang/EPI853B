@@ -108,16 +108,45 @@ We can then compute crossproducts for subsets of columns of X in parallel and th
 
 ```
 
+The following example illustrates the use of the `pCrossprod` function. The following example does not show great speed-up, the reason being that the number of columns of Y is relatively small, hence, `crossprod` is very fast and the overhead of parallel computing is too high. 
 
 ```r
-
+  library(parallel)
   n=20000
   p=5000
   q=10
   X=matrix(nrow=n,ncol=p,rnorm(n*p))
   Y=matrix(nrow=n,ncol=q,rnorm(n*q))
-  system.time(XY1<-crossprod(X,Y) )
-  system.time(XY2<-pCrossprod(X,Y,nTasks=12,nCores=4) )
+  
+  # Example 1: X'Y, no speed-up with parallel computing because q is small.
+   system.time(XY1<-crossprod(X,Y) )
+   system.time(XY2<-pCrossprod(X,Y,nTasks=12,nCores=4) )
+ 
+  # Example 1: X'X, significant speed-up, in my computer by a factor of ~2.
+   system.time(XX1<-crossprod(X) )
+   system.time(XX2<-pCrossprod(X,X,nTasks=12,nCores=4) )
+```
+
+In the follwoing example parallel computing can get a significant speedup. We use the `crossprod_parallel` of the `BGData` package.
+
+```r
+
+system.time(XX<-crossprod(X) )
+system.time(XX2<-crossprod_parallel(X,nCores=4,nTasks=12))
 
 ```
 
+The `BGData` package offers `tcrossprod_parallel(), `crossprod_parallel()` and parallel versions of apply.
+
+
+### GPU-computing
+
+The `gpuR` package offer functions for matrix operations using GPUs. In this example GPU computing gives a speed-up by a factor of 15+!!!
+
+
+```r
+ library(gpuR)
+ Z<-gpuMatrix(X,'float')
+ system.time(ZZ<-crossprod(Z))
+ 
+```
